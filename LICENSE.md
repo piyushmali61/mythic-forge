@@ -13,7 +13,7 @@ Except as expressly authorized in writing by **Mythic Bharat Studios**:
 1. **NO UNAUTHORIZED USE OR COPYING:** No person or organization may copy, reproduce, duplicate, fork, modify, adapt, translate, create derivative works of, distribute, sublicense, rent, lease, sell, or commercially exploit this Software or any part of its source code in any medium or manner.
 2. **NO REVERSE ENGINEERING:** Decompilation, disassembly, reverse engineering, extraction of underlying algorithms, or attempts to derive source code from any compiled binaries or WebAssembly bundles are strictly prohibited.
 3. **NO REDISTRIBUTION OF CORE CODE:** This Software may NOT be re-uploaded, packaged into competing game engines or creation tools, redistributed through public package registries, or republished on code-hosting platforms without prior express written permission from Mythic Bharat Studios.
-4. **BRAND & TRADEMARK PROTECTION:** "Mythic Forge", "Mythic Bharat Studios", the Mythic Forge logo, flame forge mandala, and all associated iconography are proprietary trademarks of Mythic Bharat Studios. No rights, title, or license to use these trademarks in any competing or unrelated products are granted herein.
+4. **BRAND & TRADEMARK PROTECTION:** "Mythic Forge", "Mythic Bharat Studios", the Mythic Bharat Studios logo, golden trishul emblem, and all associated iconography are proprietary trademarks of Mythic Bharat Studios. No rights, title, or license to use these trademarks in any competing or unrelated products are granted herein.
 
 ---
 

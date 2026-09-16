@@ -28,6 +28,7 @@
     "audit:licenses": "node tools/license-audit/audit.ts",
     "notices": "node tools/third-party-notices/generate.ts",
     "bench:core": "node tools/benchmark/core-bench.ts",
+    "brand:icons": "python tools/brand/make-icons.py --all",
     "android:sync": "npm run build && npm run sync -w @mythic-forge/android",
     "android:open": "npm run open -w @mythic-forge/android"
   },

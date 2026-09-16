@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="apps/editor/public/icons/logo.svg" alt="Mythic Bharat Studios — Mythic Forge Logo" width="120" height="120" />
+  <img src="apps/editor/public/icons/logo.svg" alt="Mythic Bharat Studios — Mythic Forge Logo" width="160" height="160" />
 </p>
 
 <h1 align="center">MYTHIC FORGE</h1>
