@@ -1,0 +1,1562 @@
+{
+  "format": "mythic-forge-catalog",
+  "formatVersion": 1,
+  "publisher": "Mythic Bharat Studios",
+  "generatedAt": "",
+  "sourceSha256": "120848113ede48a00ac05cdf8cd65da29438be2d3f36ca4038ef73495e085389",
+  "entries": [
+    {
+      "id": "mbs.shrine-platform",
+      "version": "1.0.0",
+      "name": "Stepped Shrine Platform",
+      "description": "Three-tier sandstone plinth with carved trim bands, brass corner finials and an octagonal inlay. 8 × 8 m footprint, 1.2 m high.",
+      "section": "official",
+      "kind": "model",
+      "category": "Indian Architecture",
+      "tags": [
+        "temple",
+        "platform",
+        "stone",
+        "architecture",
+        "mythology"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/mbs.shrine-platform.glb",
+          "bytes": 22676,
+          "sha256": "d6be4433f7d54fd8be314421ade8e2d535c66c976f93c7cab93489e921305305",
+          "role": "main"
+        },
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 512,
+        "triangles": 536,
+        "materials": 3,
+        "boundsMin": [
+          -4.03,
+          0,
+          -4.03
+        ],
+        "boundsMax": [
+          4.03,
+          1.54,
+          4.03
+        ],
+        "gpuBytesEstimate": 19600,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.shrine-platform",
+        "name": "Stepped Shrine Platform",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.carved-pillar",
+      "version": "1.0.0",
+      "name": "Carved Pillar",
+      "description": "Sandstone column with ringed shaft and bracket capital. 3 m tall.",
+      "section": "official",
+      "kind": "model",
+      "category": "Indian Architecture",
+      "tags": [
+        "pillar",
+        "column",
+        "temple",
+        "stone"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/mbs.carved-pillar.glb",
+          "bytes": 27416,
+          "sha256": "3a34552aaa0ccfbbf80fbbdf4ebc0553c3a766f70d7f7f5df31e524fc631b5c2",
+          "role": "main"
+        },
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 720,
+        "triangles": 360,
+        "materials": 2,
+        "boundsMin": [
+          -0.45,
+          0,
+          -0.45
+        ],
+        "boundsMax": [
+          0.45,
+          3,
+          0.45
+        ],
+        "gpuBytesEstimate": 25200,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.carved-pillar",
+        "name": "Carved Pillar",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.184Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.184Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.184Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.185Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.diya-lamp",
+      "version": "1.0.0",
+      "name": "Diya Lamp",
+      "description": "Terracotta oil lamp with a glowing flame. Pairs well with a small point light.",
+      "section": "official",
+      "kind": "model",
+      "category": "Props",
+      "tags": [
+        "lamp",
+        "light",
+        "festival",
+        "diwali",
+        "terracotta"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/mbs.diya-lamp.glb",
+          "bytes": 15724,
+          "sha256": "a0027cf4fa5264817fb4dba8f26688bd43e3df0cb981a2bfc6fa0175761dcca3",
+          "role": "main"
+        },
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 320,
+        "triangles": 372,
+        "materials": 3,
+        "boundsMin": [
+          -0.18,
+          0,
+          -0.18
+        ],
+        "boundsMax": [
+          0.26,
+          0.285,
+          0.18
+        ],
+        "gpuBytesEstimate": 12472,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.diya-lamp",
+        "name": "Diya Lamp",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.186Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.187Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.187Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.stone-torana",
+      "version": "1.0.0",
+      "name": "Stone Torana Gateway",
+      "description": "Red sandstone ceremonial gateway with double lintel, scrolled ends and a brass finial. About 4.3 m wide and 4.3 m tall.",
+      "section": "official",
+      "kind": "model",
+      "category": "Indian Architecture",
+      "tags": [
+        "gate",
+        "gateway",
+        "torana",
+        "arch",
+        "stone"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/mbs.stone-torana.glb",
+          "bytes": 25668,
+          "sha256": "a8180abf4bb2e2c388dc2a8e7fc4eca50d145ef6461755982008bd248792b3a9",
+          "role": "main"
+        },
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 619,
+        "triangles": 456,
+        "materials": 3,
+        "boundsMin": [
+          -2.162,
+          0,
+          -0.375
+        ],
+        "boundsMax": [
+          2.162,
+          4.3,
+          0.395
+        ],
+        "gpuBytesEstimate": 22544,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.stone-torana",
+        "name": "Stone Torana Gateway",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.189Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.kalash-pot",
+      "version": "1.0.0",
+      "name": "Kalash",
+      "description": "Brass kalash with coconut and a fan of mango leaves.",
+      "section": "official",
+      "kind": "model",
+      "category": "Props",
+      "tags": [
+        "kalash",
+        "pot",
+        "brass",
+        "ritual"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/mbs.kalash-pot.glb",
+          "bytes": 17908,
+          "sha256": "9dd4ac30a78bbd2d29afdba4d60ecbaa99e90193ba26068cdf0f6dd760f13679",
+          "role": "main"
+        },
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 372,
+        "triangles": 496,
+        "materials": 3,
+        "boundsMin": [
+          -0.25,
+          0,
+          -0.25
+        ],
+        "boundsMax": [
+          0.25,
+          0.672,
+          0.25
+        ],
+        "gpuBytesEstimate": 14880,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.kalash-pot",
+        "name": "Kalash",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.192Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.192Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.192Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.196Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.banyan-tree",
+      "version": "1.0.0",
+      "name": "Banyan Tree",
+      "description": "Stylised low-poly banyan with aerial roots and a faceted canopy. About 5 m tall.",
+      "section": "official",
+      "kind": "model",
+      "category": "Nature",
+      "tags": [
+        "tree",
+        "banyan",
+        "nature",
+        "foliage"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/mbs.banyan-tree.glb",
+          "bytes": 34172,
+          "sha256": "497cee50c7b754115a0d66658bd5e382fc69d1aa8847bc675779d149657694ab",
+          "role": "main"
+        },
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 892,
+        "triangles": 422,
+        "materials": 3,
+        "boundsMin": [
+          -2.263,
+          0,
+          -2.236
+        ],
+        "boundsMax": [
+          2.321,
+          5.195,
+          2.236
+        ],
+        "gpuBytesEstimate": 31076,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.banyan-tree",
+        "name": "Banyan Tree",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.198Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.198Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.198Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.199Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-sandstone",
+      "version": "1.0.0",
+      "name": "Sandstone",
+      "description": "Warm, matte sandstone.",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "matte"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#d8b98f",
+        "metalness": 0,
+        "roughness": 0.9,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-sandstone",
+        "name": "Sandstone",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.201Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.202Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.202Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.202Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-red-sandstone",
+      "version": "1.0.0",
+      "name": "Red Sandstone",
+      "description": "Deep red sandstone, as used in many historic gateways.",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "red"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#b5533c",
+        "metalness": 0,
+        "roughness": 0.85,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-red-sandstone",
+        "name": "Red Sandstone",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-brass",
+      "version": "1.0.0",
+      "name": "Polished Brass",
+      "description": "Metallic brass. Looks best with reflections enabled (High quality).",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "metal",
+        "gold"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#c9a14a",
+        "metalness": 1,
+        "roughness": 0.35,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-brass",
+        "name": "Polished Brass",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-terracotta",
+      "version": "1.0.0",
+      "name": "Terracotta",
+      "description": "Fired clay.",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "clay",
+        "orange"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#c4693d",
+        "metalness": 0,
+        "roughness": 0.8,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-terracotta",
+        "name": "Terracotta",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-marble",
+      "version": "1.0.0",
+      "name": "White Marble",
+      "description": "Smooth, slightly glossy white stone.",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "white",
+        "glossy"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#ece8e1",
+        "metalness": 0,
+        "roughness": 0.3,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-marble",
+        "name": "White Marble",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-teak",
+      "version": "1.0.0",
+      "name": "Teak Wood",
+      "description": "Dark, warm wood tone.",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "wood",
+        "brown"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#7a4a2a",
+        "metalness": 0,
+        "roughness": 0.7,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-teak",
+        "name": "Teak Wood",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-jade",
+      "version": "1.0.0",
+      "name": "Jade",
+      "description": "Polished green stone.",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "green"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#3f8f6b",
+        "metalness": 0,
+        "roughness": 0.4,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-jade",
+        "name": "Jade",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.208Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "mbs.mat-lamp-glow",
+      "version": "1.0.0",
+      "name": "Lamp Glow",
+      "description": "Emissive saffron for flames, lanterns and magic effects.",
+      "section": "official",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "emissive",
+        "glow",
+        "orange"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/MBS-ASSET-1.0.md",
+          "bytes": 2260,
+          "sha256": "9551f5a6b9b75b64538302bb46ec5269c6d6ec5ec9d33eb78be429ecbf6834d3",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#ffb347",
+        "metalness": 0,
+        "roughness": 1,
+        "emissive": "#ff8c1a",
+        "emissiveIntensity": 2.5,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Mythic Bharat Studios",
+        "sourceUrl": "",
+        "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+        "licenseId": "MBS-ASSET-1.0",
+        "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+        "licenseUrl": "",
+        "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+        "assetId": "mbs.mat-lamp-glow",
+        "name": "Lamp Glow",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "previousVersions": []
+    }
+  ]
+}

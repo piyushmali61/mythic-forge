@@ -1,0 +1,71 @@
+{
+  "format": "mythic-forge-asset",
+  "formatVersion": 1,
+  "id": "a_evk5g1p581lz",
+  "name": "Diya Lamp",
+  "kind": "model",
+  "fileFormat": "glb",
+  "mainFile": "mbs.diya-lamp.glb",
+  "files": [
+    {
+      "name": "mbs.diya-lamp.glb",
+      "size": 15724,
+      "sha256": "a0027cf4fa5264817fb4dba8f26688bd43e3df0cb981a2bfc6fa0175761dcca3"
+    }
+  ],
+  "importedAt": "2026-09-16T21:53:12.236Z",
+  "originalBytes": 15724,
+  "storedBytes": 15724,
+  "provenance": {
+    "source": "official",
+    "userConfirmedRights": true,
+    "originalFileName": "mbs.diya-lamp.glb",
+    "catalogId": "mbs.diya-lamp",
+    "catalogVersion": "1.0.0",
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Mythic Bharat Studios",
+      "sourceUrl": "",
+      "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+      "licenseId": "MBS-ASSET-1.0",
+      "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+      "licenseUrl": "",
+      "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false,
+      "verifiedBy": "Mythic Bharat Studios Review Team",
+      "verificationDate": "2026-09-16",
+      "verificationStatus": "verified",
+      "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+      "assetId": "mbs.diya-lamp",
+      "name": "Diya Lamp",
+      "assetVersion": "1.0.0"
+    }
+  },
+  "importSettings": null,
+  "stats": {
+    "vertices": 320,
+    "triangles": 372,
+    "materials": 3,
+    "boundsMin": [
+      -0.18,
+      0,
+      -0.18
+    ],
+    "boundsMax": [
+      0.26,
+      0.285,
+      0.18
+    ],
+    "gpuBytesEstimate": 12472,
+    "meshes": 1,
+    "textures": 0,
+    "animations": 0,
+    "bones": 0
+  }
+}

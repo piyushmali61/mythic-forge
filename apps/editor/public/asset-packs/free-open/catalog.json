@@ -1,0 +1,756 @@
+{
+  "format": "mythic-forge-catalog",
+  "formatVersion": 1,
+  "publisher": "Mythic Bharat Studios (curated Free & Open assets)",
+  "generatedAt": "",
+  "sourceSha256": "b54b264e9ade9cece92311a042eea450aa2d87bdbf8c9fa1a54e008568eadbde",
+  "entries": [
+    {
+      "id": "fo.lowpoly-rock",
+      "version": "1.0.0",
+      "name": "Low-Poly Rock",
+      "description": "Faceted low-poly stone boulder. Ideal for terrains, natural scattering, and obstacles.",
+      "section": "free-open",
+      "kind": "model",
+      "category": "Nature",
+      "tags": [
+        "rock",
+        "stone",
+        "boulder",
+        "nature",
+        "lowpoly",
+        "cc0"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/fo.lowpoly-rock.glb",
+          "bytes": 16004,
+          "sha256": "8073ed9e7d8c05473c0fc2b2667fdd638db37aab93c3b54edef2d71abd052350",
+          "role": "main"
+        },
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 432,
+        "triangles": 144,
+        "materials": 1,
+        "boundsMin": [
+          -0.96,
+          -0.04,
+          -0.8
+        ],
+        "boundsMax": [
+          0.96,
+          1.24,
+          0.8
+        ],
+        "gpuBytesEstimate": 14688,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.lowpoly-rock",
+        "name": "Low-Poly Rock",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "fo.wooden-crate",
+      "version": "1.0.0",
+      "name": "Wooden Crate",
+      "description": "Classic slatted wooden game crate with reinforced edge posts. Standard 1m cube prop.",
+      "section": "free-open",
+      "kind": "model",
+      "category": "Props",
+      "tags": [
+        "crate",
+        "box",
+        "wood",
+        "prop",
+        "gameplay",
+        "cc0"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/fo.wooden-crate.glb",
+          "bytes": 8048,
+          "sha256": "ac4480ac3331abeaab8454dd1c9029802dfd3e8c22119eff545aa2e32d5123d9",
+          "role": "main"
+        },
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 168,
+        "triangles": 84,
+        "materials": 2,
+        "boundsMin": [
+          -0.51,
+          0,
+          -0.51
+        ],
+        "boundsMax": [
+          0.51,
+          1,
+          0.51
+        ],
+        "gpuBytesEstimate": 5880,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.wooden-crate",
+        "name": "Wooden Crate",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "fo.ground-tile",
+      "version": "1.0.0",
+      "name": "Ground Tile (Grass & Dirt)",
+      "description": "Modular 2m × 2m terrain tile with lush green top and compact earth base.",
+      "section": "free-open",
+      "kind": "model",
+      "category": "Environment",
+      "tags": [
+        "ground",
+        "grass",
+        "dirt",
+        "terrain",
+        "tile",
+        "modular",
+        "cc0"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/fo.ground-tile.glb",
+          "bytes": 3856,
+          "sha256": "4bc53ea594de5ac64e94dde8573bb61d172d4ff9c7bb0b89fb7c7ab1593d9ad4",
+          "role": "main"
+        },
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 48,
+        "triangles": 24,
+        "materials": 2,
+        "boundsMin": [
+          -1.01,
+          0,
+          -1.01
+        ],
+        "boundsMax": [
+          1.01,
+          0.4,
+          1.01
+        ],
+        "gpuBytesEstimate": 1680,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.ground-tile",
+        "name": "Ground Tile (Grass & Dirt)",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "fo.terracotta-urn",
+      "version": "1.0.0",
+      "name": "Terracotta Urn",
+      "description": "Traditional lathed earthenware urn suitable for interior and exterior decor.",
+      "section": "free-open",
+      "kind": "model",
+      "category": "Props",
+      "tags": [
+        "urn",
+        "pot",
+        "terracotta",
+        "clay",
+        "prop",
+        "cc0"
+      ],
+      "format": "glb",
+      "files": [
+        {
+          "path": "models/fo.terracotta-urn.glb",
+          "bytes": 13060,
+          "sha256": "3c173ff723c52c44db38674cc99a1532865616d27e9616ebea4333551de9acd1",
+          "role": "main"
+        },
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": null,
+      "stats": {
+        "vertices": 336,
+        "triangles": 168,
+        "materials": 1,
+        "boundsMin": [
+          -0.36,
+          0,
+          -0.36
+        ],
+        "boundsMax": [
+          0.36,
+          0.82,
+          0.36
+        ],
+        "gpuBytesEstimate": 11760,
+        "meshes": 1,
+        "textures": 0,
+        "animations": 0,
+        "bones": 0
+      },
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.terracotta-urn",
+        "name": "Terracotta Urn",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "fo.mat-smooth-stone",
+      "version": "1.0.0",
+      "name": "Smooth Stone Material",
+      "description": "Neutral grey matte stone material.",
+      "section": "free-open",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "material",
+        "stone",
+        "grey",
+        "cc0"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#828282",
+        "metalness": 0,
+        "roughness": 0.9,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.mat-smooth-stone",
+        "name": "Smooth Stone Material",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "fo.mat-rough-wood",
+      "version": "1.0.0",
+      "name": "Rough Wood Material",
+      "description": "Warm timber material for crates, planks and posts.",
+      "section": "free-open",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "material",
+        "wood",
+        "timber",
+        "cc0"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#8a5d3b",
+        "metalness": 0,
+        "roughness": 0.85,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.mat-rough-wood",
+        "name": "Rough Wood Material",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "fo.mat-moss-green",
+      "version": "1.0.0",
+      "name": "Moss Green Material",
+      "description": "Vibrant foliage and moss green surface material.",
+      "section": "free-open",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "material",
+        "grass",
+        "moss",
+        "green",
+        "cc0"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#4d8a3b",
+        "metalness": 0,
+        "roughness": 0.85,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.mat-moss-green",
+        "name": "Moss Green Material",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    },
+    {
+      "id": "fo.mat-clay-earth",
+      "version": "1.0.0",
+      "name": "Clay Earth Material",
+      "description": "Rich terracotta clay earth material.",
+      "section": "free-open",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "material",
+        "clay",
+        "earth",
+        "dirt",
+        "cc0"
+      ],
+      "format": "material",
+      "files": [
+        {
+          "path": "licenses/CC0-1.0.md",
+          "bytes": 6749,
+          "sha256": "aa08cfa1221db87db633feaeb0fe46923562f6aca507f9d54e12fe962fa7ccc5",
+          "role": "license"
+        }
+      ],
+      "material": {
+        "color": "#c4693d",
+        "metalness": 0,
+        "roughness": 0.8,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "stats": {},
+      "compatibility": {
+        "minEngineVersion": "0.1.0",
+        "platforms": [
+          "android",
+          "windows",
+          "web"
+        ],
+        "minQuality": "ultra-low"
+      },
+      "license": {
+        "creator": "Mythic Bharat Studios",
+        "owner": "Public Domain (CC0)",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+        "licenseId": "CC0-1.0",
+        "licenseName": "Creative Commons Zero v1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licenseTextPath": "licenses/CC0-1.0.md",
+        "commercialUse": true,
+        "modificationAllowed": true,
+        "redistributionAllowed": true,
+        "attributionRequired": false,
+        "attributionText": "",
+        "containsThirdPartyContent": false,
+        "thirdPartyContentCleared": false,
+        "verifiedBy": "Mythic Bharat Studios Compliance Team",
+        "verificationDate": "2026-09-17",
+        "verificationStatus": "verified",
+        "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain.",
+        "assetId": "fo.mat-clay-earth",
+        "name": "Clay Earth Material",
+        "assetVersion": "1.0.0"
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "to": "published",
+            "by": "Mythic Bharat Studios Compliance Team",
+            "role": "admin",
+            "at": "2026-09-17T03:00:00.000Z",
+            "note": "CC0 verified"
+          }
+        ]
+      },
+      "previousVersions": []
+    }
+  ]
+}

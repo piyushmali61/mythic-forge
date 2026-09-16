@@ -1,0 +1,26 @@
+{
+  "format": "mythic-forge-project",
+  "formatVersion": 1,
+  "id": "p_wfsv3zakhzb9",
+  "name": "Shrine of Lamps",
+  "description": "",
+  "type": "3d-game",
+  "targets": [
+    "android",
+    "windows"
+  ],
+  "performanceProfile": "balanced",
+  "customQuality": null,
+  "template": "empty",
+  "editorMode": "3d",
+  "engineVersion": "0.1.0",
+  "createdWithEngineVersion": "0.1.0",
+  "rendererVersion": 1,
+  "createdAt": "2026-09-16T21:53:12.167Z",
+  "modifiedAt": "2026-09-16T21:53:12.250Z",
+  "startScene": "scenes/main.mfscene",
+  "scenes": [
+    "scenes/main.mfscene"
+  ],
+  "archived": false
+}

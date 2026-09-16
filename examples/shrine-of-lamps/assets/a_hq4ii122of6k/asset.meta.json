@@ -1,0 +1,71 @@
+{
+  "format": "mythic-forge-asset",
+  "formatVersion": 1,
+  "id": "a_hq4ii122of6k",
+  "name": "Stepped Shrine Platform",
+  "kind": "model",
+  "fileFormat": "glb",
+  "mainFile": "mbs.shrine-platform.glb",
+  "files": [
+    {
+      "name": "mbs.shrine-platform.glb",
+      "size": 22676,
+      "sha256": "d6be4433f7d54fd8be314421ade8e2d535c66c976f93c7cab93489e921305305"
+    }
+  ],
+  "importedAt": "2026-09-16T21:53:12.178Z",
+  "originalBytes": 22676,
+  "storedBytes": 22676,
+  "provenance": {
+    "source": "official",
+    "userConfirmedRights": true,
+    "originalFileName": "mbs.shrine-platform.glb",
+    "catalogId": "mbs.shrine-platform",
+    "catalogVersion": "1.0.0",
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Mythic Bharat Studios",
+      "sourceUrl": "",
+      "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+      "licenseId": "MBS-ASSET-1.0",
+      "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+      "licenseUrl": "",
+      "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false,
+      "verifiedBy": "Mythic Bharat Studios Review Team",
+      "verificationDate": "2026-09-16",
+      "verificationStatus": "verified",
+      "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+      "assetId": "mbs.shrine-platform",
+      "name": "Stepped Shrine Platform",
+      "assetVersion": "1.0.0"
+    }
+  },
+  "importSettings": null,
+  "stats": {
+    "vertices": 512,
+    "triangles": 536,
+    "materials": 3,
+    "boundsMin": [
+      -4.03,
+      0,
+      -4.03
+    ],
+    "boundsMax": [
+      4.03,
+      1.54,
+      4.03
+    ],
+    "gpuBytesEstimate": 19600,
+    "meshes": 1,
+    "textures": 0,
+    "animations": 0,
+    "bones": 0
+  }
+}

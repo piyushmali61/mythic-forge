@@ -1,0 +1,71 @@
+{
+  "format": "mythic-forge-asset",
+  "formatVersion": 1,
+  "id": "a_a2mey0pr9e6m",
+  "name": "Carved Pillar",
+  "kind": "model",
+  "fileFormat": "glb",
+  "mainFile": "mbs.carved-pillar.glb",
+  "files": [
+    {
+      "name": "mbs.carved-pillar.glb",
+      "size": 27416,
+      "sha256": "3a34552aaa0ccfbbf80fbbdf4ebc0553c3a766f70d7f7f5df31e524fc631b5c2"
+    }
+  ],
+  "importedAt": "2026-09-16T21:53:12.233Z",
+  "originalBytes": 27416,
+  "storedBytes": 27416,
+  "provenance": {
+    "source": "official",
+    "userConfirmedRights": true,
+    "originalFileName": "mbs.carved-pillar.glb",
+    "catalogId": "mbs.carved-pillar",
+    "catalogVersion": "1.0.0",
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Mythic Bharat Studios",
+      "sourceUrl": "",
+      "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+      "licenseId": "MBS-ASSET-1.0",
+      "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+      "licenseUrl": "",
+      "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false,
+      "verifiedBy": "Mythic Bharat Studios Review Team",
+      "verificationDate": "2026-09-16",
+      "verificationStatus": "verified",
+      "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+      "assetId": "mbs.carved-pillar",
+      "name": "Carved Pillar",
+      "assetVersion": "1.0.0"
+    }
+  },
+  "importSettings": null,
+  "stats": {
+    "vertices": 720,
+    "triangles": 360,
+    "materials": 2,
+    "boundsMin": [
+      -0.45,
+      0,
+      -0.45
+    ],
+    "boundsMax": [
+      0.45,
+      3,
+      0.45
+    ],
+    "gpuBytesEstimate": 25200,
+    "meshes": 1,
+    "textures": 0,
+    "animations": 0,
+    "bones": 0
+  }
+}

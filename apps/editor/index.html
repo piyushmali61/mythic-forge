@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <!--CSP-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#121110" />
+    <meta name="description" content="Mythic Forge — a lightweight game and 3D creation engine by Mythic Bharat Studios. Create. Build. Play." />
+    <title>Mythic Forge</title>
+    <link rel="icon" href="./icons/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="./icons/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="./icons/icon-180.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./splash.css" />
+  </head>
+  <body>
+    <!-- Static splash: visible before any JavaScript runs, removed when the app is ready. -->
+    <div id="splash" class="splash" role="status" aria-live="polite">
+      <img src="./icons/logo.svg" alt="" width="88" height="88" />
+      <div class="splash-title">MYTHIC FORGE</div>
+      <div class="splash-by">Produced by Mythic Bharat Studios</div>
+      <div class="splash-tagline">Create. Build. Play.</div>
+      <noscript><p class="splash-error">Mythic Forge needs JavaScript to run.</p></noscript>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>

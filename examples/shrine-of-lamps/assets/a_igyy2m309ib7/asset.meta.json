@@ -1,0 +1,71 @@
+{
+  "format": "mythic-forge-asset",
+  "formatVersion": 1,
+  "id": "a_igyy2m309ib7",
+  "name": "Stone Torana Gateway",
+  "kind": "model",
+  "fileFormat": "glb",
+  "mainFile": "mbs.stone-torana.glb",
+  "files": [
+    {
+      "name": "mbs.stone-torana.glb",
+      "size": 25668,
+      "sha256": "a8180abf4bb2e2c388dc2a8e7fc4eca50d145ef6461755982008bd248792b3a9"
+    }
+  ],
+  "importedAt": "2026-09-16T21:53:12.239Z",
+  "originalBytes": 25668,
+  "storedBytes": 25668,
+  "provenance": {
+    "source": "official",
+    "userConfirmedRights": true,
+    "originalFileName": "mbs.stone-torana.glb",
+    "catalogId": "mbs.stone-torana",
+    "catalogVersion": "1.0.0",
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Mythic Bharat Studios",
+      "sourceUrl": "",
+      "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+      "licenseId": "MBS-ASSET-1.0",
+      "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+      "licenseUrl": "",
+      "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false,
+      "verifiedBy": "Mythic Bharat Studios Review Team",
+      "verificationDate": "2026-09-16",
+      "verificationStatus": "verified",
+      "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+      "assetId": "mbs.stone-torana",
+      "name": "Stone Torana Gateway",
+      "assetVersion": "1.0.0"
+    }
+  },
+  "importSettings": null,
+  "stats": {
+    "vertices": 619,
+    "triangles": 456,
+    "materials": 3,
+    "boundsMin": [
+      -2.162,
+      0,
+      -0.375
+    ],
+    "boundsMax": [
+      2.162,
+      4.3,
+      0.395
+    ],
+    "gpuBytesEstimate": 22544,
+    "meshes": 1,
+    "textures": 0,
+    "animations": 0,
+    "bones": 0
+  }
+}

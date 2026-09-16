@@ -1,0 +1,24 @@
+{
+  "name": "@mythic-forge/editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mythic Forge editor application (web/PWA; hosted by the Android and desktop shells).",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build:player && vite",
+    "build:player": "vite build --config vite.player.config.ts --logLevel warn",
+    "build": "npm run build:player && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mythic-forge/core": "0.1.0",
+    "@mythic-forge/platform": "0.1.0",
+    "@mythic-forge/renderer": "0.1.0",
+    "@preact/signals": "^2.11.2",
+    "preact": "^10.29.8"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "vite": "^8.3.0"
+  }
+}

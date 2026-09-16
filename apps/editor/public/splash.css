@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+  background: #121110;
+}
+.splash {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #121110;
+  color: #f2ece3;
+  z-index: 1000;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+.splash img {
+  margin-bottom: 14px;
+}
+.splash-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  padding-left: 0.28em;
+}
+.splash-by {
+  font-size: 13px;
+  color: #c3b8aa;
+  letter-spacing: 0.08em;
+}
+.splash-tagline {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #d6a84f;
+  letter-spacing: 0.12em;
+}
+.splash-error {
+  color: #ea6a5f;
+  max-width: 320px;
+  text-align: center;
+}
+.splash.hidden {
+  display: none;
+}

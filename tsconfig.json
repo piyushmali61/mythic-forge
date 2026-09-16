@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2023", "dom", "dom.iterable"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@mythic-forge/core": ["./packages/core/src/index.ts"],
+      "@mythic-forge/platform": ["./packages/platform/src/index.ts"],
+      "@mythic-forge/renderer": ["./packages/renderer/src/index.ts"],
+      "@mythic-forge/renderer/importer": ["./packages/renderer/src/assets/importer.ts"],
+      "@mythic-forge/renderer/probe": ["./packages/renderer/src/probe.ts"]
+    }
+  },
+  "include": [
+    "packages/*/src",
+    "packages/*/test",
+    "apps/editor/src",
+    "apps/editor/test",
+    "apps/editor/*.config.ts",
+    "tools",
+    "vitest.config.ts",
+    "workspace-aliases.ts"
+  ],
+  "exclude": ["**/node_modules", "**/dist"]
+}

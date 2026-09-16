@@ -1,0 +1,20 @@
+{
+  "name": "@mythic-forge/renderer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "three.js (WebGL 2) viewport, scene synchronisation, gizmos, model import/optimisation, thumbnails.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./importer": "./src/assets/importer.ts",
+    "./probe": "./src/probe.ts"
+  },
+  "dependencies": {
+    "@mythic-forge/core": "0.1.0",
+    "three": "^0.186.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0"
+  }
+}

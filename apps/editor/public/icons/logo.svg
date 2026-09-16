@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mythic Forge">
+  <rect width="64" height="64" rx="14" fill="#15130f"/>
+  <path d="M32 8 L56 32 L32 56 L8 32 Z" fill="none" stroke="#d6a84f" stroke-width="3.2" stroke-linejoin="round"/>
+  <g fill="#d6a84f">
+    <circle cx="32" cy="3.6" r="1.8"/>
+    <circle cx="60.4" cy="32" r="1.8"/>
+    <circle cx="32" cy="60.4" r="1.8"/>
+    <circle cx="3.6" cy="32" r="1.8"/>
+    <rect x="24" y="48.2" width="16" height="2.4" rx="1.2"/>
+  </g>
+  <path fill="#f08a2c" d="M32 15 C37 22 42 28 42 36 C42 42 37.5 46 32 46 C26.5 46 22 42 22 36 C22 31 25 27.5 27.5 24.5 C27.8 28.5 29.2 31 31.5 31.5 C30 26 30.2 20 32 15 Z"/>
+  <path fill="#ffd27a" d="M32 31 C34.5 34 36 36 36 38.5 C36 40.8 34.2 42.5 32 42.5 C29.8 42.5 28 40.8 28 38.5 C28 36 30 33.5 32 31 Z"/>
+</svg>

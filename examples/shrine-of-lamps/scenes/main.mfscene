@@ -1,0 +1,1633 @@
+{
+  "format": "mythic-forge-scene",
+  "formatVersion": 1,
+  "id": "scene_25mi4sqi3xqe",
+  "name": "Shrine of Lamps",
+  "environment": {
+    "background": "#2b1e2e",
+    "ambientColor": "#ffd9a8",
+    "ambientIntensity": 0.25,
+    "fogEnabled": true,
+    "fogColor": "#2b1e2e",
+    "fogNear": 18,
+    "fogFar": 60,
+    "gravity": -9.81
+  },
+  "hud": {
+    "title": "Collect every diya",
+    "showScore": true,
+    "winMessage": "The shrine glows. Well done!"
+  },
+  "rootIds": [
+    "e_7iifyxlpiall",
+    "e_ahtvf4ke8smr",
+    "e_twdxw0nim1nw",
+    "e_jb3amz1os9sk",
+    "e_fcholbydoqt4",
+    "e_myryzf12m6yc",
+    "e_wae65dx1yfdh",
+    "e_lr0expt01vi6",
+    "e_03vzr7y7t6ns",
+    "e_waui5wpw1oc8",
+    "e_nq95bk86skx8",
+    "e_01p9flyxbbyo",
+    "e_b5g482p2591n",
+    "e_rkpk2uh11c8u",
+    "e_aszv98r8g4nf",
+    "e_qk8m3liw1xku",
+    "e_aq2n2tfq4ndr",
+    "e_q9adw2q7r140",
+    "e_azy6eb9dwtlp",
+    "e_ybxnqdfm7w1v",
+    "e_4w270vu9bzfn",
+    "e_32h3bxmxlany"
+  ],
+  "entities": {
+    "e_7iifyxlpiall": {
+      "id": "e_7iifyxlpiall",
+      "name": "Directional Light",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          4,
+          8,
+          5
+        ],
+        "rotation": [
+          -35,
+          -140,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "directional",
+          "color": "#ffb070",
+          "intensity": 1.6,
+          "range": 0,
+          "angle": 35,
+          "castShadow": true,
+          "groundColor": "#3a3128"
+        }
+      }
+    },
+    "e_ahtvf4ke8smr": {
+      "id": "e_ahtvf4ke8smr",
+      "name": "Sky Light",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          3,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "hemisphere",
+          "color": "#6a5a8c",
+          "intensity": 0.6,
+          "range": 0,
+          "angle": 35,
+          "castShadow": false,
+          "groundColor": "#3a2a1a"
+        }
+      }
+    },
+    "e_twdxw0nim1nw": {
+      "id": "e_twdxw0nim1nw",
+      "name": "Ground",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          -0.1,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          60,
+          0.2,
+          60
+        ]
+      },
+      "components": {
+        "mesh": {
+          "primitive": "cube",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "material": {
+          "presetId": null,
+          "color": "#a0764c",
+          "metalness": 0,
+          "roughness": 0.95,
+          "emissive": "#000000",
+          "emissiveIntensity": 0,
+          "opacity": 1,
+          "textureAssetId": null,
+          "textureRepeat": [
+            1,
+            1
+          ],
+          "doubleSided": false,
+          "flatShading": false
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_jb3amz1os9sk": {
+      "id": "e_jb3amz1os9sk",
+      "name": "Shrine Platform",
+      "parent": null,
+      "children": [
+        "e_64fbk3rb8t2p",
+        "e_gx15unwf2quj",
+        "e_framash53lih"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          0,
+          -6
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_hq4ii122of6k",
+          "castShadow": true,
+          "receiveShadow": true
+        }
+      }
+    },
+    "e_64fbk3rb8t2p": {
+      "id": "e_64fbk3rb8t2p",
+      "name": "Step Collider 1",
+      "parent": "e_jb3amz1os9sk",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          0.2,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          8,
+          0.4,
+          8
+        ]
+      },
+      "components": {
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_gx15unwf2quj": {
+      "id": "e_gx15unwf2quj",
+      "name": "Step Collider 2",
+      "parent": "e_jb3amz1os9sk",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          0.6,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          6.5,
+          0.4,
+          6.5
+        ]
+      },
+      "components": {
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_framash53lih": {
+      "id": "e_framash53lih",
+      "name": "Step Collider 3",
+      "parent": "e_jb3amz1os9sk",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          1,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          5,
+          0.4,
+          5
+        ]
+      },
+      "components": {
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_fcholbydoqt4": {
+      "id": "e_fcholbydoqt4",
+      "name": "Carved Pillar",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          -2,
+          1.2,
+          -8
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_a2mey0pr9e6m",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            1.5,
+            0
+          ],
+          "size": [
+            0.7,
+            3,
+            0.7
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_myryzf12m6yc": {
+      "id": "e_myryzf12m6yc",
+      "name": "Carved Pillar",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          2,
+          1.2,
+          -8
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_a2mey0pr9e6m",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            1.5,
+            0
+          ],
+          "size": [
+            0.7,
+            3,
+            0.7
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_wae65dx1yfdh": {
+      "id": "e_wae65dx1yfdh",
+      "name": "Carved Pillar",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          -2,
+          1.2,
+          -4
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_a2mey0pr9e6m",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            1.5,
+            0
+          ],
+          "size": [
+            0.7,
+            3,
+            0.7
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_lr0expt01vi6": {
+      "id": "e_lr0expt01vi6",
+      "name": "Carved Pillar",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          2,
+          1.2,
+          -4
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_a2mey0pr9e6m",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            1.5,
+            0
+          ],
+          "size": [
+            0.7,
+            3,
+            0.7
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_03vzr7y7t6ns": {
+      "id": "e_03vzr7y7t6ns",
+      "name": "Torana Gateway",
+      "parent": null,
+      "children": [
+        "e_0294irt12x2d",
+        "e_kk497c5hvk52"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          0,
+          6
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_igyy2m309ib7",
+          "castShadow": true,
+          "receiveShadow": true
+        }
+      }
+    },
+    "e_0294irt12x2d": {
+      "id": "e_0294irt12x2d",
+      "name": "Post Collider",
+      "parent": "e_03vzr7y7t6ns",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          -1.4,
+          1.9,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            0.6,
+            3.8,
+            0.6
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_kk497c5hvk52": {
+      "id": "e_kk497c5hvk52",
+      "name": "Post Collider",
+      "parent": "e_03vzr7y7t6ns",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          1.4,
+          1.9,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            0.6,
+            3.8,
+            0.6
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_waui5wpw1oc8": {
+      "id": "e_waui5wpw1oc8",
+      "name": "Kalash",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          0,
+          1.2,
+          -6
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_qvjckxu09okb",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0.31,
+            0
+          ],
+          "size": [
+            0.5,
+            0.62,
+            0.5
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_nq95bk86skx8": {
+      "id": "e_nq95bk86skx8",
+      "name": "Banyan Tree",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          -14,
+          0,
+          -12
+        ],
+        "rotation": [
+          0,
+          -154,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_q9wpmg8hyxf8",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            2.5,
+            0
+          ],
+          "size": [
+            1.2,
+            5,
+            1.2
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_01p9flyxbbyo": {
+      "id": "e_01p9flyxbbyo",
+      "name": "Banyan Tree",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          14,
+          0,
+          -10
+        ],
+        "rotation": [
+          0,
+          154,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_q9wpmg8hyxf8",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            2.5,
+            0
+          ],
+          "size": [
+            1.2,
+            5,
+            1.2
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_b5g482p2591n": {
+      "id": "e_b5g482p2591n",
+      "name": "Banyan Tree",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          -12,
+          0,
+          10
+        ],
+        "rotation": [
+          0,
+          -132,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_q9wpmg8hyxf8",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            2.5,
+            0
+          ],
+          "size": [
+            1.2,
+            5,
+            1.2
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_rkpk2uh11c8u": {
+      "id": "e_rkpk2uh11c8u",
+      "name": "Banyan Tree",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": true,
+      "transform": {
+        "position": [
+          13,
+          0,
+          12
+        ],
+        "rotation": [
+          0,
+          143,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_q9wpmg8hyxf8",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            2.5,
+            0
+          ],
+          "size": [
+            1.2,
+            5,
+            1.2
+          ],
+          "isTrigger": false
+        }
+      }
+    },
+    "e_aszv98r8g4nf": {
+      "id": "e_aszv98r8g4nf",
+      "name": "Diya 1",
+      "parent": null,
+      "children": [
+        "e_s65zko9yl334"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          -6,
+          0,
+          2
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.6,
+          1.6,
+          1.6
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_evk5g1p581lz",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0.3,
+            0
+          ],
+          "size": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "isTrigger": true
+        },
+        "behaviours": [
+          {
+            "type": "collectible",
+            "scoreValue": 1,
+            "soundAssetId": null
+          },
+          {
+            "type": "bob",
+            "amplitude": 0.08,
+            "frequency": 0.6
+          }
+        ]
+      }
+    },
+    "e_s65zko9yl334": {
+      "id": "e_s65zko9yl334",
+      "name": "Glow",
+      "parent": "e_aszv98r8g4nf",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          0.4,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "point",
+          "color": "#ff9a3c",
+          "intensity": 6,
+          "range": 5,
+          "angle": 35,
+          "castShadow": false,
+          "groundColor": "#3a3128"
+        }
+      }
+    },
+    "e_qk8m3liw1xku": {
+      "id": "e_qk8m3liw1xku",
+      "name": "Diya 2",
+      "parent": null,
+      "children": [
+        "e_okg6ktzcg65t"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          6,
+          0,
+          2
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.6,
+          1.6,
+          1.6
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_evk5g1p581lz",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0.3,
+            0
+          ],
+          "size": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "isTrigger": true
+        },
+        "behaviours": [
+          {
+            "type": "collectible",
+            "scoreValue": 1,
+            "soundAssetId": null
+          },
+          {
+            "type": "bob",
+            "amplitude": 0.08,
+            "frequency": 0.6
+          }
+        ]
+      }
+    },
+    "e_okg6ktzcg65t": {
+      "id": "e_okg6ktzcg65t",
+      "name": "Glow",
+      "parent": "e_qk8m3liw1xku",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          0.4,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "point",
+          "color": "#ff9a3c",
+          "intensity": 6,
+          "range": 5,
+          "angle": 35,
+          "castShadow": false,
+          "groundColor": "#3a3128"
+        }
+      }
+    },
+    "e_aq2n2tfq4ndr": {
+      "id": "e_aq2n2tfq4ndr",
+      "name": "Diya 3",
+      "parent": null,
+      "children": [
+        "e_x9q7umqjs661"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          -8,
+          0,
+          -8
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.6,
+          1.6,
+          1.6
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_evk5g1p581lz",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0.3,
+            0
+          ],
+          "size": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "isTrigger": true
+        },
+        "behaviours": [
+          {
+            "type": "collectible",
+            "scoreValue": 1,
+            "soundAssetId": null
+          },
+          {
+            "type": "bob",
+            "amplitude": 0.08,
+            "frequency": 0.6
+          }
+        ]
+      }
+    },
+    "e_x9q7umqjs661": {
+      "id": "e_x9q7umqjs661",
+      "name": "Glow",
+      "parent": "e_aq2n2tfq4ndr",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          0.4,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "point",
+          "color": "#ff9a3c",
+          "intensity": 6,
+          "range": 5,
+          "angle": 35,
+          "castShadow": false,
+          "groundColor": "#3a3128"
+        }
+      }
+    },
+    "e_q9adw2q7r140": {
+      "id": "e_q9adw2q7r140",
+      "name": "Diya 4",
+      "parent": null,
+      "children": [
+        "e_2ea1oxzx7mbj"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          8,
+          0,
+          -8
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.6,
+          1.6,
+          1.6
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_evk5g1p581lz",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0.3,
+            0
+          ],
+          "size": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "isTrigger": true
+        },
+        "behaviours": [
+          {
+            "type": "collectible",
+            "scoreValue": 1,
+            "soundAssetId": null
+          },
+          {
+            "type": "bob",
+            "amplitude": 0.08,
+            "frequency": 0.6
+          }
+        ]
+      }
+    },
+    "e_2ea1oxzx7mbj": {
+      "id": "e_2ea1oxzx7mbj",
+      "name": "Glow",
+      "parent": "e_q9adw2q7r140",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          0.4,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "point",
+          "color": "#ff9a3c",
+          "intensity": 6,
+          "range": 5,
+          "angle": 35,
+          "castShadow": false,
+          "groundColor": "#3a3128"
+        }
+      }
+    },
+    "e_azy6eb9dwtlp": {
+      "id": "e_azy6eb9dwtlp",
+      "name": "Diya 5",
+      "parent": null,
+      "children": [
+        "e_1rxecqwuo2d4"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          1.2,
+          -7.4
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.6,
+          1.6,
+          1.6
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_evk5g1p581lz",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0.3,
+            0
+          ],
+          "size": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "isTrigger": true
+        },
+        "behaviours": [
+          {
+            "type": "collectible",
+            "scoreValue": 1,
+            "soundAssetId": null
+          },
+          {
+            "type": "bob",
+            "amplitude": 0.08,
+            "frequency": 0.6
+          }
+        ]
+      }
+    },
+    "e_1rxecqwuo2d4": {
+      "id": "e_1rxecqwuo2d4",
+      "name": "Glow",
+      "parent": "e_azy6eb9dwtlp",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          0.4,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "point",
+          "color": "#ff9a3c",
+          "intensity": 6,
+          "range": 5,
+          "angle": 35,
+          "castShadow": false,
+          "groundColor": "#3a3128"
+        }
+      }
+    },
+    "e_ybxnqdfm7w1v": {
+      "id": "e_ybxnqdfm7w1v",
+      "name": "Diya 6",
+      "parent": null,
+      "children": [
+        "e_nkvuiw7m8dn5"
+      ],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          0,
+          10
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1.6,
+          1.6,
+          1.6
+        ]
+      },
+      "components": {
+        "model": {
+          "assetId": "a_evk5g1p581lz",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0.3,
+            0
+          ],
+          "size": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "isTrigger": true
+        },
+        "behaviours": [
+          {
+            "type": "collectible",
+            "scoreValue": 1,
+            "soundAssetId": null
+          },
+          {
+            "type": "bob",
+            "amplitude": 0.08,
+            "frequency": 0.6
+          }
+        ]
+      }
+    },
+    "e_nkvuiw7m8dn5": {
+      "id": "e_nkvuiw7m8dn5",
+      "name": "Glow",
+      "parent": "e_ybxnqdfm7w1v",
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          0.4,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "light": {
+          "type": "point",
+          "color": "#ff9a3c",
+          "intensity": 6,
+          "range": 5,
+          "angle": 35,
+          "castShadow": false,
+          "groundColor": "#3a3128"
+        }
+      }
+    },
+    "e_4w270vu9bzfn": {
+      "id": "e_4w270vu9bzfn",
+      "name": "Player",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          1,
+          13
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.8,
+          0.9,
+          0.8
+        ]
+      },
+      "components": {
+        "mesh": {
+          "primitive": "capsule",
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        "material": {
+          "presetId": null,
+          "color": "#d4a24c",
+          "metalness": 0,
+          "roughness": 0.5,
+          "emissive": "#000000",
+          "emissiveIntensity": 0,
+          "opacity": 1,
+          "textureAssetId": null,
+          "textureRepeat": [
+            1,
+            1
+          ],
+          "doubleSided": false,
+          "flatShading": false
+        },
+        "collider": {
+          "shape": "box",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1,
+            2,
+            1
+          ],
+          "isTrigger": false
+        },
+        "rigidBody": {
+          "mass": 1,
+          "useGravity": true,
+          "isKinematic": false
+        },
+        "behaviours": [
+          {
+            "type": "playerController",
+            "mode": "third-person",
+            "moveSpeed": 4.5,
+            "jumpSpeed": 5.5,
+            "lookSensitivity": 0.25
+          }
+        ]
+      }
+    },
+    "e_32h3bxmxlany": {
+      "id": "e_32h3bxmxlany",
+      "name": "Main Camera",
+      "parent": null,
+      "children": [],
+      "enabled": true,
+      "visible": true,
+      "locked": false,
+      "isStatic": false,
+      "transform": {
+        "position": [
+          0,
+          4.5,
+          20
+        ],
+        "rotation": [
+          -18,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": {
+        "camera": {
+          "projection": "perspective",
+          "fov": 60,
+          "orthoSize": 6,
+          "near": 0.1,
+          "far": 500,
+          "isMain": true
+        },
+        "behaviours": [
+          {
+            "type": "followCamera",
+            "targetId": "e_4w270vu9bzfn",
+            "distance": 7,
+            "height": 3.5,
+            "smoothing": 8
+          }
+        ]
+      }
+    }
+  }
+}

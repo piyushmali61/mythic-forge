@@ -1,0 +1,40 @@
+{
+  "name": "mythic-forge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mythic Forge — a lightweight, cross-platform game & 3D creation engine by Mythic Bharat Studios.",
+  "author": "Mythic Bharat Studios",
+  "license": "UNLICENSED",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/editor",
+    "apps/android"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @mythic-forge/editor",
+    "build": "npm run audit:licenses && npm run notices && npm run build -w @mythic-forge/editor",
+    "preview": "npm run preview -w @mythic-forge/editor",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json",
+    "check": "npm run typecheck && npm run test && npm run audit:licenses",
+    "assets:generate": "node tools/asset-gen/generate.ts",
+    "assets:signoff": "node tools/asset-gen/signoff.ts",
+    "examples:generate": "node tools/example-pack/generate.ts",
+    "audit:licenses": "node tools/license-audit/audit.ts",
+    "notices": "node tools/third-party-notices/generate.ts",
+    "bench:core": "node tools/benchmark/core-bench.ts",
+    "android:sync": "npm run build && npm run sync -w @mythic-forge/android",
+    "android:open": "npm run open -w @mythic-forge/android"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "fake-indexeddb": "^6.2.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}

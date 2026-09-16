@@ -1,0 +1,71 @@
+{
+  "format": "mythic-forge-asset",
+  "formatVersion": 1,
+  "id": "a_q9wpmg8hyxf8",
+  "name": "Banyan Tree",
+  "kind": "model",
+  "fileFormat": "glb",
+  "mainFile": "mbs.banyan-tree.glb",
+  "files": [
+    {
+      "name": "mbs.banyan-tree.glb",
+      "size": 34172,
+      "sha256": "497cee50c7b754115a0d66658bd5e382fc69d1aa8847bc675779d149657694ab"
+    }
+  ],
+  "importedAt": "2026-09-16T21:53:12.245Z",
+  "originalBytes": 34172,
+  "storedBytes": 34172,
+  "provenance": {
+    "source": "official",
+    "userConfirmedRights": true,
+    "originalFileName": "mbs.banyan-tree.glb",
+    "catalogId": "mbs.banyan-tree",
+    "catalogVersion": "1.0.0",
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Mythic Bharat Studios",
+      "sourceUrl": "",
+      "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+      "licenseId": "MBS-ASSET-1.0",
+      "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+      "licenseUrl": "",
+      "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false,
+      "verifiedBy": "Mythic Bharat Studios Review Team",
+      "verificationDate": "2026-09-16",
+      "verificationStatus": "verified",
+      "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+      "assetId": "mbs.banyan-tree",
+      "name": "Banyan Tree",
+      "assetVersion": "1.0.0"
+    }
+  },
+  "importSettings": null,
+  "stats": {
+    "vertices": 892,
+    "triangles": 422,
+    "materials": 3,
+    "boundsMin": [
+      -2.263,
+      0,
+      -2.236
+    ],
+    "boundsMax": [
+      2.321,
+      5.195,
+      2.236
+    ],
+    "gpuBytesEstimate": 31076,
+    "meshes": 1,
+    "textures": 0,
+    "animations": 0,
+    "bones": 0
+  }
+}

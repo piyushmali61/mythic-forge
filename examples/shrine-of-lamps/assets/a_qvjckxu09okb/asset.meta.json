@@ -1,0 +1,71 @@
+{
+  "format": "mythic-forge-asset",
+  "formatVersion": 1,
+  "id": "a_qvjckxu09okb",
+  "name": "Kalash",
+  "kind": "model",
+  "fileFormat": "glb",
+  "mainFile": "mbs.kalash-pot.glb",
+  "files": [
+    {
+      "name": "mbs.kalash-pot.glb",
+      "size": 17908,
+      "sha256": "9dd4ac30a78bbd2d29afdba4d60ecbaa99e90193ba26068cdf0f6dd760f13679"
+    }
+  ],
+  "importedAt": "2026-09-16T21:53:12.243Z",
+  "originalBytes": 17908,
+  "storedBytes": 17908,
+  "provenance": {
+    "source": "official",
+    "userConfirmedRights": true,
+    "originalFileName": "mbs.kalash-pot.glb",
+    "catalogId": "mbs.kalash-pot",
+    "catalogVersion": "1.0.0",
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Mythic Bharat Studios",
+      "sourceUrl": "",
+      "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+      "licenseId": "MBS-ASSET-1.0",
+      "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+      "licenseUrl": "",
+      "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false,
+      "verifiedBy": "Mythic Bharat Studios Review Team",
+      "verificationDate": "2026-09-16",
+      "verificationStatus": "verified",
+      "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts.",
+      "assetId": "mbs.kalash-pot",
+      "name": "Kalash",
+      "assetVersion": "1.0.0"
+    }
+  },
+  "importSettings": null,
+  "stats": {
+    "vertices": 372,
+    "triangles": 496,
+    "materials": 3,
+    "boundsMin": [
+      -0.25,
+      0,
+      -0.25
+    ],
+    "boundsMax": [
+      0.25,
+      0.672,
+      0.25
+    ],
+    "gpuBytesEstimate": 14880,
+    "meshes": 1,
+    "textures": 0,
+    "animations": 0,
+    "bones": 0
+  }
+}

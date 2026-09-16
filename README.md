@@ -1,0 +1,181 @@
+<p align="center">
+  <img src="apps/editor/public/icons/logo.svg" alt="Mythic Bharat Studios — Mythic Forge Logo" width="120" height="120" />
+</p>
+
+<h1 align="center">MYTHIC FORGE</h1>
+
+<p align="center">
+  <strong>Produced by Mythic Bharat Studios</strong><br />
+  <em>Create. Build. Play. — A powerful creation engine that respects the device.</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status" />
+  <img src="https://img.shields.io/badge/producer-Mythic%20Bharat%20Studios-gold.svg" alt="Producer" />
+  <img src="https://img.shields.io/badge/platforms-Android%20%7C%20Windows%20%7C%20Web-orange.svg" alt="Platforms" />
+</p>
+
+---
+
+## 1. Overview
+
+**Mythic Forge** is a lightweight, beginner-friendly, cross-platform 3D creation and game engine designed from the ground up for students, indie developers, creators, and enthusiasts.
+
+Unlike traditional game engines that require high-end desktop hardware, consume gigabytes of disk space, and drain laptop or mobile batteries within hours, Mythic Forge is architected around the hierarchy:
+$$\text{PHONE} \longrightarrow \text{LAPTOP} \longrightarrow \text{PC}$$
+
+It delivers a smooth, professional 3D authoring experience while prioritizing:
+- **Low Battery Consumption:** Render-on-demand editor draws **0 FPS when idle**, dropping CPU and GPU load to zero.
+- **Low Memory & Footprint:** Compact APK ($\approx 4.9\text{ MB}$), tiny memory footprint ($\le 150\text{ MB}$ RAM on mobile).
+- **100% Offline-First:** Fully functional without internet connectivity.
+- **Strict Legal Licensing:** Every bundled asset is verified against a 10-point distribution gate.
+- **Cross-Platform Portability:** Portable `.mfpack` container transfers projects seamlessly between Android phones, tablets, laptops, and desktop PCs.
+
+---
+
+## 2. Key Features
+
+- **Project Manager & Wizard:** Create, duplicate, archive, import, and export projects with customizable templates (Basic 3D, Platformer, Third Person, First Person, Shrine of Lamps).
+- **3D Scene Editor:** Clean, responsive workspace featuring scene hierarchy trees, transform gizmos (Move, Rotate, Scale), camera controls (Orbit, Fly, Pan, Touch gestures), and entity inspectors.
+- **Built-in 3D Primitives & PBR Materials:** Instantly spawn Cubes, Spheres, Cylinders, Capsules, Planes, Directional Lights, Point Lights, and Ambient Lights.
+- **Model Import Pipeline:** Import and optimize external GLB, glTF, OBJ, WebP, PNG, JPEG, and audio assets with real-time geometry analysis and bounding box calculation.
+- **Curated Asset Libraries:**
+  - **Official Mythic Bharat Studios Library:** Original in-house Indian architecture, temples, carved pillars, torana gateways, and glowing diya lamps (`MBS-ASSET-1.0`).
+  - **Free & Open Library:** Verified CC0 1.0 public domain game starter models (rocks, wooden crates, ground tiles, earthenware urns) and PBR materials.
+- **Instant Play Mode:** Switch seamlessly between Editor and Play Mode with declarative behaviours (`rotate`, `bob`, `playerController`, `followCamera`, `collectible`) and simple rigid-body physics.
+- **Battery-First Power Management:** Automatically suspends rendering when backgrounded; features a dedicated Battery Saver profile ($30\text{ FPS}$, reduced shadows) and native Android thermal management integration.
+- **Web Export & PWA Support:** Export projects as standalone, self-contained HTML/JS games, or install Mythic Forge directly as an offline Progressive Web App.
+
+---
+
+## 3. Quickstart Guide
+
+### Prerequisites
+- **Node.js:** $\ge 22.18$
+- **npm:** $\ge 10.0$
+
+### Setup & Development
+```bash
+# Clone the repository
+git clone https://github.com/mythic-bharat-studios/mythic-forge.git
+cd mythic-forge
+
+# Install dependencies
+npm ci
+
+# Start the local development editor (http://localhost:5173)
+npm run dev
+```
+
+### Verification & Testing
+```bash
+# Run TypeScript compilation checks
+npm run typecheck
+
+# Run full Vitest test suite (142+ unit & integration tests)
+npm test
+
+# Audit asset license verification and publication gates
+npm run audit:licenses
+
+# Generate and verify procedural asset packs
+npm run assets:generate
+
+# Run platform-independent core performance benchmark
+npm run bench:core
+
+# Run comprehensive pre-commit check
+npm run check
+```
+
+### Production Build
+```bash
+# Build editor and standalone player bundles (apps/editor/dist)
+npm run build
+
+# Preview production build locally (http://localhost:4173)
+npm run preview
+```
+
+---
+
+## 4. Platform Targets
+
+### A. Android (Capacitor Shell)
+Hosted in `apps/android`:
+- **Shell:** Capacitor 8 wrapper around the production web build.
+- **Thermal Management:** Native Java plugin (`ThermalStatusPlugin.java`) bridges `PowerManager` thermal status to the engine.
+- **Permissions:** Minimal install-time `INTERNET` permission; zero runtime permissions requested.
+- **Build APK:**
+  ```bash
+  npm run android:sync
+  cd apps/android/android
+  ./gradlew assembleDebug
+  ```
+
+### B. Windows Desktop (Tauri 2 Shell)
+Hosted in `apps/desktop`:
+- **Shell:** Lightweight Rust container leveraging Microsoft Edge WebView2.
+- **Native binary size:** $\approx 5\text{–}10\text{ MB}$.
+- **Build Exe:**
+  ```bash
+  npm run build
+  cd apps/desktop
+  npm run build
+  ```
+
+### C. Web / PWA
+- Supported out-of-the-box in modern browsers with WebGL 2 support.
+- Fully offline capable via Service Worker (`sw.js`).
+
+---
+
+## 5. Repository Architecture
+
+```
+mythic-forge/
+├── apps/
+│   ├── editor/         # Preact UI (Home, Wizard, Editor, Library, Settings, Docs)
+│   ├── android/        # Capacitor Android shell with native ThermalStatus plugin
+│   └── desktop/        # Tauri 2 Windows desktop shell configuration
+├── packages/
+│   ├── core/           # Headless engine core (scene, project store, math, security, perf)
+│   ├── renderer/       # Three.js WebGL 2 viewport, render-on-demand loop, gizmos
+│   └── platform/       # IndexedDB filesystem, Capacitor lifecycle, Web battery adapters
+├── assets/
+│   ├── official/       # In-house Mythic Bharat Studios catalog (MBS-ASSET-1.0)
+│   ├── free-open/      # Public-domain CC0 1.0 catalog
+│   └── licenses/       # Preserved full legal texts
+├── examples/           # Reference demo project (Shrine of Lamps) and .mfpack archives
+├── tools/              # Verification, benchmark, icon, and asset generation scripts
+└── docs/               # Comprehensive subsystem architectural documentation
+```
+
+---
+
+## 6. Subsystem Documentation
+
+For deep technical specifications, refer to the documentation in `docs/`:
+
+- [Architecture Specification](docs/architecture.md)
+- [Project Format & .mfpack Specification](docs/project-format.md)
+- [Asset Pipeline & Catalog Specification](docs/asset-system.md)
+- [Rendering Engine & Graphics Specification](docs/rendering.md)
+- [Performance Budgets & Adaptive Governor](docs/performance.md)
+- [Battery Optimization & Power Management](docs/battery.md)
+- [Licensing, Provenance & Audit Pipeline](docs/licensing.md)
+- [Security Model & Untrusted Input Sanitization](docs/security.md)
+- [Android Platform Architecture & Thermal Plugin](docs/android.md)
+- [Windows & Desktop Architecture](docs/windows.md)
+- [Testing Strategy & Quality Assurance](docs/testing.md)
+- [Google Play Store Readiness Checklist](docs/play-store-checklist.md)
+- [Contributor Guide & Standards](docs/contributing.md)
+
+---
+
+## 7. Licensing & Attribution
+
+- **Mythic Forge Engine:** © 2026 Mythic Bharat Studios. All rights reserved.
+- **Official Assets:** Licensed under `MBS-ASSET-1.0` (free for use in personal & commercial projects made with Mythic Forge).
+- **Free & Open Assets:** Dedicated to the public domain under Creative Commons `CC0-1.0`.
+- **Third-Party Dependencies:** Permissively licensed (MIT / Apache-2.0). Complete notices and copyright statements are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

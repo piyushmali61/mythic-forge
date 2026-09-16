@@ -1,0 +1,17 @@
+{
+  "appId": "com.mythicbharatstudios.mythicforge",
+  "appName": "Mythic Forge",
+  "webDir": "../editor/dist",
+  "loggingBehavior": "debug",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": false
+  },
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": false,
+    "webContentsDebuggingEnabled": false,
+    "backgroundColor": "#121110",
+    "adjustMarginsForEdgeToEdge": "auto"
+  }
+}

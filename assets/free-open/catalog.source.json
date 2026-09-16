@@ -1,0 +1,191 @@
+{
+  "publisher": "Mythic Bharat Studios (curated Free & Open assets)",
+  "notes": "Curated starter assets dedicated to the public domain or licensed under verified permissive licenses. Every entry passes the §15 verification gate and npm run audit:licenses.",
+  "defaults": {
+    "section": "free-open",
+    "compatibility": {
+      "minEngineVersion": "0.1.0",
+      "platforms": ["android", "windows", "web"],
+      "minQuality": "ultra-low"
+    },
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Public Domain (CC0)",
+      "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceDescription": "Procedurally generated in-house for the Mythic Forge Free & Open asset library and dedicated to the public domain under Creative Commons CC0 1.0 Universal.",
+      "licenseId": "CC0-1.0",
+      "licenseName": "Creative Commons Zero v1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseTextPath": "licenses/CC0-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false,
+      "verifiedBy": "Mythic Bharat Studios Compliance Team",
+      "verificationDate": "2026-09-17",
+      "verificationStatus": "verified",
+      "verificationNotes": "In-house procedural model dedicated to CC0 1.0 public domain."
+    }
+  },
+  "entries": [
+    {
+      "id": "fo.lowpoly-rock",
+      "version": "1.0.0",
+      "name": "Low-Poly Rock",
+      "description": "Faceted low-poly stone boulder. Ideal for terrains, natural scattering, and obstacles.",
+      "kind": "model",
+      "category": "Nature",
+      "tags": ["rock", "stone", "boulder", "nature", "lowpoly", "cc0"],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    },
+    {
+      "id": "fo.wooden-crate",
+      "version": "1.0.0",
+      "name": "Wooden Crate",
+      "description": "Classic slatted wooden game crate with reinforced edge posts. Standard 1m cube prop.",
+      "kind": "model",
+      "category": "Props",
+      "tags": ["crate", "box", "wood", "prop", "gameplay", "cc0"],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    },
+    {
+      "id": "fo.ground-tile",
+      "version": "1.0.0",
+      "name": "Ground Tile (Grass & Dirt)",
+      "description": "Modular 2m × 2m terrain tile with lush green top and compact earth base.",
+      "kind": "model",
+      "category": "Environment",
+      "tags": ["ground", "grass", "dirt", "terrain", "tile", "modular", "cc0"],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    },
+    {
+      "id": "fo.terracotta-urn",
+      "version": "1.0.0",
+      "name": "Terracotta Urn",
+      "description": "Traditional lathed earthenware urn suitable for interior and exterior decor.",
+      "kind": "model",
+      "category": "Props",
+      "tags": ["urn", "pot", "terracotta", "clay", "prop", "cc0"],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    },
+    {
+      "id": "fo.mat-smooth-stone",
+      "version": "1.0.0",
+      "name": "Smooth Stone Material",
+      "description": "Neutral grey matte stone material.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": ["material", "stone", "grey", "cc0"],
+      "material": { "color": "#828282", "metalness": 0, "roughness": 0.9, "emissive": "#000000", "emissiveIntensity": 0, "flatShading": false },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    },
+    {
+      "id": "fo.mat-rough-wood",
+      "version": "1.0.0",
+      "name": "Rough Wood Material",
+      "description": "Warm timber material for crates, planks and posts.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": ["material", "wood", "timber", "cc0"],
+      "material": { "color": "#8a5d3b", "metalness": 0, "roughness": 0.85, "emissive": "#000000", "emissiveIntensity": 0, "flatShading": false },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    },
+    {
+      "id": "fo.mat-moss-green",
+      "version": "1.0.0",
+      "name": "Moss Green Material",
+      "description": "Vibrant foliage and moss green surface material.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": ["material", "grass", "moss", "green", "cc0"],
+      "material": { "color": "#4d8a3b", "metalness": 0, "roughness": 0.85, "emissive": "#000000", "emissiveIntensity": 0, "flatShading": false },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    },
+    {
+      "id": "fo.mat-clay-earth",
+      "version": "1.0.0",
+      "name": "Clay Earth Material",
+      "description": "Rich terracotta clay earth material.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": ["material", "clay", "earth", "dirt", "cc0"],
+      "material": { "color": "#c4693d", "metalness": 0, "roughness": 0.8, "emissive": "#000000", "emissiveIntensity": 0, "flatShading": false },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          { "to": "published", "by": "Mythic Bharat Studios Compliance Team", "role": "admin", "at": "2026-09-17T03:00:00.000Z", "note": "CC0 verified" }
+        ]
+      }
+    }
+  ]
+}

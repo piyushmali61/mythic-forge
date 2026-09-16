@@ -1,0 +1,10 @@
+{
+  "name": "@mythic-forge/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tauri 2 desktop shell for Mythic Forge (Windows now; macOS/Linux later). Requires Rust — see docs/windows.md. Not part of the npm workspaces so the Tauri CLI is only installed when needed.",
+  "scripts": {
+    "dev": "npx --yes @tauri-apps/cli@^2 dev",
+    "build": "npx --yes @tauri-apps/cli@^2 build"
+  }
+}

@@ -1,0 +1,885 @@
+{
+  "publisher": "Mythic Bharat Studios",
+  "defaults": {
+    "section": "official",
+    "compatibility": {
+      "minEngineVersion": "0.1.0",
+      "platforms": [
+        "android",
+        "windows",
+        "web"
+      ],
+      "minQuality": "ultra-low"
+    },
+    "license": {
+      "creator": "Mythic Bharat Studios",
+      "owner": "Mythic Bharat Studios",
+      "sourceUrl": "",
+      "sourceDescription": "Original in-house asset, procedurally generated from code in tools/asset-gen/models.ts of the Mythic Forge repository. No third-party meshes, textures, images or reference material were used.",
+      "licenseId": "MBS-ASSET-1.0",
+      "licenseName": "Mythic Bharat Studios Asset License 1.0 (DRAFT)",
+      "licenseUrl": "",
+      "licenseTextPath": "licenses/MBS-ASSET-1.0.md",
+      "commercialUse": true,
+      "modificationAllowed": true,
+      "redistributionAllowed": true,
+      "attributionRequired": false,
+      "attributionText": "",
+      "containsThirdPartyContent": false,
+      "thirdPartyContentCleared": false
+    }
+  },
+  "entries": [
+    {
+      "id": "mbs.shrine-platform",
+      "version": "1.0.0",
+      "name": "Stepped Shrine Platform",
+      "description": "Three-tier sandstone plinth with carved trim bands, brass corner finials and an octagonal inlay. 8 × 8 m footprint, 1.2 m high.",
+      "kind": "model",
+      "category": "Indian Architecture",
+      "tags": [
+        "temple",
+        "platform",
+        "stone",
+        "architecture",
+        "mythology"
+      ],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.166Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.carved-pillar",
+      "version": "1.0.0",
+      "name": "Carved Pillar",
+      "description": "Sandstone column with ringed shaft and bracket capital. 3 m tall.",
+      "kind": "model",
+      "category": "Indian Architecture",
+      "tags": [
+        "pillar",
+        "column",
+        "temple",
+        "stone"
+      ],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.184Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.184Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.184Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.185Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.diya-lamp",
+      "version": "1.0.0",
+      "name": "Diya Lamp",
+      "description": "Terracotta oil lamp with a glowing flame. Pairs well with a small point light.",
+      "kind": "model",
+      "category": "Props",
+      "tags": [
+        "lamp",
+        "light",
+        "festival",
+        "diwali",
+        "terracotta"
+      ],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.186Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.187Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.187Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.stone-torana",
+      "version": "1.0.0",
+      "name": "Stone Torana Gateway",
+      "description": "Red sandstone ceremonial gateway with double lintel, scrolled ends and a brass finial. About 4.3 m wide and 4.3 m tall.",
+      "kind": "model",
+      "category": "Indian Architecture",
+      "tags": [
+        "gate",
+        "gateway",
+        "torana",
+        "arch",
+        "stone"
+      ],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.188Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.189Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.kalash-pot",
+      "version": "1.0.0",
+      "name": "Kalash",
+      "description": "Brass kalash with coconut and a fan of mango leaves.",
+      "kind": "model",
+      "category": "Props",
+      "tags": [
+        "kalash",
+        "pot",
+        "brass",
+        "ritual"
+      ],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.192Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.192Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.192Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.196Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.banyan-tree",
+      "version": "1.0.0",
+      "name": "Banyan Tree",
+      "description": "Stylised low-poly banyan with aerial roots and a faceted canopy. About 5 m tall.",
+      "kind": "model",
+      "category": "Nature",
+      "tags": [
+        "tree",
+        "banyan",
+        "nature",
+        "foliage"
+      ],
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.198Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.198Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.198Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.199Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-sandstone",
+      "version": "1.0.0",
+      "name": "Sandstone",
+      "description": "Warm, matte sandstone.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "matte"
+      ],
+      "material": {
+        "color": "#d8b98f",
+        "metalness": 0,
+        "roughness": 0.9,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.201Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.202Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.202Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.202Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-red-sandstone",
+      "version": "1.0.0",
+      "name": "Red Sandstone",
+      "description": "Deep red sandstone, as used in many historic gateways.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "red"
+      ],
+      "material": {
+        "color": "#b5533c",
+        "metalness": 0,
+        "roughness": 0.85,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.203Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-brass",
+      "version": "1.0.0",
+      "name": "Polished Brass",
+      "description": "Metallic brass. Looks best with reflections enabled (High quality).",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "metal",
+        "gold"
+      ],
+      "material": {
+        "color": "#c9a14a",
+        "metalness": 1,
+        "roughness": 0.35,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-terracotta",
+      "version": "1.0.0",
+      "name": "Terracotta",
+      "description": "Fired clay.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "clay",
+        "orange"
+      ],
+      "material": {
+        "color": "#c4693d",
+        "metalness": 0,
+        "roughness": 0.8,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.204Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-marble",
+      "version": "1.0.0",
+      "name": "White Marble",
+      "description": "Smooth, slightly glossy white stone.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "white",
+        "glossy"
+      ],
+      "material": {
+        "color": "#ece8e1",
+        "metalness": 0,
+        "roughness": 0.3,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.205Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-teak",
+      "version": "1.0.0",
+      "name": "Teak Wood",
+      "description": "Dark, warm wood tone.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "wood",
+        "brown"
+      ],
+      "material": {
+        "color": "#7a4a2a",
+        "metalness": 0,
+        "roughness": 0.7,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-jade",
+      "version": "1.0.0",
+      "name": "Jade",
+      "description": "Polished green stone.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "stone",
+        "green"
+      ],
+      "material": {
+        "color": "#3f8f6b",
+        "metalness": 0,
+        "roughness": 0.4,
+        "emissive": "#000000",
+        "emissiveIntensity": 0,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.206Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.208Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    },
+    {
+      "id": "mbs.mat-lamp-glow",
+      "version": "1.0.0",
+      "name": "Lamp Glow",
+      "description": "Emissive saffron for flames, lanterns and magic effects.",
+      "kind": "material",
+      "category": "Materials",
+      "tags": [
+        "emissive",
+        "glow",
+        "orange"
+      ],
+      "material": {
+        "color": "#ffb347",
+        "metalness": 0,
+        "roughness": 1,
+        "emissive": "#ff8c1a",
+        "emissiveIntensity": 2.5,
+        "flatShading": false
+      },
+      "review": {
+        "stage": "published",
+        "licenseVerified": true,
+        "contentReview": true,
+        "technicalReview": true,
+        "rejectionReason": null,
+        "history": [
+          {
+            "stage": "content-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "technical-review",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "approved",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          },
+          {
+            "stage": "published",
+            "by": "Mythic Bharat Studios Review Team",
+            "role": "admin",
+            "at": "2026-09-16T21:48:48.211Z",
+            "note": "Studio sign-off"
+          }
+        ]
+      },
+      "verification": {
+        "verifiedBy": "Mythic Bharat Studios Review Team",
+        "verificationDate": "2026-09-16",
+        "verificationStatus": "verified",
+        "verificationNotes": "Signed off by Mythic Bharat Studios Review Team (admin) on 2026-09-16 via tools/asset-gen/signoff.ts."
+      }
+    }
+  ]
+}
