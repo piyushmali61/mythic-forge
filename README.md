@@ -11,6 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status" />
+  <img src="https://img.shields.io/badge/license-Proprietary%20%7C%20All%20Rights%20Reserved-red.svg" alt="License" />
   <img src="https://img.shields.io/badge/producer-Mythic%20Bharat%20Studios-gold.svg" alt="Producer" />
   <img src="https://img.shields.io/badge/platforms-Android%20%7C%20Windows%20%7C%20Web-orange.svg" alt="Platforms" />
 </p>
@@ -175,7 +176,8 @@ For deep technical specifications, refer to the documentation in `docs/`:
 
 ## 7. Licensing & Attribution
 
-- **Mythic Forge Engine:** © 2026 Mythic Bharat Studios. All rights reserved.
+- **Mythic Forge Engine:** © 2026 Mythic Bharat Studios. All rights reserved. See [LICENSE.md](LICENSE.md) for full proprietary terms. Unauthorized copying, modification, or commercial redistribution of the engine source code is strictly prohibited.
+- **User Project Ownership:** Users retain full copyright and ownership of the original games, assets, and experiences created using Mythic Forge.
 - **Official Assets:** Licensed under `MBS-ASSET-1.0` (free for use in personal & commercial projects made with Mythic Forge).
-- **Free & Open Assets:** Dedicated to the public domain under Creative Commons `CC0-1.0`.
-- **Third-Party Dependencies:** Permissively licensed (MIT / Apache-2.0). Complete notices and copyright statements are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+- **Free & Open Assets:** Dedicated to the public domain under Creative Commons `CC0-1.0` ([assets/licenses/CC0-1.0.md](assets/licenses/CC0-1.0.md)).
+- **Third-Party Open-Source Components:** Permissively licensed (MIT / Apache-2.0). Complete notices and copyright statements are preserved and documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
