@@ -16,6 +16,20 @@
   <img src="https://img.shields.io/badge/platforms-Android%20%7C%20Windows%20%7C%20Web-orange.svg" alt="Platforms" />
 </p>
 
+<p align="center">
+  <a href="apps/editor/public/downloads/MythicForge-Mobile-v0.1.0.apk">
+    <img src="https://img.shields.io/badge/📱_Download_Mobile-Android_APK_(20.7_MB)-2ea44f?style=for-the-badge&logo=android&logoColor=white" alt="Download Mobile APK" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="apps/editor/public/downloads/MythicForge-Windows-x64-v0.1.0.zip">
+    <img src="https://img.shields.io/badge/💻_Download_PC-Windows_64--bit_(2.6_MB)-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download PC App" />
+  </a>
+</p>
+
+<p align="center">
+  <em>⚡ Direct download with required files only — 100% offline-first, no bloatware, zero installation needed.</em>
+</p>
+
 ---
 
 <p align="center">

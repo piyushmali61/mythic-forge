@@ -52,6 +52,38 @@ export function Home() {
         </div>
       </section>
 
+      <section class="card" style={{ padding: '16px 20px', background: 'linear-gradient(135deg, rgba(35,32,26,0.92), rgba(20,18,15,0.98))', border: '1px solid rgba(214,168,79,0.3)', borderRadius: '12px', marginTop: '16px', marginBottom: '8px' }}>
+        <div class="row wrap" style={{ alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
+          <div class="row" style={{ alignItems: 'center', gap: '14px' }}>
+            <img src="./icons/logo.svg" alt="" width="48" height="48" />
+            <div>
+              <div style={{ fontWeight: 750, fontSize: '1.05rem', color: 'var(--gold, #d6a84f)', letterSpacing: '0.05em' }}>GET STANDALONE APPLICATION</div>
+              <div class="muted" style={{ fontSize: '0.85rem' }}>Direct download with required runtime files only — 100% offline-first.</div>
+            </div>
+          </div>
+          <div class="row wrap" style={{ gap: '10px' }}>
+            <a
+              href="./downloads/MythicForge-Mobile-v0.1.0.apk"
+              download="MythicForge-Mobile-v0.1.0.apk"
+              class="btn btn-primary"
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+              title="Download Android APK (9.2 MB)"
+            >
+              <Icon name="smartphone" size={18} /> <span>Download Mobile (Android APK)</span>
+            </a>
+            <a
+              href="./downloads/MythicForge-Windows-x64-v0.1.0.zip"
+              download="MythicForge-Windows-x64-v0.1.0.zip"
+              class="btn"
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', borderColor: 'var(--gold, #d6a84f)' }}
+              title="Download Windows 64-bit Desktop Application (2.6 MB)"
+            >
+              <Icon name="monitor" size={18} /> <span>Download PC (Windows)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="section" aria-labelledby="recent-h">
         <h2 class="section-title" id="recent-h">
           Recent Projects

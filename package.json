@@ -29,6 +29,8 @@
     "notices": "node tools/third-party-notices/generate.ts",
     "bench:core": "node tools/benchmark/core-bench.ts",
     "brand:icons": "python tools/brand/make-icons.py --all",
+    "package:windows": "python tools/desktop/package-windows.py",
+    "package:android": "python tools/android/package-apk.py",
     "android:sync": "npm run build && npm run sync -w @mythic-forge/android",
     "android:open": "npm run open -w @mythic-forge/android"
   },

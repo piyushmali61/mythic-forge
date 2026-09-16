@@ -144,6 +144,18 @@ const PATHS = {
       <path d="M5 8l7 1.5L19 8M12 9.5V14l-3 6M12 14l3 6" />
     </>
   ),
+  smartphone: (
+    <>
+      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+      <path d="M12 18h.01" />
+    </>
+  ),
+  monitor: (
+    <>
+      <rect x="2" y="3" width="20" height="14" rx="2" />
+      <path d="M8 21h8M12 17v4" />
+    </>
+  ),
 } satisfies Record<string, JSX.Element>;
 
 export type IconName = keyof typeof PATHS;

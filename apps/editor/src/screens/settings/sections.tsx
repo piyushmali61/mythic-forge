@@ -812,6 +812,31 @@ export function AboutSection() {
         </dd>
       </dl>
 
+      <div class="card" style={{ marginTop: '16px', padding: '16px', border: '1px solid rgba(214,168,79,0.3)', borderRadius: '10px' }}>
+        <div style={{ fontWeight: 700, marginBottom: '6px', color: 'var(--gold)' }}>OFFICIAL NATIVE DOWNLOADS</div>
+        <p class="muted" style={{ fontSize: '0.9em', marginBottom: '12px' }}>
+          Download standalone native applications packaged with required runtime files only (100% offline-first).
+        </p>
+        <div class="row wrap" style={{ gap: '10px' }}>
+          <a
+            href="./downloads/MythicForge-Mobile-v0.1.0.apk"
+            download="MythicForge-Mobile-v0.1.0.apk"
+            class="btn btn-primary"
+            style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+          >
+            <Icon name="smartphone" size={16} /> <span>Download Android APK (9.2 MB)</span>
+          </a>
+          <a
+            href="./downloads/MythicForge-Windows-x64-v0.1.0.zip"
+            download="MythicForge-Windows-x64-v0.1.0.zip"
+            class="btn"
+            style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+          >
+            <Icon name="monitor" size={16} /> <span>Download Windows PC (2.6 MB)</span>
+          </a>
+        </div>
+      </div>
+
       <h3 style={{ marginTop: '22px' }}>Licences</h3>
       <p class="muted">
         Mythic Forge is built on open-source software. Those components stay under their own licences, listed below. Mythic Bharat Studios assets are under the Mythic Bharat Studios Asset License; third-party assets keep their original licences.
