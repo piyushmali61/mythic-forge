@@ -18,6 +18,15 @@
 
 ---
 
+<p align="center">
+  <img src="docs/assets/editor-tour.gif" alt="Mythic Forge 3D Creation Engine — Editor Tour" width="100%" />
+</p>
+<p align="center">
+  <em>Real-time 3D viewport, scene hierarchy, entity inspector, and instant play mode switch.</em>
+</p>
+
+---
+
 ## 1. Overview
 
 **Mythic Forge** is a lightweight, beginner-friendly, cross-platform 3D creation and game engine designed from the ground up for students, indie developers, creators, and enthusiasts.
@@ -34,7 +43,37 @@ It delivers a smooth, professional 3D authoring experience while prioritizing:
 
 ---
 
-## 2. Key Features
+## 2. Visual Showcase & Video Clips
+
+### 🎬 Interactive 3D Editor Tour
+Experience zero-battery idle draw (0 FPS render-on-demand), responsive gizmos, and asset placement:
+
+<p align="center">
+  <img src="docs/assets/editor-tour.gif" alt="Mythic Forge 3D Editor Tour" width="100%" />
+</p>
+
+- 📹 **Full Video Clip:** [`docs/assets/editor-tour.mp4`](docs/assets/editor-tour.mp4) (High-definition MP4 clip)
+- 🖼️ **Full-Resolution Capture:** [`docs/assets/editor-preview.jpg`](docs/assets/editor-preview.jpg)
+
+### 🎮 Real-Time Gameplay & Physics Mode
+One-click switch to real-time 60 FPS gameplay, dynamic diya lighting, player controller, and battery-aware telemetry:
+
+<p align="center">
+  <img src="docs/assets/gameplay-demo.gif" alt="Mythic Forge Play Mode Demo" width="100%" />
+</p>
+
+- 📹 **Full Video Clip:** [`docs/assets/gameplay-demo.mp4`](docs/assets/gameplay-demo.mp4) (High-definition MP4 clip)
+- 🖼️ **Full-Resolution Capture:** [`docs/assets/gameplay-preview.jpg`](docs/assets/gameplay-preview.jpg)
+
+### 📸 High-Resolution Engine Captures
+
+| 3D Authoring Environment | In-Game Play Mode |
+| :---: | :---: |
+| [![3D Editor](docs/assets/editor-preview.jpg)](docs/assets/editor-preview.jpg) | [![Play Mode](docs/assets/gameplay-preview.jpg)](docs/assets/gameplay-preview.jpg) |
+
+---
+
+## 3. Key Features
 
 - **Project Manager & Wizard:** Create, duplicate, archive, import, and export projects with customizable templates (Basic 3D, Platformer, Third Person, First Person, Shrine of Lamps).
 - **3D Scene Editor:** Clean, responsive workspace featuring scene hierarchy trees, transform gizmos (Move, Rotate, Scale), camera controls (Orbit, Fly, Pan, Touch gestures), and entity inspectors.
@@ -49,7 +88,7 @@ It delivers a smooth, professional 3D authoring experience while prioritizing:
 
 ---
 
-## 3. Quickstart Guide
+## 4. Quickstart Guide
 
 ### Prerequisites
 - **Node.js:** $\ge 22.18$
@@ -58,7 +97,7 @@ It delivers a smooth, professional 3D authoring experience while prioritizing:
 ### Setup & Development
 ```bash
 # Clone the repository
-git clone https://github.com/mythic-bharat-studios/mythic-forge.git
+git clone https://github.com/piyushmali61/mythic-forge.git
 cd mythic-forge
 
 # Install dependencies
@@ -100,7 +139,7 @@ npm run preview
 
 ---
 
-## 4. Platform Targets
+## 5. Platform Targets
 
 ### A. Android (Capacitor Shell)
 Hosted in `apps/android`:
@@ -131,7 +170,7 @@ Hosted in `apps/desktop`:
 
 ---
 
-## 5. Repository Architecture
+## 6. Repository Architecture
 
 ```
 mythic-forge/
@@ -154,7 +193,7 @@ mythic-forge/
 
 ---
 
-## 6. Subsystem Documentation
+## 7. Subsystem Documentation
 
 For deep technical specifications, refer to the documentation in `docs/`:
 
@@ -174,7 +213,7 @@ For deep technical specifications, refer to the documentation in `docs/`:
 
 ---
 
-## 7. Licensing & Attribution
+## 8. Licensing & Attribution
 
 - **Mythic Forge Engine:** © 2026 Mythic Bharat Studios. All rights reserved. See [LICENSE.md](LICENSE.md) for full proprietary terms. Unauthorized copying, modification, or commercial redistribution of the engine source code is strictly prohibited.
 - **User Project Ownership:** Users retain full copyright and ownership of the original games, assets, and experiences created using Mythic Forge.
