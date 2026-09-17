@@ -31,8 +31,8 @@ import {
 import { config } from '../../lib/config.ts';
 import { renderMarkdown } from '../../lib/markdown.ts';
 import { currentQuality } from '../../lib/quality.ts';
-import { detectShell } from '@mythic-forge/platform';
 import { Callout, Modal, NotImplemented, Segmented } from '../../ui/common.tsx';
+import { DownloadsCard } from '../../ui/Downloads.tsx';
 import { Toggle } from '../../ui/fields.tsx';
 import { Icon } from '../../ui/Icon.tsx';
 import { lazyComponent } from '../../ui/lazy.tsx';
@@ -813,32 +813,7 @@ export function AboutSection() {
         </dd>
       </dl>
 
-      {detectShell() === 'browser' && (
-      <div class="card" style={{ marginTop: '16px', padding: '16px', border: '1px solid rgba(214,168,79,0.3)', borderRadius: '10px' }}>
-        <div style={{ fontWeight: 700, marginBottom: '6px', color: 'var(--gold)' }}>OFFICIAL NATIVE DOWNLOADS</div>
-        <p class="muted" style={{ fontSize: '0.9em', marginBottom: '12px' }}>
-          Download standalone native applications packaged with required runtime files only (100% offline-first).
-        </p>
-        <div class="row wrap" style={{ gap: '10px' }}>
-          <a
-            href="./downloads/MythicForge-Mobile-v0.1.0.apk"
-            download="MythicForge-Mobile-v0.1.0.apk"
-            class="btn btn-primary"
-            style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-          >
-            <Icon name="smartphone" size={16} /> <span>Download Android APK (9.2 MB)</span>
-          </a>
-          <a
-            href="./downloads/MythicForge-Windows-x64-v0.1.0.zip"
-            download="MythicForge-Windows-x64-v0.1.0.zip"
-            class="btn"
-            style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-          >
-            <Icon name="monitor" size={16} /> <span>Download Windows PC (2.6 MB)</span>
-          </a>
-        </div>
-      </div>
-      )}
+      <DownloadsCard title="Standalone apps" text="Native builds of this version. They work fully offline." />
 
       <h3 style={{ marginTop: '22px' }}>Licences</h3>
       <p class="muted">

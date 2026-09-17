@@ -8,6 +8,7 @@
     "dev": "npm run build:player && vite",
     "build:player": "vite build --config vite.player.config.ts --logLevel warn",
     "build": "npm run build:player && vite build",
+    "build:app": "npm run build:player && vite build --mode app",
     "preview": "vite preview"
   },
   "dependencies": {

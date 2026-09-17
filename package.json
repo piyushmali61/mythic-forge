@@ -17,6 +17,7 @@
   "scripts": {
     "dev": "npm run dev -w @mythic-forge/editor",
     "build": "npm run audit:licenses && npm run notices && npm run build -w @mythic-forge/editor",
+    "build:app": "npm run audit:licenses && npm run notices && npm run build:app -w @mythic-forge/editor",
     "preview": "npm run preview -w @mythic-forge/editor",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -31,7 +32,7 @@
     "brand:icons": "python tools/brand/make-icons.py --all",
     "package:windows": "python tools/desktop/package-windows.py",
     "package:android": "python tools/android/package-apk.py",
-    "android:sync": "npm run build && npm run sync -w @mythic-forge/android",
+    "android:sync": "npm run build:app && npm run sync -w @mythic-forge/android",
     "android:open": "npm run open -w @mythic-forge/android"
   },
   "devDependencies": {

@@ -258,6 +258,38 @@ input[type='color'] {
 .section {
   margin-bottom: 28px;
 }
+
+/* Standalone app downloads (web build only) */
+.downloads-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 16px;
+  margin: 16px 0 24px;
+  border-color: var(--border-strong);
+}
+.downloads-intro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.downloads-title {
+  font-weight: 700;
+  color: var(--gold);
+}
+.downloads-card .btn {
+  max-width: 100%;
+  min-height: 38px;
+  height: auto;
+  white-space: normal;
+  text-align: left;
+  text-decoration: none;
+}
+.downloads-meta {
+  font-weight: 400;
+  opacity: 0.8;
+}
 .section-title {
   display: flex;
   align-items: center;

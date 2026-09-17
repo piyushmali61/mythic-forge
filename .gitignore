@@ -16,7 +16,6 @@ apps/android/android/app/src/main/assets/public/
 apps/desktop/src-tauri/target/
 reports/
 *.exe
-dist-windows-staging/
 
 # Secrets — never commit
 .env

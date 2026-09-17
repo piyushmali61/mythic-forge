@@ -59,6 +59,27 @@
   font-size: 0.78em;
   color: var(--text-3);
 }
+.nav-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.nav-downloads-title {
+  padding: 0 10px 2px;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.nav-downloads .nav-item {
+  min-height: 32px;
+  font-size: 0.9em;
+  text-decoration: none;
+}
 .main {
   overflow: auto;
   min-width: 0;
@@ -104,9 +125,8 @@
   }
   .brand,
   .nav-footer,
-  .desktop-only,
-  .nav-item.desktop-only {
-    display: none !important;
+  .desktop-only {
+    display: none;
   }
   .nav-item {
     flex-direction: column;

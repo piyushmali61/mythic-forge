@@ -10,7 +10,6 @@
   "android": {
     "allowMixedContent": false,
     "captureInput": true,
-    "webContentsDebuggingEnabled": true,
     "backgroundColor": "#121110",
     "adjustMarginsForEdgeToEdge": "auto"
   }

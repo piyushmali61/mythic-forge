@@ -1,6 +1,7 @@
 import preact from '@preact/preset-vite';
-import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import { workspaceAliases } from '../../workspace-aliases.ts';
 
@@ -12,13 +13,15 @@ function contentSecurityPolicy(repositoryUrl: string): Plugin {
   } catch {
     repoOrigin = '';
   }
+  // The Android shell serves the app from https://localhost, which 'self' already covers.
+  // Preact applies `style` props through the CSSOM, which style-src does not restrict.
   const policy = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-eval'",
-    "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: content: https:",
-    "media-src 'self' data: blob: content:",
-    `connect-src 'self' data: blob: https://localhost capacitor: http://localhost${repoOrigin ? ` ${repoOrigin}` : ''}`,
+    "script-src 'self'",
+    "style-src 'self'",
+    "img-src 'self' data: blob:",
+    "media-src 'self' data: blob:",
+    `connect-src 'self' data: blob:${repoOrigin ? ` ${repoOrigin}` : ''}`,
     "worker-src 'self' blob:",
     "font-src 'self' data:",
     "object-src 'none'",
@@ -30,6 +33,56 @@ function contentSecurityPolicy(repositoryUrl: string): Plugin {
     apply: 'build',
     transformIndexHtml(html) {
       return html.replace('<!--CSP-->', `<meta http-equiv="Content-Security-Policy" content="${policy}" />`);
+    },
+  };
+}
+
+const DOWNLOADS_DIR = fileURLToPath(new URL('../../downloads/', import.meta.url));
+
+interface DownloadFile {
+  file: string;
+  bytes: number;
+  platform: 'android' | 'windows';
+}
+
+function listDownloads(): DownloadFile[] {
+  if (!existsSync(DOWNLOADS_DIR)) return [];
+  const out: DownloadFile[] = [];
+  for (const file of readdirSync(DOWNLOADS_DIR).sort()) {
+    const platform = file.endsWith('.apk') ? 'android' : /windows/i.test(file) && file.endsWith('.zip') ? 'windows' : null;
+    if (platform) out.push({ file, bytes: statSync(join(DOWNLOADS_DIR, file)).size, platform });
+  }
+  return out;
+}
+
+/**
+ * Standalone app downloads (repository `downloads/`). Only the web build offers them: the
+ * Android and desktop shells are built with `--mode app`, so the binaries never end up inside
+ * the apps themselves (which would make every release contain the previous one).
+ */
+function standaloneDownloads(mode: string): Plugin {
+  const files = mode === 'app' ? [] : listDownloads();
+  let outDir = 'dist';
+  return {
+    name: 'mf-downloads',
+    config: () => ({ define: { __MF_DOWNLOADS__: JSON.stringify(files) } }),
+    configResolved(config) {
+      outDir = config.build.outDir;
+    },
+    configureServer(server) {
+      server.middlewares.use('/downloads/', (req, res, next) => {
+        const name = decodeURIComponent((req.url ?? '').split('?')[0]!.replace(/^\//, ''));
+        const entry = files.find((f) => f.file === name);
+        if (!entry) return next();
+        res.setHeader('Content-Type', 'application/octet-stream');
+        res.setHeader('Content-Length', String(entry.bytes));
+        res.end(readFileSync(join(DOWNLOADS_DIR, entry.file)));
+      });
+    },
+    writeBundle() {
+      if (!files.length) return;
+      mkdirSync(join(outDir, 'downloads'), { recursive: true });
+      for (const f of files) copyFileSync(join(DOWNLOADS_DIR, f.file), join(outDir, 'downloads', f.file));
     },
   };
 }
@@ -53,8 +106,10 @@ function precacheManifest(): Plugin {
         }
       };
       walk(outDir);
-      // Optional asset packs and the exported-game player are fetched on demand, not precached.
-      const precache = files.filter((f) => !f.startsWith('asset-packs/') && f !== 'precache-manifest.json' && f !== 'sw.js');
+      // Optional asset packs, the exported-game player and app downloads are fetched on demand, not precached.
+      const precache = files.filter(
+        (f) => !f.startsWith('asset-packs/') && !f.startsWith('downloads/') && f !== 'precache-manifest.json' && f !== 'sw.js',
+      );
       const version = String(Date.now());
       writeFileSync(join(outDir, 'precache-manifest.json'), JSON.stringify({ version, files: ['./', ...precache] }));
       // Stamping the build id into sw.js makes browsers notice the new version.
@@ -69,7 +124,12 @@ export default defineConfig(({ mode }) => {
   return {
     // Relative base so the same build works from a web server sub-path, Capacitor and Tauri.
     base: './',
-    plugins: [preact(), contentSecurityPolicy(env.VITE_ASSET_REPOSITORY_URL ?? ''), precacheManifest()],
+    plugins: [
+      preact(),
+      contentSecurityPolicy(env.VITE_ASSET_REPOSITORY_URL ?? ''),
+      standaloneDownloads(mode),
+      precacheManifest(),
+    ],
     resolve: { alias: workspaceAliases },
     server: { port: 5173, strictPort: true },
     preview: { port: 4173, strictPort: true },

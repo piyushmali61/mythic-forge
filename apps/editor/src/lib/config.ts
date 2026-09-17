@@ -13,7 +13,18 @@ const httpsOnly = (v: string): string => {
   }
 };
 
+export interface AppDownload {
+  file: string;
+  bytes: number;
+  platform: 'android' | 'windows';
+}
+
+/** Filled in by the `mf-downloads` Vite plugin; always empty in the app shells. */
+declare const __MF_DOWNLOADS__: AppDownload[] | undefined;
+
 export const config = {
+  /** Standalone apps offered for download by the web build (repository `downloads/`). */
+  downloads: typeof __MF_DOWNLOADS__ === 'undefined' ? [] : __MF_DOWNLOADS__,
   /** Remote official repository. Empty = use the pack bundled with the app. */
   assetRepositoryUrl: httpsOnly(clean(import.meta.env.VITE_ASSET_REPOSITORY_URL)),
   websiteUrl: httpsOnly(clean(import.meta.env.VITE_WEBSITE_URL)),

@@ -101,6 +101,14 @@ const deps = collect();
 const notices = [...deps].map(([name, version]) => readNotice(name, version)).sort((a, b) => a.name.localeCompare(b.name));
 const problems = notices.filter((n) => !isAllowed(n.license) || !n.licenseText);
 
+console.log(`[notices] ${notices.length} runtime packages: ${[...new Set(notices.map((n) => n.license))].join(', ')}`);
+// Check before writing, so a failed run never replaces the committed notices.
+if (problems.length) {
+  for (const p of problems) console.error(`  ✗ ${p.name}@${p.version}: licence "${p.license}"${p.licenseText ? '' : ' (no licence text found)'}`);
+  console.error('Third-party licence check FAILED.');
+  process.exit(1);
+}
+
 const md: string[] = [
   '# Third-Party Notices',
   '',
@@ -133,10 +141,4 @@ if (existsSync(publicDir)) {
     join(publicDir, 'third-party-licenses.json'),
     JSON.stringify({ generated: true, packages: notices.map(({ name, version, license, source, usage, licenseText }) => ({ name, version, license, source, usage, licenseText })) }),
   );
-}
-console.log(`[notices] ${notices.length} runtime packages: ${[...new Set(notices.map((n) => n.license))].join(', ')}`);
-if (problems.length) {
-  for (const p of problems) console.error(`  ✗ ${p.name}@${p.version}: licence "${p.license}"${p.licenseText ? '' : ' (no licence text found)'}`);
-  console.error('Third-party licence check FAILED.');
-  process.exit(1);
 }

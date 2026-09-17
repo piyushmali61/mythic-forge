@@ -6,7 +6,7 @@ import { Projects } from '../screens/Projects.tsx';
 import { SearchOverlay, searchOpen } from '../screens/SearchOverlay.tsx';
 import { Templates } from '../screens/Templates.tsx';
 import { Icon, type IconName } from '../ui/Icon.tsx';
-import { detectShell } from '@mythic-forge/platform';
+import { NavDownloads } from '../ui/Downloads.tsx';
 import { DialogHost, ToastHost } from '../ui/hosts.tsx';
 import { lazyComponent } from '../ui/lazy.tsx';
 import { config } from '../lib/config.ts';
@@ -44,7 +44,6 @@ const NAV: { route: Route['name']; label: string; icon: IconName; target: Route;
 
 function Shell({ children }: { children: preact.ComponentChildren }) {
   const current = route.value.name === 'new-project' ? 'projects' : route.value.name;
-  const shell = detectShell();
   return (
     <div class="shell">
       <nav class="nav" aria-label="Main">
@@ -72,31 +71,7 @@ function Shell({ children }: { children: preact.ComponentChildren }) {
           <span>Search</span>
           <kbd style={{ marginLeft: 'auto', fontSize: '0.75em' }}>Ctrl K</kbd>
         </button>
-        {shell === 'browser' && (
-        <div class="desktop-only" style={{ padding: '8px 12px', display: 'flex', flexDirection: 'column', gap: '6px', borderTop: '1px solid var(--line, #2a2824)', marginTop: '8px' }}>
-          <div style={{ fontSize: '0.72rem', color: 'var(--muted, #888)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Downloads</div>
-          <a
-            href="./downloads/MythicForge-Mobile-v0.1.0.apk"
-            download="MythicForge-Mobile-v0.1.0.apk"
-            class="nav-item"
-            title="Download Mobile App (Android APK, 9.2 MB)"
-            style={{ padding: '6px 8px', fontSize: '0.85rem', textDecoration: 'none' }}
-          >
-            <Icon name="smartphone" size={16} />
-            <span>Mobile APK</span>
-          </a>
-          <a
-            href="./downloads/MythicForge-Windows-x64-v0.1.0.zip"
-            download="MythicForge-Windows-x64-v0.1.0.zip"
-            class="nav-item desktop-only"
-            title="Download Windows PC App (Portable, 2.6 MB)"
-            style={{ padding: '6px 8px', fontSize: '0.85rem', textDecoration: 'none' }}
-          >
-            <Icon name="monitor" size={16} />
-            <span>PC App (Win)</span>
-          </a>
-        </div>
-        )}
+        <NavDownloads />
         <div class="nav-footer">
           <div class="offline-pill">
             <Icon name={online.value ? 'wifi' : 'wifi-off'} size={14} />
