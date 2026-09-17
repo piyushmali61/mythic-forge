@@ -3,12 +3,14 @@ from the master Mythic Bharat Studios logo image.
 
 Master source: assets/brand/mythic-bharat-studios-logo.png
 Outputs:
-- apps/editor/public/icons/logo.svg (SVG wrapper embedding high-res PNG with squircle clip)
-- apps/editor/public/icons/logo.png (Full 512x512 master logo)
+- apps/editor/public/icons/logo.svg (SVG wrapper embedding a 384 px WebP with squircle clip)
 - apps/editor/public/icons/icon-*.png (Web icons: 32, 180, 192, 512)
 - apps/editor/public/icons/maskable-512.png (PWA maskable icon)
 - apps/desktop/src-tauri/icons/ (Tauri desktop icons: 32x32, 128x128, icon.png, icon.ico)
-- apps/android/android/app/src/main/res/ (Android launcher mipmaps & splash screens)
+- apps/android/android/app/src/main/res/ (Android launcher mipmaps & splash screens, WebP)
+
+Raster outputs that ship inside the apps are lossy WebP at quality 90 (visually identical to
+the PNGs, a fraction of the size). The PWA manifest icons stay PNG.
 
 Usage: python tools/brand/make-icons.py [--all] [--android <res dir>] [--tauri <icons dir>]
 """
@@ -22,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MASTER_SRC = ROOT / "assets" / "brand" / "mythic-bharat-studios-logo.png"
 PUBLIC = ROOT / "apps" / "editor" / "public" / "icons"
 CHARCOAL = (21, 19, 15, 255)
+WEBP = {"format": "WEBP", "quality": 90, "method": 6}
 
 
 def load_master():
@@ -44,10 +47,20 @@ def make_circle_mask(size):
     return mask
 
 
-def create_logo_svg(img_512_path, out_svg_path):
-    """Creates a high-res SVG that embeds the PNG with an elegant squircle clip."""
-    with open(img_512_path, "rb") as f:
-        b64 = base64.b64encode(f.read()).decode("ascii")
+def save_webp(image, path):
+    """Writes `path` as WebP and removes a same-named PNG (Android rejects duplicate resources)."""
+    image.save(path, **WEBP)
+    stale = path.with_suffix(".png")
+    if stale.exists():
+        stale.unlink()
+
+
+def create_logo_svg(master, out_svg_path):
+    """Creates the SVG logo: the mark as an embedded 384 px WebP with a squircle clip.
+    The logo is shown at 34-160 CSS px, so 384 px stays sharp on high-density screens."""
+    buf = io.BytesIO()
+    master.resize((384, 384), Image.Resampling.LANCZOS).save(buf, **WEBP)
+    b64 = base64.b64encode(buf.getvalue()).decode("ascii")
 
     svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%" role="img" aria-label="Mythic Bharat Studios Logo">
   <defs>
@@ -56,25 +69,22 @@ def create_logo_svg(img_512_path, out_svg_path):
     </clipPath>
   </defs>
   <rect width="512" height="512" rx="96" ry="96" fill="#15130f" />
-  <image href="data:image/png;base64,{b64}" width="512" height="512" clip-path="url(#mbs-squircle)" preserveAspectRatio="xMidYMid slice" />
+  <image href="data:image/webp;base64,{b64}" width="512" height="512" clip-path="url(#mbs-squircle)" preserveAspectRatio="xMidYMid slice" />
 </svg>
 """
-    out_svg_path.write_text(svg_content, encoding="utf-8")
+    out_svg_path.write_bytes(svg_content.encode("utf-8"))
     print(f"[icons] Wrote {out_svg_path.relative_to(ROOT)} ({out_svg_path.stat().st_size} bytes)")
 
 
 def generate_web_icons(master):
     PUBLIC.mkdir(parents=True, exist_ok=True)
     
-    # 1. Base 512x512 logo
-    logo_512 = master.resize((512, 512), Image.Resampling.LANCZOS)
-    logo_path = PUBLIC / "logo.png"
-    logo_512.save(logo_path, optimize=True)
-    print(f"[icons] Wrote {logo_path.relative_to(ROOT)}")
-    
-    # 2. logo.svg embedding the high-res 512x512 image
+    # 1. logo.svg (used by the app UI, the splash and the README)
     svg_path = PUBLIC / "logo.svg"
-    create_logo_svg(logo_path, svg_path)
+    create_logo_svg(master, svg_path)
+    stale = PUBLIC / "logo.png"
+    if stale.exists():
+        stale.unlink()
 
     # 3. Standard web icons (32, 180, 192, 512)
     for size in (32, 180, 192, 512):
@@ -126,13 +136,13 @@ def generate_android_icons(master, res_dir):
         mask = make_squircle_mask(launcher_size, radius=round(launcher_size * 0.2))
         icon_squircle = Image.new("RGBA", (launcher_size, launcher_size), (0, 0, 0, 0))
         icon_squircle.paste(icon, (0, 0), mask)
-        icon_squircle.save(folder / "ic_launcher.png", optimize=True)
+        save_webp(icon_squircle, folder / "ic_launcher.webp")
 
         # Round launcher icon
         round_mask = make_circle_mask(launcher_size)
         icon_round = Image.new("RGBA", (launcher_size, launcher_size), (0, 0, 0, 0))
         icon_round.paste(icon, (0, 0), round_mask)
-        icon_round.save(folder / "ic_launcher_round.png", optimize=True)
+        save_webp(icon_round, folder / "ic_launcher_round.webp")
 
         # Adaptive icon foreground (108dp canvas, mark in safe zone)
         fg_size = round(108 * factor)
@@ -141,17 +151,17 @@ def generate_android_icons(master, res_dir):
         scaled = master.resize((safe_size, safe_size), Image.Resampling.LANCZOS)
         offset = (fg_size - safe_size) // 2
         fg_img.alpha_composite(scaled, (offset, offset))
-        fg_img.save(folder / "ic_launcher_foreground.png", optimize=True)
+        save_webp(fg_img, folder / "ic_launcher_foreground.webp")
 
     # Android Splash Screens
-    for splash in res_dir.glob("drawable*/splash.png"):
+    for splash in [*res_dir.glob("drawable*/splash.png"), *res_dir.glob("drawable*/splash.webp")]:
         with Image.open(splash) as old:
             w, h = old.size
         canvas = Image.new("RGBA", (w, h), CHARCOAL)
         mark_size = max(64, round(min(w, h) * 0.45))
         mark = master.resize((mark_size, mark_size), Image.Resampling.LANCZOS)
         canvas.alpha_composite(mark, ((w - mark_size) // 2, (h - mark_size) // 2))
-        canvas.convert("RGB").save(splash, optimize=True)
+        save_webp(canvas.convert("RGB"), splash.with_suffix(".webp"))
 
     print(f"[icons] Wrote Android launcher icons and splash screens to {res_dir.relative_to(ROOT)}")
 
