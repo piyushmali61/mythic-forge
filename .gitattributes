@@ -15,3 +15,5 @@
 *.apk binary
 *.zip binary
 *.jar binary
+*.bin binary
+*.exe binary

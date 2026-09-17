@@ -47,7 +47,31 @@ The exe is not code-signed, so Windows SmartScreen may warn on first launch. Sig
 
 ---
 
-## 2. Keyboard shortcuts (§30)
+## 2. Exporting games for Windows (§34)
+
+**Build & Export → Windows (portable .zip)** in the editor wraps the single-file web build:
+
+```
+Your-Game/
+  Your-Game.exe    launcher (tools/desktop/GameLauncher.cs, about 12 KB)
+  game.html        the game (same file as the Web build; runs from file://)
+  launcher.txt     title and window size (key=value)
+  README.txt
+```
+
+- **The launcher** opens `game.html` with `msedge --app=file:///…`, so the game gets its own window using the player's normal Edge profile, then exits. Without Edge, it opens the file in the default browser. It starts no server and reads only its own folder. Values from `launcher.txt` are only a title (used in error messages) and a clamped window size.
+- **Neutral icon:** exported games belong to their creators, so the launcher uses a plain play icon rather than the Mythic Bharat Studios logo.
+- **Prebuilt binary:** the editor ships the exe as `apps/editor/public/export/windows-game-launcher.bin`, so exports work offline on any device. Rebuild it on Windows after changing `GameLauncher.cs`:
+  ```bash
+  python tools/desktop/build-game-launcher.py
+  ```
+  `apps/editor/test/windows-export.test.ts` fails if the binary no longer matches the source's SHA-256 (recorded in `windows-game-launcher.json`).
+- **Not code-signed:** SmartScreen may warn on first run. Studios that publish widely should sign the exe.
+- **Verified 2026-09-17** on Windows 11: the demo exported as a 405 KB zip. After extraction, the exe opened a 1280×720 Edge app window titled with the game name, showing the game's start screen.
+
+---
+
+## 3. Keyboard shortcuts (§30)
 
 Editor shortcuts (`apps/editor/src/editor/EditorScreen.tsx`). They are ignored while typing in a field or when a dialog is open.
 
@@ -66,7 +90,7 @@ Editor shortcuts (`apps/editor/src/editor/EditorScreen.tsx`). They are ignored w
 
 ---
 
-## 3. Desktop quality (§22)
+## 4. Desktop quality (§22)
 
 Desktops start at **Medium**. A discrete GPU raises that to **High**, and a high-end GPU with 8 or more CPU cores to **Ultra**. Older integrated graphics drop to **Low** (`packages/core/src/perf/device-tier.ts`). The top presets in `packages/core/src/perf/profiles.ts` are:
 
@@ -79,7 +103,7 @@ Frame-rate caps of 90 and 120 FPS can be chosen in **Settings → Graphics**. Th
 
 ---
 
-## 4. Tauri build (not yet verified)
+## 5. Tauri build (not yet verified)
 
 Requirements: Node.js ≥ 22.18, the Rust toolchain (`rustup`), and WebView2 (included in Windows 10/11).
 

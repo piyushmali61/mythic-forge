@@ -37,9 +37,10 @@ export interface WebBuildPayload {
   notices: { name: string; version: string; license: string; text: string }[];
 }
 
-export interface WebBuildResult {
+export interface BuildResult {
   bytes: Uint8Array;
   fileName: string;
+  mime: string;
   assetCount: number;
   assetBytes: number;
   runtimeBytes: number;
@@ -77,7 +78,7 @@ export function referencedAssetIds(scene: SceneDocument): Set<string> {
  * Builds a single self-contained HTML file that runs the scene in any modern browser
  * (and can be wrapped by the Android/desktop player shells later).
  */
-export async function buildWebExport(manifest: ProjectManifest, scene: SceneDocument, options: WebBuildOptions): Promise<WebBuildResult> {
+export async function buildWebExport(manifest: ProjectManifest, scene: SceneDocument, options: WebBuildOptions): Promise<BuildResult> {
   const { store } = svc();
   const warnings: string[] = [];
   const res = await fetch('./player/mythic-forge-player.js');
@@ -158,6 +159,7 @@ export async function buildWebExport(manifest: ProjectManifest, scene: SceneDocu
   return {
     bytes,
     fileName: `${safe}${options.debug ? '-debug' : ''}.html`,
+    mime: 'text/html',
     assetCount: Object.keys(assets).length,
     assetBytes,
     runtimeBytes: runtime.length,

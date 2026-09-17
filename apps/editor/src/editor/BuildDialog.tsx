@@ -1,7 +1,7 @@
 import { QUALITY_LABELS, QUALITY_LEVELS, formatBytes, type QualityLevel } from '@mythic-forge/core';
 import { useState } from 'preact/hooks';
 import { navigate, reportError, svc, toast } from '../app/state.ts';
-import type { WebBuildResult } from '../build/web-export.ts';
+import type { BuildResult } from '../build/web-export.ts';
 import { Callout, Modal, NotImplemented, Segmented } from '../ui/common.tsx';
 import { Icon } from '../ui/Icon.tsx';
 import type { EditorSession } from './session.ts';
@@ -14,14 +14,20 @@ export function BuildDialog({ session, onClose }: { session: EditorSession; onCl
   const [buildType, setBuildType] = useState<'debug' | 'release'>('release');
   const [quality, setQuality] = useState<QualityLevel | 'auto'>('auto');
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<WebBuildResult | null>(null);
+  const [result, setResult] = useState<BuildResult | null>(null);
 
   const build = async (): Promise<void> => {
     setBusy(true);
     setResult(null);
     try {
-      const { buildWebExport } = await import('../build/web-export.ts');
-      setResult(await buildWebExport(manifest, session.scene.toJSON(), { debug: buildType === 'debug', quality }));
+      const options = { debug: buildType === 'debug', quality };
+      if (target === 'windows') {
+        const { buildWindowsExport } = await import('../build/windows-export.ts');
+        setResult(await buildWindowsExport(manifest, session.scene.toJSON(), options));
+      } else {
+        const { buildWebExport } = await import('../build/web-export.ts');
+        setResult(await buildWebExport(manifest, session.scene.toJSON(), options));
+      }
     } catch (error) {
       reportError(error, 'The build failed.');
     } finally {
@@ -32,7 +38,7 @@ export function BuildDialog({ session, onClose }: { session: EditorSession; onCl
   const save = async (): Promise<void> => {
     if (!result) return;
     try {
-      const outcome = await svc().platform.files.save(result.fileName, result.bytes, 'text/html');
+      const outcome = await svc().platform.files.save(result.fileName, result.bytes, result.mime);
       if (outcome !== 'cancelled') toast(`Build saved as ${result.fileName}.`, 'success');
     } catch (error) {
       reportError(error, 'The build could not be saved.');
@@ -54,7 +60,7 @@ export function BuildDialog({ session, onClose }: { session: EditorSession; onCl
               <Icon name="download" /> Save {formatBytes(result.bytes.byteLength)} file
             </button>
           ) : (
-            <button type="button" class="btn btn-primary" disabled={busy || target !== 'web'} onClick={() => void build()}>
+            <button type="button" class="btn btn-primary" disabled={busy || target === 'android'} onClick={() => void build()}>
               <Icon name="hammer" /> {busy ? 'Building…' : 'BUILD'}
             </button>
           )}
@@ -84,15 +90,15 @@ export function BuildDialog({ session, onClose }: { session: EditorSession; onCl
           </button>
           <button type="button" role="radio" class="choice" aria-checked={target === 'windows'} onClick={() => (setTarget('windows'), setResult(null))}>
             <strong>
-              Windows (EXE) <NotImplemented />
+              <Icon name="monitor" /> Windows (portable .zip)
             </strong>
-            <span>x64 desktop app.</span>
+            <span>Windows 10/11. A small launcher opens the game in a Microsoft Edge app window. No install needed.</span>
           </button>
         </div>
       </div>
-      {target !== 'web' ? (
+      {target === 'android' ? (
         <Callout kind="info" title="Not available yet">
-          Packaging games as {target === 'android' ? 'Android' : 'Windows'} apps from inside the editor is planned. It needs platform SDKs, a signing key and (for Android) Google Play's current requirements, checked at release time. For now, export a Web build and see{' '}
+          Packaging games as Android apps from inside the editor is planned. It needs the Android SDK, a signing key and Google Play's current requirements, checked at release time. For now, export a Web build and see{' '}
           <a
             href="#"
             onClick={(e) => {

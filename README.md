@@ -107,7 +107,8 @@ One-click switch to real-time 60 FPS gameplay, dynamic diya lighting, player con
 - **Instant Play Mode:** Switch seamlessly between Editor and Play Mode with declarative behaviours (`rotate`, `bob`, `playerController`, `followCamera`, `collectible`) and simple rigid-body physics.
 - **Animation Playback:** Plays the animation clips inside imported GLB, glTF and FBX models, and blends to a move clip (for example *Run*) while a Player Controller moves the object. Animations run only in play mode and exported games.
 - **Battery-First Power Management:** Automatically suspends rendering when backgrounded; features a dedicated Battery Saver profile ($30\text{ FPS}$, reduced shadows) and native Android thermal management integration.
-- **Web Export & PWA Support:** Export projects as standalone, self-contained HTML/JS games, or install Mythic Forge directly as an offline Progressive Web App.
+- **Game Export:** Export projects as a self-contained single-file HTML game, or as a **portable Windows game** (zip with a 12 KB launcher that opens the game in an Edge app window). Android game export is not implemented yet.
+- **PWA Support:** Install Mythic Forge itself as an offline Progressive Web App.
 
 ---
 
@@ -187,7 +188,7 @@ Hosted in `apps/android`:
   ```bash
   python tools/desktop/package-windows.py   # builds and writes downloads/MythicForge-Windows-x64-v0.1.0.zip
   ```
-- **Tauri 2 shell (`apps/desktop`, not built or tested yet):** a native WebView2 window with NSIS/MSI installers. Building it needs the Rust toolchain; see [docs/windows.md](docs/windows.md#4-tauri-build-not-yet-verified).
+- **Tauri 2 shell (`apps/desktop`, not built or tested yet):** a native WebView2 window with NSIS/MSI installers. Building it needs the Rust toolchain; see [docs/windows.md](docs/windows.md#5-tauri-build-not-yet-verified).
 
 ### C. Web / PWA
 - Supported out-of-the-box in modern browsers with WebGL 2 support.

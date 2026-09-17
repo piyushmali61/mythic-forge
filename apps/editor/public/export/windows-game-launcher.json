@@ -1,0 +1,7 @@
+{
+  "source": "tools/desktop/GameLauncher.cs",
+  "sourceSha256": "8be48357bcf3e5038ee44ff8e7fcc4cb3bc9b88783564c1444d8a295e505e518",
+  "size": 11776,
+  "sha256": "8133c6a1bf1ede74e9f41c255293a77d699a77ab8f06dba7c517333a182a0abd",
+  "compiler": "csc.exe (.NET Framework 4, C# 5), /target:winexe /optimize+"
+}
