@@ -45,24 +45,25 @@ Even if disguised with a `.glb` or `.png` extension, such files are detected and
 
 All file paths within projects, asset packs, and archives are sanitized through `isSafeRelativePath()` and `sanitizeFileName()` (`packages/core/src/security/paths.ts`):
 
-- **Relative Traversal:** Any path containing `..`, `./`, or leading slashes (`/` or `\`) is rejected.
-- **Windows Reserved Device Names:** Rejects `CON`, `PRN`, `AUX`, `NUL`, `COM1`–`COM9`, `LPT1`–`LPT9`.
-- **Illegal Characters:** Control characters ($0\text{x}00\text{–}0\text{x}1\text{F}$), `<`, `>`, `:`, `"`, `|`, `?`, `*` are stripped or rejected.
-- **Depth Limits:** Paths cannot exceed 10 directory segments or 240 total characters.
+- **Traversal and absolute paths:** `..` segments, leading `/` or `\`, drive letters (`C:`), and URL schemes are rejected. `.` and empty segments are dropped, and backslashes are treated as `/`.
+- **Windows reserved device names:** `CON`, `PRN`, `AUX`, `NUL`, `COM0`–`COM9`, `LPT0`–`LPT9` (with or without an extension) are rejected.
+- **Forbidden characters:** control characters, DEL, `<`, `>`, `:`, `"`, `|`, `?` and `*` are rejected, as are segments ending in a dot or space. `sanitizeFileName()` replaces them in user-typed names instead.
+- **Length limits:** at most 240 characters per path and 120 per segment.
 
 ---
 
 ## 4. Archive Security & Zip-Bomb Defense (§76, §77)
 
-The `.mfpack` and asset zip unpacker (`safeUnzip` in `packages/core/src/security/archive.ts`) enforces strict decompression quotas:
+The `.mfpack` and asset zip unpacker (`safeUnzip` in `packages/core/src/security/archive.ts`) enforces the resource limits from `packages/core/src/security/limits.ts`:
 
-| Constraint | Limit | Purpose |
-|---|---|---|
-| **Max Archive Size** | $150\text{ MB}$ | Prevents memory exhaustion on mobile devices. |
-| **Max Uncompressed Size** | $400\text{ MB}$ | Thwarts zip bombs with massive uncompressed sizes. |
-| **Max Entries in Archive** | $2,000$ | Prevents inode and directory table exhaustion. |
-| **Max Expansion Ratio** | $10\times$ | Aborts extraction if uncompressed data grows disproportionately to compressed bytes. |
-| **No Corrupted Symlinks** | Disallowed | Symlinks and hardlinks in archives are rejected. |
+| Constraint | Mobile | Desktop | Purpose |
+|---|---|---|---|
+| **Max archive size** | 512 MB | 2 GB | Bounds memory use before decompression starts. |
+| **Max expanded size** | 768 MB | 3 GB | Stops zip bombs. Counted on the bytes actually produced, not on header claims. |
+| **Max entries** | 4,096 | 16,384 | Stops archives with huge entry tables. |
+| **Max compression ratio** | 200× per entry (checked once an entry passes 1 MB) | 200× | Aborts entries that inflate suspiciously. |
+
+Directory entries are ignored and nothing is extracted to the real file system: entries become in-memory files whose paths pass the path checks above.
 
 ---
 
@@ -75,6 +76,24 @@ Instead, game logic is driven through **declarative behaviours** (`packages/core
 - `bob`: Smooth sine-wave vertical oscillation.
 - `playerController`: Input-bound kinematic controller with configurable move/jump speeds.
 - `followCamera`: Smooth target tracking with spring damping.
-- `collectible`: Trigger collision with score increment and particle/sound cue.
+- `collectible`: Adds to the score when the player touches it; can play an optional sound.
 
 Because behaviours are purely declarative configuration data, malicious projects **cannot** execute arbitrary shell commands, access host filesystems, or steal sensitive tokens.
+
+---
+
+## 6. Content Security Policy
+
+Production builds carry this policy (`apps/editor/vite.config.ts`):
+
+```
+default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:;
+media-src 'self' data: blob:; connect-src 'self' data: blob: [asset repository origin];
+worker-src 'self' blob:; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'
+```
+
+- No `'unsafe-eval'` and no `'unsafe-inline'`. Preact applies `style` props through the CSSOM, which `style-src` does not restrict. The Android shell serves the app from `https://localhost`, which `'self'` covers. The policy was checked in Chromium and on the Android 17 emulator (2026-09-17) with no violations.
+- Images, media and requests cannot reach other sites. The only exception is the optional official asset repository (`VITE_ASSET_REPOSITORY_URL`, HTTPS only).
+- The Tauri shell sets an equivalent policy in `tauri.conf.json`.
+
+If a future feature seems to need a looser policy, fix the feature instead: move inline code into files, and keep remote content behind the asset repository's verification.

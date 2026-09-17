@@ -22,7 +22,9 @@ The Android edition of Mythic Forge is built using **Capacitor 8** hosting the c
 ```
 
 Key Advantages:
-- **Tiny APK Footprint:** $\approx 4.9\text{ MB}$ debug APK, well below the $15\text{ MB}$ performance budget.
+- **Small APK:** the v0.1.0 debug APK is 6.4 MB, within the 15 MB budget. Most of it is the unminified debug `classes.dex`; a minified release build is smaller.
+  The shell hosts the **app build** (`npm run build:app`), which never contains `downloads/`. An earlier build bundled the previous APK inside the new one and reached 43 MB. `tools/android/package-apk.py` now refuses such an APK.
+  Launcher icons and splash screens are WebP (`tools/brand/make-icons.py`).
 - **Fast Startup:** No heavyweight embedded browser runtime; boots directly via the system-optimized WebView.
 - **100% Offline Capable:** All engine assets, scripts, styles, and catalogs load locally without cellular or Wi-Fi connectivity.
 
@@ -72,7 +74,7 @@ public class ThermalStatusPlugin extends Plugin {
 }
 ```
 
-The TypeScript platform adapter (`packages/platform/src/capacitor/thermal.ts`) receives these events and informs the Core `AdaptiveGovernor` to gracefully drop shadow maps and clamp FPS before the device experiences severe hardware throttling.
+The TypeScript platform adapter (`packages/platform/src/capacitor/android.ts`) receives these events and informs the core `AdaptiveQualityGovernor` to gracefully drop shadow maps and clamp FPS before the device experiences severe hardware throttling.
 
 ---
 
@@ -80,29 +82,43 @@ The TypeScript platform adapter (`packages/platform/src/capacitor/thermal.ts`) r
 
 ### Prerequisites
 - Node.js $\ge 22.18$
-- Java JDK 17 or 21
-- Android SDK (API 34 or 35)
+- JDK 17 or newer (v0.1.0 was built with the JDK 25 bundled with Android Studio, Gradle 9.5, AGP 8.13)
+- Android SDK platform 36 (`compileSdk`/`targetSdk` 36, `minSdk` 24)
 
 ### Build Steps
 
-1. **Build Editor Assets:**
-   ```bash
-   npm run build
-   ```
-
-2. **Sync Web Assets to Android Project:**
+1. **Build the app bundle and sync it into the Android project** (runs `npm run build:app`, then `cap sync android`):
    ```bash
    npm run android:sync
    ```
+   Do not sync a web build (`npm run build`) into the shell: it contains the `downloads/` folder.
 
-3. **Assemble Debug APK:**
+2. **Assemble Debug APK:**
    ```bash
    cd apps/android/android
    ./gradlew assembleDebug
    ```
    *The built APK will be generated in `apps/android/android/app/build/outputs/apk/debug/app-debug.apk`.*
+   To publish it on the web build's download buttons, run `npm run package:android` (it copies the APK to `downloads/`).
+   A debug APK is signed with the local debug key. Use it for testing only.
 
-4. **Build Production Release Bundle (AAB for Google Play):**
+3. **Build Production Release Bundle (AAB for Google Play):**
    ```bash
    ./gradlew bundleRelease
    ```
+   Keep the upload keystore and its passwords outside the repository (`*.jks`/`*.keystore` are git-ignored).
+   Pass them in through `~/.gradle/gradle.properties` or environment variables.
+
+---
+
+## 5. WebView debugging
+
+`capacitor.config.json` does not set `webContentsDebuggingEnabled`, so Capacitor's default applies: **debuggable (debug) builds can be inspected** from `chrome://inspect`, and **release builds cannot**. Do not set it to `true`: that would let anyone with USB access inspect a release build and read its projects.
+
+## 6. Verified on
+
+| Date | Device | Result |
+|---|---|---|
+| 2026-09-17 | Android 17 emulator (Pixel 4 profile) | Installs and starts with the strict CSP, with no console errors from the app. Demo project loads its official models. In play mode the touch stick moves the player and collecting a diya updates the score. |
+
+Capacitor logs `Error injecting safe area CSS` at start. This comes from Capacitor's own injected script, not from Mythic Forge. The app gets its safe-area insets from CSS `env()` (`--safe-top`/`--safe-bottom`), so the layout is unaffected.

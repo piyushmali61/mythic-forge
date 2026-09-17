@@ -1,65 +1,94 @@
-# Mythic Forge — Windows & Desktop Platform Architecture
+# Mythic Forge — Windows & Desktop
 
-## 1. Overview & Architecture (§3, §12)
+## 1. Distribution paths (§3, §12)
 
-On Windows desktop PCs and laptops, Mythic Forge supports two distribution paths:
-
-### A. Tauri 2 Desktop Shell (`apps/desktop`)
-- **Runtime:** High-performance Rust shell leveraging Windows Edge WebView2.
-- **Binary Footprint:** Approximately 5–10 MB (orders of magnitude lighter than 150 MB+ Electron applications).
-- **Native OS Integration:** Native window chrome, file dialogs, hardware acceleration, and system menus.
-
-### B. Progressive Web Application (PWA)
-- **Zero Install Requirement:** Works in Chrome and Edge out-of-the-box.
-- **Offline Service Worker (`sw.js`):** Automatically precaches all engine bundles, styles, and catalogs for offline desktop operation.
-- **Installable:** Click the "Install Mythic Forge" button in the browser address bar to install as a standalone desktop application.
-
----
-
-## 2. Desktop Keyboard Navigation & Shortcuts (§30)
-
-Mythic Forge is optimized for high-velocity desktop workflows:
-
-| Shortcut | Action | Description |
+| Path | Status | What it is |
 |---|---|---|
-| **`Ctrl + S`** | Save Project | Atomically persists scene changes with rolling backup rotation. |
-| **`Ctrl + Z`** | Undo | Rolls back the last reversible command in `CommandHistory`. |
-| **`Ctrl + Shift + Z`** | Redo | Re-applies the next command in `CommandHistory`. |
-| **`Ctrl + D`** | Duplicate | Duplicates selected scene entity with transform offset. |
-| **`Delete` / `Backspace`** | Delete | Removes the selected entity from the active scene. |
-| **`F`** | Focus Selection | Centers and frames the viewport camera on the selected object. |
-| **`W`** | Translate Gizmo | Switches transform gizmo to Move mode. |
-| **`E`** | Rotate Gizmo | Switches transform gizmo to Rotate mode. |
-| **`R`** | Scale Gizmo | Switches transform gizmo to Scale mode. |
-| **`Ctrl + K`** | Global Search | Opens fast search overlay for projects, assets, templates, and docs. |
-| **`Space`** | Play / Pause | Starts or pauses runtime simulation. |
-| **`Escape`** | Stop / Deselect | Stops Play Mode and restores the editor scene snapshot. |
+| **Portable edition** (`downloads/MythicForge-Windows-x64-v*.zip`) | Built and tested on Windows 11 | `MythicForge.exe` + the editor build. Opens in a Microsoft Edge app window. No installer, no admin rights. |
+| **PWA** | Offline service worker tested in a Chromium browser | Open the web build and use the browser's *Install* button. Works offline after the first visit. |
+| **Tauri 2 shell** (`apps/desktop`) | **Not built or tested yet** (needs a Rust toolchain) | Native window using WebView2, with installers (NSIS/MSI). Planned as the store-ready desktop build. |
 
----
+### Portable edition
 
-## 3. High-End Desktop Performance Profile (§22)
+`tools/desktop/Launcher.cs` is a small C# program (about 190 KB compiled, including the icon), built with the `csc.exe` that ships with the .NET Framework 4 on every Windows 10/11 PC. It:
 
-When running on desktop hardware with discrete GPUs (NVIDIA GeForce / AMD Radeon / Intel Arc):
-- **Ultra Quality Profile:** Unlocks $2048\times 2048$ soft shadow maps, $4\times$ MSAA anti-aliasing, and extended draw distances up to $2000\text{ m}$.
-- **High Refresh Rates:** Automatically supports 60, 90, 120, and 144 Hz monitors when enabled in **Settings → Graphics**.
-- **Energy Preservation:** Even on high-end desktop PCs, the render-on-demand loop keeps GPU fans quiet and wattage low while the editor is idle.
+1. Serves the `app` folder next to the exe on `http://127.0.0.1:47831/` (fixed port; falls back to 47832–47835 in order if that port is taken by another program, and says so).
+2. Opens that address with `msedge.exe --app=… --user-data-dir=%LOCALAPPDATA%\MythicBharatStudios\MythicForge\EdgeProfile`, so Mythic Forge gets its own window and its own storage.
+3. Stops serving when that Edge window (profile) closes. Starting the exe again while it is running opens a second window on the same server instead of starting another one.
+4. Without Edge, opens the default browser and keeps serving until the user clicks OK on the "running" message.
 
----
+**Why the port is fixed:** projects are stored in the browser storage (IndexedDB) of the page's origin, and the origin includes the port. A different port on each launch would hide every saved project. Projects saved in the old v0.1.0 zip (random port) cannot be recovered by the new launcher. Export important projects as `.mfpack`.
 
-## 4. Desktop Build Instructions
+**Security of the local server:**
+- Listens on `127.0.0.1` only. Serves only files inside `app\` (URL-decoded segments are checked, `..`, `:` and invalid file-name characters are rejected, and the final full path must stay under `app\`).
+- Rejects requests whose `Host` header is not `127.0.0.1:<port>` or `localhost:<port>`. This stops DNS-rebinding pages from reading the app.
+- `GET`/`HEAD` only, `X-Content-Type-Options: nosniff`, no directory listings.
+- The app itself keeps its Content-Security-Policy (see [security.md](security.md)).
 
-### Prerequisites
-- Node.js $\ge 22.18$
-- Rust toolchain (`rustup`, `cargo`)
-- Windows 10/11 with Microsoft Edge WebView2 (installed by default)
-
-### Building the Tauri 2 Binary
+**Build the zip:**
 ```bash
-# 1. Build the editor web bundle
-npm run build
-
-# 2. Build the Tauri desktop executable
-cd apps/desktop
-npm run build
+python tools/desktop/package-windows.py
 ```
-*The compiled native Windows executable is output to `apps/desktop/src-tauri/target/release/mythic-forge.exe`.*
+The script runs `npm run build:app`, compiles the launcher, and writes `downloads/MythicForge-Windows-x64-v<version>.zip`. It includes `LICENSE.txt`, `README.txt` and `app/THIRD_PARTY_NOTICES.md`. It refuses a web build that contains `downloads/`.
+
+**Manual test** (serve only, no browser window):
+```bash
+MythicForge.exe --no-browser
+```
+Then `curl http://127.0.0.1:47831/` returns the app, and `curl --path-as-is http://127.0.0.1:47831/%2e%2e/LICENSE.txt` is refused.
+
+The exe is not code-signed, so Windows SmartScreen may warn on first launch. Sign it with the studio's code-signing certificate before a wide release; the certificate must never be committed.
+
+### Web build vs app build
+
+`npm run build` produces the **web** build. It includes `downloads/` and shows the download buttons in the browser.
+
+`npm run build:app` (Vite mode `app`) produces the build hosted by the Android, portable and Tauri shells, with no downloads inside. Without this split, every APK would contain the previous APK. Note that mode `app` loads `.env.app` / `.env.app.local`, not `.env.production`.
+
+---
+
+## 2. Keyboard shortcuts (§30)
+
+Editor shortcuts (`apps/editor/src/editor/EditorScreen.tsx`). They are ignored while typing in a field or when a dialog is open.
+
+| Shortcut | Action |
+|---|---|
+| `Ctrl + S` | Save the project |
+| `Ctrl + P` | Play / pause |
+| `Escape` | Stop play mode (restores the edit-time scene) |
+| `Ctrl + Z` | Undo |
+| `Ctrl + Shift + Z` or `Ctrl + Y` | Redo |
+| `Ctrl + D` | Duplicate the selected object |
+| `Delete` / `Backspace` | Delete the selected object |
+| `F` | Frame the selected object |
+| `W` / `E` / `R` | Move / rotate / scale gizmo |
+| `Ctrl + K` | Search (on the Home, Projects, Assets, Learn and Settings screens) |
+
+---
+
+## 3. Desktop quality (§22)
+
+Desktops start at **Medium**. A discrete GPU raises that to **High**, and a high-end GPU with 8 or more CPU cores to **Ultra**. Older integrated graphics drop to **Low** (`packages/core/src/perf/device-tier.ts`). The top presets in `packages/core/src/perf/profiles.ts` are:
+
+| Preset | Shadow map | Antialiasing | Max pixel ratio | Draw distance | Play-mode FPS cap |
+|---|---|---|---|---|---|
+| High | 1024 | on | 2 | 600 m | 60 |
+| Ultra | 2048 | on | 2.5 | 1000 m | 60 |
+
+Frame-rate caps of 90 and 120 FPS can be chosen in **Settings → Graphics**. The editor still renders only when something changes, so an idle editor uses no GPU time on desktop either.
+
+---
+
+## 4. Tauri build (not yet verified)
+
+Requirements: Node.js ≥ 22.18, the Rust toolchain (`rustup`), and WebView2 (included in Windows 10/11).
+
+```bash
+cd apps/desktop
+npm run build        # runs `npm run build:app` first (tauri.conf.json → beforeBuildCommand)
+```
+
+Installers are written to `apps/desktop/src-tauri/target/release/bundle/`. Before the first Tauri release:
+- build and test it;
+- inventory Rust crate licences (`cargo about`);
+- sign the installer.

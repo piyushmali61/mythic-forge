@@ -25,17 +25,17 @@
 </p>
 
 <p align="center" id="direct-downloads">
-  <a href="https://github.com/piyushmali61/mythic-forge/raw/main/apps/editor/public/downloads/MythicForge-Mobile-v0.1.0.apk">
-    <img src="https://img.shields.io/badge/📱_Download_Mobile-Android_APK_(41.3_MB)-2ea44f?style=for-the-badge&logo=android&logoColor=white" alt="Download Mobile APK" />
+  <a href="https://github.com/piyushmali61/mythic-forge/raw/main/downloads/MythicForge-Mobile-v0.1.0.apk">
+    <img src="https://img.shields.io/badge/📱_Download_Mobile-Android_APK_(6.4_MB)-2ea44f?style=for-the-badge&logo=android&logoColor=white" alt="Download Mobile APK" />
   </a>
   &nbsp;&nbsp;
-  <a href="https://github.com/piyushmali61/mythic-forge/raw/main/apps/editor/public/downloads/MythicForge-Windows-x64-v0.1.0.zip">
-    <img src="https://img.shields.io/badge/💻_Download_PC-Windows_64--bit_(2.6_MB)-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download PC App" />
+  <a href="https://github.com/piyushmali61/mythic-forge/raw/main/downloads/MythicForge-Windows-x64-v0.1.0.zip">
+    <img src="https://img.shields.io/badge/💻_Download_PC-Windows_portable_(1.7_MB)-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download PC App" />
   </a>
 </p>
 
 <p align="center">
-  <em>⚡ Direct download with required files only — 100% offline-first, no bloatware, zero installation needed.</em>
+  <em>⚡ Works fully offline. The Windows edition is portable (unzip and run <code>MythicForge.exe</code>).<br />The APK is a debug-signed test build: allow installs from this source on your phone.</em>
 </p>
 
 ---
@@ -58,7 +58,7 @@ $$\text{PHONE} \longrightarrow \text{LAPTOP} \longrightarrow \text{PC}$$
 
 It delivers a smooth, professional 3D authoring experience while prioritizing:
 - **Low Battery Consumption:** Render-on-demand editor draws **0 FPS when idle**, dropping CPU and GPU load to zero.
-- **Low Memory & Footprint:** Compact APK ($\approx 4.9\text{ MB}$), tiny memory footprint ($\le 150\text{ MB}$ RAM on mobile).
+- **Low Memory & Footprint:** a 6.4 MB APK and a 1.7 MB Windows download. The memory budget is 150 MB on phones with the demo open (see [performance.md](docs/performance.md)).
 - **100% Offline-First:** Fully functional without internet connectivity.
 - **Strict Legal Licensing:** Every bundled asset is verified against a 10-point distribution gate.
 - **Cross-Platform Portability:** Portable `.mfpack` container transfers projects seamlessly between Android phones, tablets, laptops, and desktop PCs.
@@ -152,8 +152,11 @@ npm run check
 
 ### Production Build
 ```bash
-# Build editor and standalone player bundles (apps/editor/dist)
+# Web build: editor + player bundles + the downloads/ folder (apps/editor/dist)
 npm run build
+
+# App build for the Android / Windows / Tauri shells (same, without downloads/)
+npm run build:app
 
 # Preview production build locally (http://localhost:4173)
 npm run preview
@@ -165,7 +168,7 @@ npm run preview
 
 ### A. Android (Capacitor Shell)
 Hosted in `apps/android`:
-- **Shell:** Capacitor 8 wrapper around the production web build.
+- **Shell:** Capacitor 8 wrapper around the app build (`npm run build:app`).
 - **Thermal Management:** Native Java plugin (`ThermalStatusPlugin.java`) bridges `PowerManager` thermal status to the engine.
 - **Permissions:** Minimal install-time `INTERNET` permission; zero runtime permissions requested.
 - **Build APK:**
@@ -173,22 +176,21 @@ Hosted in `apps/android`:
   npm run android:sync
   cd apps/android/android
   ./gradlew assembleDebug
+  cd ../../..
+  npm run package:android   # copies the APK to downloads/
   ```
+- **Tested:** Android 17 emulator. Real-device testing is still to do. See [docs/android.md](docs/android.md#6-verified-on).
 
-### B. Windows Desktop (Tauri 2 Shell)
-Hosted in `apps/desktop`:
-- **Shell:** Lightweight Rust container leveraging Microsoft Edge WebView2.
-- **Native binary size:** $\approx 5\text{–}10\text{ MB}$.
-- **Build Exe:**
+### B. Windows
+- **Portable edition (available now):** `MythicForge.exe` is a 190 KB C# launcher (`tools/desktop/Launcher.cs`). It serves the app on `127.0.0.1:47831` and opens it in a Microsoft Edge app window with its own profile. No installer and no admin rights are needed.
   ```bash
-  npm run build
-  cd apps/desktop
-  npm run build
+  python tools/desktop/package-windows.py   # builds and writes downloads/MythicForge-Windows-x64-v0.1.0.zip
   ```
+- **Tauri 2 shell (`apps/desktop`, not built or tested yet):** a native WebView2 window with NSIS/MSI installers. Building it needs the Rust toolchain; see [docs/windows.md](docs/windows.md#4-tauri-build-not-yet-verified).
 
 ### C. Web / PWA
 - Supported out-of-the-box in modern browsers with WebGL 2 support.
-- Fully offline capable via Service Worker (`sw.js`).
+- Fully offline capable via Service Worker (`sw.js`). The standalone downloads are offered only here and are never precached.
 
 ---
 
@@ -208,6 +210,7 @@ mythic-forge/
 │   ├── official/       # In-house Mythic Bharat Studios catalog (MBS-ASSET-1.0)
 │   ├── free-open/      # Public-domain CC0 1.0 catalog
 │   └── licenses/       # Preserved full legal texts
+├── downloads/          # Standalone Android APK and Windows portable zip (served by the web build)
 ├── examples/           # Reference demo project (Shrine of Lamps) and .mfpack archives
 ├── tools/              # Verification, benchmark, icon, and asset generation scripts
 └── docs/               # Comprehensive subsystem architectural documentation
