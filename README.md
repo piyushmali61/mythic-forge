@@ -10,18 +10,26 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status" />
-  <img src="https://img.shields.io/badge/license-Proprietary%20%7C%20All%20Rights%20Reserved-red.svg" alt="License" />
-  <img src="https://img.shields.io/badge/producer-Mythic%20Bharat%20Studios-gold.svg" alt="Producer" />
-  <img src="https://img.shields.io/badge/platforms-Android%20%7C%20Windows%20%7C%20Web-orange.svg" alt="Platforms" />
+  <a href="docs/testing.md">
+    <img src="https://img.shields.io/badge/build-142%20passing-brightgreen.svg" alt="Build Status — 142 Passing" />
+  </a>
+  <a href="LICENSE.md">
+    <img src="https://img.shields.io/badge/license-Proprietary%20%7C%20All%20Rights%20Reserved-red.svg" alt="License: Proprietary — All Rights Reserved" />
+  </a>
+  <a href="#9-about-mythic-bharat-studios">
+    <img src="https://img.shields.io/badge/producer-Mythic%20Bharat%20Studios-gold.svg" alt="Producer: Mythic Bharat Studios" />
+  </a>
+  <a href="#direct-downloads">
+    <img src="https://img.shields.io/badge/platforms-Android%20%7C%20Windows%20%7C%20Web-orange.svg" alt="Platforms: Android | Windows | Web" />
+  </a>
 </p>
 
-<p align="center">
-  <a href="apps/editor/public/downloads/MythicForge-Mobile-v0.1.0.apk">
-    <img src="https://img.shields.io/badge/📱_Download_Mobile-Android_APK_(20.7_MB)-2ea44f?style=for-the-badge&logo=android&logoColor=white" alt="Download Mobile APK" />
+<p align="center" id="direct-downloads">
+  <a href="https://github.com/piyushmali61/mythic-forge/raw/main/apps/editor/public/downloads/MythicForge-Mobile-v0.1.0.apk">
+    <img src="https://img.shields.io/badge/📱_Download_Mobile-Android_APK_(41.3_MB)-2ea44f?style=for-the-badge&logo=android&logoColor=white" alt="Download Mobile APK" />
   </a>
   &nbsp;&nbsp;
-  <a href="apps/editor/public/downloads/MythicForge-Windows-x64-v0.1.0.zip">
+  <a href="https://github.com/piyushmali61/mythic-forge/raw/main/apps/editor/public/downloads/MythicForge-Windows-x64-v0.1.0.zip">
     <img src="https://img.shields.io/badge/💻_Download_PC-Windows_64--bit_(2.6_MB)-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download PC App" />
   </a>
 </p>
@@ -234,3 +242,20 @@ For deep technical specifications, refer to the documentation in `docs/`:
 - **Official Assets:** Licensed under `MBS-ASSET-1.0` (free for use in personal & commercial projects made with Mythic Forge).
 - **Free & Open Assets:** Dedicated to the public domain under Creative Commons `CC0-1.0` ([assets/licenses/CC0-1.0.md](assets/licenses/CC0-1.0.md)).
 - **Third-Party Open-Source Components:** Permissively licensed (MIT / Apache-2.0). Complete notices and copyright statements are preserved and documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+---
+
+## 9. About Mythic Bharat Studios
+
+<p align="center">
+  <img src="apps/editor/public/icons/logo.svg" alt="Mythic Bharat Studios Logo" width="100" height="100" />
+</p>
+
+**Mythic Bharat Studios** is an independent technology and creative studio pioneering accessible, culturally-inspired, and performance-optimized 3D game engines, interactive simulations, and digital experiences.
+
+- **Brand:** Mythic Bharat Studios
+- **Product:** Mythic Forge — *Create. Build. Play.*
+- **Philosophy:** A powerful creation engine that respects the device.
+- **Repository:** [https://github.com/piyushmali61/mythic-forge](https://github.com/piyushmali61/mythic-forge)
+- **Official Contact & Releases:** Hosted on GitHub.
+
