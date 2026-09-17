@@ -1,74 +1,86 @@
-"""Packages the standalone portable Windows PC edition of Mythic Forge.
-Contains ONLY the required runtime and compiled application assets.
+"""Packages the portable Windows edition of Mythic Forge into downloads/.
+
+The package is MythicForge.exe (tools/desktop/Launcher.cs, compiled with the csc.exe that ships
+with the .NET Framework 4) plus the editor built for app shells (`npm run build:app`), which
+leaves out the downloads themselves. The launcher serves the files on 127.0.0.1 and opens them
+in a Microsoft Edge app window; see docs/windows.md.
+
+Usage: python tools/desktop/package-windows.py [--skip-build]
 """
+import json
 import os
 import shutil
+import subprocess
+import sys
+import tempfile
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DIST = ROOT / "apps" / "editor" / "dist"
-LAUNCHER = ROOT / "MythicForge.exe"
-DOWNLOADS_PUBLIC = ROOT / "apps" / "editor" / "public" / "downloads"
-DOWNLOADS_PUBLIC.mkdir(parents=True, exist_ok=True)
+DOWNLOADS = ROOT / "downloads"
+CSC = Path(os.environ.get("WINDIR", r"C:\Windows")) / "Microsoft.NET" / "Framework64" / "v4.0.30319" / "csc.exe"
+VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]
 
-PACKAGE_DIR = ROOT / "dist-windows-staging"
-if PACKAGE_DIR.exists():
-    shutil.rmtree(PACKAGE_DIR)
-PACKAGE_DIR.mkdir(parents=True, exist_ok=True)
+README = f"""MYTHIC FORGE {VERSION} - Windows 64-bit portable edition
+Produced by Mythic Bharat Studios. Create. Build. Play.
 
-# 1. Compile or copy MythicForge.exe
-if not LAUNCHER.exists():
-    csc = r"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
-    icon = ROOT / "apps" / "desktop" / "src-tauri" / "icons" / "icon.ico"
-    launcher_cs = ROOT / "tools" / "desktop" / "Launcher.cs"
-    cmd = f'"{csc}" /target:winexe /out:"{LAUNCHER}" /win32icon:"{icon}" /r:System.Windows.Forms.dll "{launcher_cs}"'
-    os.system(cmd)
+HOW TO RUN
+1. Extract the whole folder anywhere on your PC.
+2. Double-click MythicForge.exe.
 
-shutil.copy(LAUNCHER, PACKAGE_DIR / "MythicForge.exe")
+Mythic Forge opens in a Microsoft Edge app window (Edge is part of Windows 10 and 11).
+Everything runs on this PC: the launcher serves the app on 127.0.0.1 port 47831 and
+needs no internet connection. Projects are saved in the app window's own storage under
+%LOCALAPPDATA%\\MythicBharatStudios\\MythicForge. Export important projects
+(Project > Export .mfpack) to keep a copy you can move to other devices.
 
-# 2. Copy compiled app/ folder
-app_dest = PACKAGE_DIR / "app"
-shutil.copytree(DIST, app_dest, ignore=shutil.ignore_patterns("downloads", "*.zip", "*.apk"))
+Documentation: https://github.com/piyushmali61/mythic-forge
 
-# 3. Create README.txt
-readme_content = """========================================================
-MYTHIC FORGE v0.1.0 (Windows 64-bit Desktop Edition)
-Produced by Mythic Bharat Studios
-Create. Build. Play.
-========================================================
-
-HOW TO RUN:
-1. Extract this folder anywhere on your PC.
-2. Double-click "MythicForge.exe" to start creating!
-
-FEATURES:
-- 100% Offline-First (No internet required)
-- Zero Installation Required (Fully portable)
-- Low Battery Consumption (0 FPS render-on-demand when idle)
-- Cross-platform .mfpack project compatibility
-
-Documentation & Updates:
-https://github.com/piyushmali61/mythic-forge
-
-© 2026 Mythic Bharat Studios. All Rights Reserved.
-========================================================
+(c) 2026 Mythic Bharat Studios. All rights reserved. See LICENSE.txt.
+Open-source components: app/THIRD_PARTY_NOTICES.md
 """
-(PACKAGE_DIR / "README.txt").write_text(readme_content, encoding="utf-8")
 
-# 4. Create ZIP archive
-zip_name = "MythicForge-Windows-x64-v0.1.0.zip"
-zip_public_path = DOWNLOADS_PUBLIC / zip_name
 
-with zipfile.ZipFile(zip_public_path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
-    for root, dirs, files in os.walk(PACKAGE_DIR):
-        for file in files:
-            full_path = Path(root) / file
-            rel_path = full_path.relative_to(PACKAGE_DIR)
-            zf.write(full_path, arcname=Path("MythicForge") / rel_path)
+def run(cmd):
+    print("$", " ".join(str(c) for c in cmd))
+    subprocess.run(cmd, cwd=ROOT, check=True, shell=(os.name == "nt"))
 
-# Cleanup staging
-shutil.rmtree(PACKAGE_DIR)
 
-size_mb = os.path.getsize(zip_public_path) / (1024 * 1024)
-print(f"Created PC Download Package: {zip_public_path} ({size_mb:.2f} MB)")
+def main():
+    if not CSC.exists():
+        sys.exit(f"csc.exe not found at {CSC} (the .NET Framework 4 compiler ships with Windows).")
+    if "--skip-build" not in sys.argv:
+        run(["npm", "run", "build:app"])
+    if not (DIST / "index.html").exists():
+        sys.exit(f"No editor build at {DIST}. Run `npm run build:app` first.")
+    if (DIST / "downloads").exists():
+        sys.exit("The editor build contains downloads/: it is a web build. Run `npm run build:app`.")
+
+    with tempfile.TemporaryDirectory(prefix="mf-windows-") as tmp:
+        stage = Path(tmp) / "MythicForge"
+        stage.mkdir()
+        subprocess.run(
+            [str(CSC), "-nologo", "-target:winexe", "-optimize+",
+             f"-out:{stage / 'MythicForge.exe'}",
+             f"-win32icon:{ROOT / 'apps' / 'desktop' / 'src-tauri' / 'icons' / 'icon.ico'}",
+             "-r:System.Windows.Forms.dll",
+             str(ROOT / "tools" / "desktop" / "Launcher.cs")],
+            check=True,
+        )
+        shutil.copytree(DIST, stage / "app")
+        shutil.copy(ROOT / "THIRD_PARTY_NOTICES.md", stage / "app" / "THIRD_PARTY_NOTICES.md")
+        shutil.copy(ROOT / "LICENSE", stage / "LICENSE.txt")
+        (stage / "README.txt").write_text(README.replace("\n", "\r\n"), encoding="utf-8")
+
+        DOWNLOADS.mkdir(exist_ok=True)
+        out = DOWNLOADS / f"MythicForge-Windows-x64-v{VERSION}.zip"
+        with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
+            for path in sorted(stage.rglob("*")):
+                if path.is_file():
+                    zf.write(path, path.relative_to(stage.parent).as_posix())
+    print(f"Created {out.relative_to(ROOT)} ({out.stat().st_size / 1048576:.2f} MB)")
+
+
+if __name__ == "__main__":
+    main()
