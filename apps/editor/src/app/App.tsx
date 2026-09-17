@@ -6,6 +6,7 @@ import { Projects } from '../screens/Projects.tsx';
 import { SearchOverlay, searchOpen } from '../screens/SearchOverlay.tsx';
 import { Templates } from '../screens/Templates.tsx';
 import { Icon, type IconName } from '../ui/Icon.tsx';
+import { detectShell } from '@mythic-forge/platform';
 import { DialogHost, ToastHost } from '../ui/hosts.tsx';
 import { lazyComponent } from '../ui/lazy.tsx';
 import { config } from '../lib/config.ts';
@@ -43,6 +44,7 @@ const NAV: { route: Route['name']; label: string; icon: IconName; target: Route;
 
 function Shell({ children }: { children: preact.ComponentChildren }) {
   const current = route.value.name === 'new-project' ? 'projects' : route.value.name;
+  const shell = detectShell();
   return (
     <div class="shell">
       <nav class="nav" aria-label="Main">
@@ -70,7 +72,8 @@ function Shell({ children }: { children: preact.ComponentChildren }) {
           <span>Search</span>
           <kbd style={{ marginLeft: 'auto', fontSize: '0.75em' }}>Ctrl K</kbd>
         </button>
-        <div style={{ padding: '8px 12px', display: 'flex', flexDirection: 'column', gap: '6px', borderTop: '1px solid var(--line, #2a2824)', marginTop: '8px' }}>
+        {shell === 'browser' && (
+        <div class="desktop-only" style={{ padding: '8px 12px', display: 'flex', flexDirection: 'column', gap: '6px', borderTop: '1px solid var(--line, #2a2824)', marginTop: '8px' }}>
           <div style={{ fontSize: '0.72rem', color: 'var(--muted, #888)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Downloads</div>
           <a
             href="./downloads/MythicForge-Mobile-v0.1.0.apk"
@@ -93,6 +96,7 @@ function Shell({ children }: { children: preact.ComponentChildren }) {
             <span>PC App (Win)</span>
           </a>
         </div>
+        )}
         <div class="nav-footer">
           <div class="offline-pill">
             <Icon name={online.value ? 'wifi' : 'wifi-off'} size={14} />

@@ -1,3 +1,4 @@
+import { Capacitor } from '@capacitor/core';
 import {
   MemoryFileSystem,
   MemoryKeyValueStore,
@@ -28,11 +29,17 @@ export interface AppPlatform extends Platform {
 }
 
 export function detectShell(): ShellKind {
+  try {
+    if (Capacitor.isNativePlatform()) return 'capacitor';
+  } catch {
+    // Fall back to window inspection if Capacitor hasn't initialized yet
+  }
   const w = globalThis as unknown as {
+    androidBridge?: unknown;
     Capacitor?: { isNativePlatform?: () => boolean };
     __TAURI_INTERNALS__?: unknown;
   };
-  if (w.Capacitor?.isNativePlatform?.()) return 'capacitor';
+  if (w.androidBridge || w.Capacitor?.isNativePlatform?.()) return 'capacitor';
   if (w.__TAURI_INTERNALS__) return 'tauri';
   return 'browser';
 }

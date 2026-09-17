@@ -104,8 +104,9 @@
   }
   .brand,
   .nav-footer,
+  .desktop-only,
   .nav-item.desktop-only {
-    display: none;
+    display: none !important;
   }
   .nav-item {
     flex-direction: column;

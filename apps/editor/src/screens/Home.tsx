@@ -1,6 +1,7 @@
 import type { ComponentChildren } from 'preact';
 import { createDemoProject, importProjectFile } from '../app/project-actions.ts';
 import { navigate, projects, projectsLoaded, type Route } from '../app/state.ts';
+import { detectShell } from '@mythic-forge/platform';
 import { NotImplemented } from '../ui/common.tsx';
 import { Icon, type IconName } from '../ui/Icon.tsx';
 import { searchOpen } from './SearchOverlay.tsx';
@@ -34,6 +35,7 @@ function Tile({ icon, title, text, to, onClick, disabled, extra }: { icon: IconN
 
 export function Home() {
   const recent = projects.value.filter((p) => !p.archived).slice(0, 3);
+  const shell = detectShell();
   return (
     <div class="page">
       <section class="hero" aria-label="Welcome">
@@ -52,6 +54,7 @@ export function Home() {
         </div>
       </section>
 
+      {shell === 'browser' && (
       <section class="card" style={{ padding: '16px 20px', background: 'linear-gradient(135deg, rgba(35,32,26,0.92), rgba(20,18,15,0.98))', border: '1px solid rgba(214,168,79,0.3)', borderRadius: '12px', marginTop: '16px', marginBottom: '8px' }}>
         <div class="row wrap" style={{ alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
           <div class="row" style={{ alignItems: 'center', gap: '14px' }}>
@@ -83,6 +86,7 @@ export function Home() {
           </div>
         </div>
       </section>
+      )}
 
       <section class="section" aria-labelledby="recent-h">
         <h2 class="section-title" id="recent-h">

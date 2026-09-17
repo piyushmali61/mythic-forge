@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mythic Bharat Studios brand colours for native UI elements (status bar, splash). -->
+    <color name="colorPrimary">#d6a84f</color>
+    <color name="colorPrimaryDark">#121110</color>
+    <color name="colorAccent">#d6a84f</color>
+</resources>

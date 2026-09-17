@@ -9,8 +9,8 @@
   },
   "android": {
     "allowMixedContent": false,
-    "captureInput": false,
-    "webContentsDebuggingEnabled": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true,
     "backgroundColor": "#121110",
     "adjustMarginsForEdgeToEdge": "auto"
   }

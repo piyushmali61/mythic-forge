@@ -31,6 +31,7 @@ import {
 import { config } from '../../lib/config.ts';
 import { renderMarkdown } from '../../lib/markdown.ts';
 import { currentQuality } from '../../lib/quality.ts';
+import { detectShell } from '@mythic-forge/platform';
 import { Callout, Modal, NotImplemented, Segmented } from '../../ui/common.tsx';
 import { Toggle } from '../../ui/fields.tsx';
 import { Icon } from '../../ui/Icon.tsx';
@@ -812,6 +813,7 @@ export function AboutSection() {
         </dd>
       </dl>
 
+      {detectShell() === 'browser' && (
       <div class="card" style={{ marginTop: '16px', padding: '16px', border: '1px solid rgba(214,168,79,0.3)', borderRadius: '10px' }}>
         <div style={{ fontWeight: 700, marginBottom: '6px', color: 'var(--gold)' }}>OFFICIAL NATIVE DOWNLOADS</div>
         <p class="muted" style={{ fontSize: '0.9em', marginBottom: '12px' }}>
@@ -836,6 +838,7 @@ export function AboutSection() {
           </a>
         </div>
       </div>
+      )}
 
       <h3 style={{ marginTop: '22px' }}>Licences</h3>
       <p class="muted">
