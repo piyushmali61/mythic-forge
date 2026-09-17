@@ -24,23 +24,23 @@ Mythic Forge includes an automatic runtime governor (`packages/core/src/perf/gov
 
 $$\text{Frame Time} > \text{Budget} \quad\text{or}\quad \text{Thermal Throttling Event}$$
 
-### Progressive Quality Degradation
-Rather than abrupt scene degradation, the governor throttles settings gradually in 3 distinct stages:
+### Progressive quality degradation
 
-```
-[Target: 60 FPS / Normal Temperature]
-               │
-               ▼ (Consecutive frame spikes > budget)
-Stage 1: Disable Shadows & Soft Shadow Filtering
-               │
-               ▼ (Performance remains constrained)
-Stage 2: Reduce Render Resolution Scaling (e.g. 1.0x ──► 0.75x)
-               │
-               ▼ (Device thermally throttled)
-Stage 3: Cap Target Frame Rate to 30 FPS & Reduce Draw Distance
-```
+The governor works only while a game runs (it gets no samples from the idle editor). It keeps a window of the last 45 frame intervals. When at least 25% of them are over 1.35× the frame budget, it moves one step down the ladder, waiting at least 3 s between changes. Each step builds on the previous ones, cheapest to notice first:
 
-When conditions normalize, quality settings gradually recover after a stabilized 10-second hysteresis window.
+1. Shadow quality one step lower
+2. Shadows off
+3. Reflections off
+4. Render scale ≤ 0.85
+5. Render scale ≤ 0.7
+6. Draw distance ≤ 150 m
+7. LOD distance ≤ ×0.5 (simpler models appear sooner)
+8. Render scale ≤ 0.55 and pixel ratio 1
+9. Frame rate ≤ 30 FPS
+
+It steps back up one level at a time. That happens only after 12 s without slow frames, and only if CPU work per frame stays below half of the budget of the level it would move to.
+
+**Thermal input** comes from the platform as events and is never polled. `serious` forces at least step 4, and `critical` forces every step. While the device reports `fair`, quality is never raised. Under `serious` or `critical`, it is never raised past the forced step.
 
 ---
 

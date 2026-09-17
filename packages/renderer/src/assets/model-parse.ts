@@ -1,5 +1,6 @@
 import { UserFacingError, type FileFormat } from '@mythic-forge/core';
 import { parseGltf, sandboxedManager, toArrayBuffer, type InputFile, type ParsedModel } from './glb.ts';
+import { stripLods } from './lod.ts';
 
 export type { InputFile, ParsedModel } from './glb.ts';
 
@@ -44,6 +45,7 @@ export async function parseModel(main: InputFile, format: FileFormat, companions
     }
     // OBJ/FBX textures load asynchronously through the manager; wait for them.
     await sandbox.settled();
+    stripLods(result.root);
     if (blocked.length > 0) {
       warnings.push(
         `${blocked.length} external file reference(s) could not be resolved and were skipped. Select the model's texture/buffer files together with it.`,

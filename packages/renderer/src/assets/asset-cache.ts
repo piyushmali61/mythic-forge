@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { clone as cloneSkinned } from 'three/addons/utils/SkeletonUtils.js';
 import { decodeTexture, downscaleTexture } from './images.ts';
 import { parseGlb } from './glb.ts';
+import { buildLods } from './lod.ts';
 
 export interface LoadedAssetBytes {
   bytes: Uint8Array;
@@ -116,6 +117,7 @@ export class AssetCache {
       const { root, animations } = await parseGlb(data.bytes);
       // Clones copy this list, so every instance can create its own animation mixer.
       root.animations = animations;
+      buildLods(root);
       root.traverse((o) => {
         const mesh = o as THREE.Mesh;
         if (!mesh.isMesh) return;

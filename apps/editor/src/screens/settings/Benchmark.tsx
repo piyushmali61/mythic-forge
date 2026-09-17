@@ -101,7 +101,7 @@ export function BenchmarkModal({ onClose }: { onClose: () => void }) {
         const { analyzeModel, optimizeModel } = await import('@mythic-forge/renderer/importer');
         t = performance.now();
         const analysis = await analyzeModel({ name: 'sample.glb', bytes }, 'glb', []);
-        await optimizeModel(analysis, { compressTextures: true, textureQuality: 0.85, maxTextureSize: 1024, generateMipmaps: true, optimizeMesh: true, removeUnused: true, generateCollider: true });
+        await optimizeModel(analysis, { compressTextures: true, textureQuality: 0.85, maxTextureSize: 1024, generateMipmaps: true, optimizeMesh: true, removeUnused: true, generateCollider: true, generateLods: true });
         values.assetImport = performance.now() - t;
         mark(3, 'done', `${values.assetImport.toFixed(0)} ms (${sample.name})`);
       } else {

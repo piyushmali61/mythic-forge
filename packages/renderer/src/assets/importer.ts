@@ -10,6 +10,7 @@ import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
 import { canvasToBytes, decodeTexture, downscaleTexture, fitSize, imageSize, makeCanvas, textureBytesEstimate } from './images.ts';
 import { parseGlb, type InputFile, type ParsedModel } from './glb.ts';
+import { LOD_MIN_TRIANGLES, generateLods, isLodCopy } from './lod.ts';
 import { parseModel } from './model-parse.ts';
 
 /** Recommended ceilings for mobile-friendly assets (warnings, not hard limits). */
@@ -49,6 +50,8 @@ export interface ModelAnalysis {
 
 function collect(root: THREE.Object3D) {
   const geometries = new Set<THREE.BufferGeometry>();
+  /** Geometry of simplified LOD copies: uses memory, but isn't extra model content. */
+  const lodGeometries = new Set<THREE.BufferGeometry>();
   const materials = new Set<THREE.Material>();
   const textures = new Set<THREE.Texture>();
   const bones = new Set<THREE.Bone>();
@@ -56,6 +59,10 @@ function collect(root: THREE.Object3D) {
   root.traverse((obj) => {
     const mesh = obj as THREE.Mesh;
     if (!mesh.isMesh) return;
+    if (isLodCopy(mesh)) {
+      lodGeometries.add(mesh.geometry);
+      return;
+    }
     meshes++;
     geometries.add(mesh.geometry);
     const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
@@ -70,7 +77,7 @@ function collect(root: THREE.Object3D) {
     const skinned = obj as THREE.SkinnedMesh;
     if (skinned.isSkinnedMesh) for (const b of skinned.skeleton.bones) bones.add(b);
   });
-  return { geometries, materials, textures, bones, meshes };
+  return { geometries, lodGeometries, materials, textures, bones, meshes };
 }
 
 function geometryStats(geometries: Set<THREE.BufferGeometry>): { vertices: number; triangles: number; bytes: number } {
@@ -92,8 +99,9 @@ function geometryStats(geometries: Set<THREE.BufferGeometry>): { vertices: numbe
 }
 
 export function analyzeParsed(parsed: ParsedModel, name: string, format: FileFormat, fileBytes: number, warnings: string[]): ModelAnalysis {
-  const { geometries, materials, textures, bones, meshes } = collect(parsed.root);
+  const { geometries, lodGeometries, materials, textures, bones, meshes } = collect(parsed.root);
   const geo = geometryStats(geometries);
+  const lodBytes = geometryStats(lodGeometries).bytes;
   const textureInfos: TextureInfo[] = [];
   let textureBytes = 0;
   for (const t of textures) {
@@ -132,7 +140,7 @@ export function analyzeParsed(parsed: ParsedModel, name: string, format: FileFor
             boundsMin: [box.min.x, box.min.y, box.min.z],
             boundsMax: [box.max.x, box.max.y, box.max.z],
           }),
-      gpuBytesEstimate: geo.bytes + textureBytes,
+      gpuBytesEstimate: geo.bytes + lodBytes + textureBytes,
     },
     textures: textureInfos,
     geometryBytes: geo.bytes,
@@ -156,8 +164,15 @@ export function estimateOptimizedGpuBytes(analysis: ModelAnalysis, settings: Imp
     const size = fitSize(t.width, t.height, settings.maxTextureSize);
     textures += textureBytesEstimate(size.width, size.height, settings.generateMipmaps);
   }
-  const geometry = settings.optimizeMesh ? Math.round(analysis.geometryBytes * 0.8) : analysis.geometryBytes;
+  let geometry = settings.optimizeMesh ? Math.round(analysis.geometryBytes * 0.8) : analysis.geometryBytes;
+  // LOD copies add roughly 35% + 12% of the geometry of large meshes.
+  if (lodsApply(analysis, settings)) geometry = Math.round(geometry * 1.47);
   return geometry + textures;
+}
+
+/** LODs are generated only for static models with at least one large mesh. */
+export function lodsApply(analysis: ModelAnalysis, settings: ImportSettings): boolean {
+  return settings.generateLods && (analysis.stats.animations ?? 0) === 0 && (analysis.stats.triangles ?? 0) >= LOD_MIN_TRIANGLES;
 }
 
 export interface OptimizeResult {
@@ -200,6 +215,20 @@ export async function optimizeModel(analysis: ModelAnalysis, settings: ImportSet
     });
     for (const original of replaced.keys()) original.dispose();
     if (before > 0) notes.push(`Merged duplicate vertices: ${before.toLocaleString()} → ${after.toLocaleString()}.`);
+  }
+
+  if (settings.generateLods) {
+    if (animations.length > 0) {
+      notes.push('LODs were not generated: the model is animated.');
+    } else {
+      const lod = generateLods(root);
+      if (lod.meshes > 0) {
+        const levels = lod.levelTriangles.filter((t) => t > 0).map((t) => t.toLocaleString());
+        notes.push(`Generated LODs for ${lod.meshes} mesh(es): ${lod.triangles.toLocaleString()} → ${levels.join(' → ')} triangles.`);
+      } else {
+        notes.push(`No LODs needed: no mesh has ${LOD_MIN_TRIANGLES.toLocaleString()} triangles or more.`);
+      }
+    }
   }
 
   let resized = 0;

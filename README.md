@@ -100,7 +100,7 @@ One-click switch to real-time 60 FPS gameplay, dynamic diya lighting, player con
 - **Project Manager & Wizard:** Create, duplicate, archive, import, and export projects with customizable templates (Basic 3D, Platformer, Third Person, First Person, Shrine of Lamps).
 - **3D Scene Editor:** Clean, responsive workspace featuring scene hierarchy trees, transform gizmos (Move, Rotate, Scale), camera controls (Orbit, Fly, Pan, Touch gestures), and entity inspectors.
 - **Built-in 3D Primitives & PBR Materials:** Instantly spawn Cubes, Spheres, Cylinders, Capsules, Planes, Directional Lights, Point Lights, and Ambient Lights.
-- **Model Import Pipeline:** Import and optimize external GLB, glTF, OBJ, WebP, PNG, JPEG, and audio assets with real-time geometry analysis and bounding box calculation.
+- **Model Import Pipeline:** Import and optimize external GLB, glTF, OBJ, FBX (experimental), WebP, PNG, JPEG, and audio assets with real-time geometry analysis and bounding box calculation. Large meshes get automatic **LODs**: simpler copies drawn at a distance, with switch distances set by the quality level.
 - **Curated Asset Libraries:**
   - **Official Mythic Bharat Studios Library:** Original in-house Indian architecture, temples, carved pillars, torana gateways, and glowing diya lamps (`MBS-ASSET-1.0`).
   - **Free & Open Library:** Verified CC0 1.0 public domain game starter models (rocks, wooden crates, ground tiles, earthenware urns) and PBR materials.

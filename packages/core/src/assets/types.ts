@@ -56,6 +56,8 @@ export interface ImportSettings {
   optimizeMesh: boolean;
   removeUnused: boolean;
   generateCollider: boolean;
+  /** Add simplified copies of large meshes for distant views. */
+  generateLods: boolean;
 }
 
 export const DEFAULT_IMPORT_SETTINGS: ImportSettings = {
@@ -66,6 +68,7 @@ export const DEFAULT_IMPORT_SETTINGS: ImportSettings = {
   optimizeMesh: true,
   removeUnused: true,
   generateCollider: true,
+  generateLods: true,
 };
 
 /** Stored at `assets/<id>/asset.meta.json` inside a project. */

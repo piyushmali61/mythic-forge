@@ -377,12 +377,7 @@ function ModelReview({ analysis: a, settings, setSettings }: { analysis: ModelAn
       {opt('optimizeMesh', 'Optimise mesh', 'merge duplicate vertices')}
       {opt('removeUnused', 'Remove hidden objects and unused materials')}
       {opt('generateCollider', 'Generate collision', 'box collider from the bounds')}
-      <label class="checkbox" style={{ opacity: 0.6 }}>
-        <input type="checkbox" disabled />
-        <span>
-          Generate LODs <span class="not-implemented">Not implemented</span>
-        </span>
-      </label>
+      {opt('generateLods', 'Generate LODs', 'simpler copies of large meshes for distant views')}
       <div class="field" style={{ maxWidth: '260px', marginTop: '6px' }}>
         <label for="max-tex">Reduce texture resolution to</label>
         <select id="max-tex" class="input" value={String(settings.maxTextureSize)} onChange={(e) => setSettings({ ...settings, maxTextureSize: Number(e.currentTarget.value) })}>

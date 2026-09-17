@@ -31,6 +31,7 @@ If the system's own battery saver is on, Mythic Forge behaves as if Maximum Batt
 ## Making lighter games
 - Keep triangle counts and texture sizes modest (see [Importing](doc:importing-models)).
 - Mark objects that never move as **Static**.
+- Keep **Generate LODs** on when importing detailed models: distant objects then draw with far fewer triangles. **LOD distance** in the quality level decides how soon.
 - Use fog to hide distant detail.
 - Avoid shadows from point lights.
 - Use the **performance overlay** (View menu) and **Settings → Performance → Run benchmark** to measure.

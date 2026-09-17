@@ -517,6 +517,8 @@ export class Viewport {
         this.events.emit('noCamera', { message: 'This scene has no active Main Camera; showing the editor view instead.' });
       }
     }
+    // Read by ScaledLOD: how long models keep full detail at this quality level.
+    camera.userData.lodDistanceScale = this.quality.lodDistance;
     this.renderer.render(this.scene, camera);
     const work = performance.now() - start;
 

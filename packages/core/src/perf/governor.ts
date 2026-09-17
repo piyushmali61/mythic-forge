@@ -18,6 +18,7 @@ const LADDER: readonly Rung[] = [
   { label: 'Reduced render resolution', apply: (s) => ({ ...s, renderScale: Math.min(s.renderScale, 0.85) }) },
   { label: 'Reduced render resolution', apply: (s) => ({ ...s, renderScale: Math.min(s.renderScale, 0.7) }) },
   { label: 'Reduced draw distance', apply: (s) => ({ ...s, drawDistance: Math.min(s.drawDistance, 150) }) },
+  { label: 'Switched to simpler models sooner', apply: (s) => ({ ...s, lodDistance: Math.min(s.lodDistance, 0.5) }) },
   { label: 'Reduced render resolution', apply: (s) => ({ ...s, renderScale: Math.min(s.renderScale, 0.55), maxPixelRatio: 1 }) },
   { label: 'Limited frame rate to 30 FPS', apply: (s) => ({ ...s, targetFps: Math.min(s.targetFps, 30) }) },
 ];

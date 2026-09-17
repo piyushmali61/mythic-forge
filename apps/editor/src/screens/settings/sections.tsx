@@ -249,11 +249,13 @@ export function GraphicsSection() {
         <dd>{q.ambientEffects ? 'On' : 'Off'}</dd>
         <dt>Draw distance</dt>
         <dd>{q.drawDistance} m</dd>
+        <dt>LOD distance</dt>
+        <dd>×{q.lodDistance} (how long models keep full detail as they get farther away)</dd>
         <dt>Why</dt>
         <dd>{resolved.reasons.join(' · ')}</dd>
       </dl>
       <p class="dim" style={{ fontSize: '0.86em', marginTop: '12px' }}>
-        Post-processing, particle density and LOD distance settings will appear when those features are added. <NotImplemented label="Planned" />
+        Post-processing and particle density settings will appear when those features are added. <NotImplemented label="Planned" />
       </p>
     </>
   );

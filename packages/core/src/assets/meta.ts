@@ -49,6 +49,8 @@ export function validateAssetMeta(input: unknown, expectedId: string): Validatio
         optimizeMesh: r.bool(settingsIn.optimizeMesh, 'importSettings.optimizeMesh', true),
         removeUnused: r.bool(settingsIn.removeUnused, 'importSettings.removeUnused', true),
         generateCollider: r.bool(settingsIn.generateCollider, 'importSettings.generateCollider', true),
+        // Assets imported before LODs existed have none.
+        generateLods: r.bool(settingsIn.generateLods, 'importSettings.generateLods', false),
       }
     : null;
 

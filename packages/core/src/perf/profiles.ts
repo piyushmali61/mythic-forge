@@ -12,7 +12,7 @@ export type PerformanceProfileId = (typeof PERFORMANCE_PROFILES)[number];
 
 /**
  * Settings that the renderer actually applies. Settings for features that don't exist yet
- * (post-processing, particles, LOD) are intentionally absent — see docs/performance.md.
+ * (post-processing, particles) are intentionally absent — see docs/performance.md.
  */
 export interface QualitySettings {
   level: QualityLevel;
@@ -30,6 +30,8 @@ export interface QualitySettings {
   ambientEffects: boolean;
   /** Camera far-plane cap in metres. */
   drawDistance: number;
+  /** Multiplier for the distances at which models switch to simpler LOD copies. */
+  lodDistance: number;
   /** Play-mode frame-rate cap. The editor renders on demand regardless. */
   targetFps: number;
 }
@@ -47,6 +49,7 @@ export const QUALITY_PRESETS: Readonly<Record<QualityLevel, QualitySettings>> = 
     reflections: false,
     ambientEffects: false,
     drawDistance: 120,
+    lodDistance: 0.5,
     targetFps: 30,
   },
   low: {
@@ -59,6 +62,7 @@ export const QUALITY_PRESETS: Readonly<Record<QualityLevel, QualitySettings>> = 
     reflections: false,
     ambientEffects: true,
     drawDistance: 200,
+    lodDistance: 0.7,
     targetFps: 30,
   },
   medium: {
@@ -71,6 +75,7 @@ export const QUALITY_PRESETS: Readonly<Record<QualityLevel, QualitySettings>> = 
     reflections: false,
     ambientEffects: true,
     drawDistance: 350,
+    lodDistance: 1,
     targetFps: 30,
   },
   high: {
@@ -83,6 +88,7 @@ export const QUALITY_PRESETS: Readonly<Record<QualityLevel, QualitySettings>> = 
     reflections: true,
     ambientEffects: true,
     drawDistance: 600,
+    lodDistance: 1.5,
     targetFps: 60,
   },
   ultra: {
@@ -95,6 +101,7 @@ export const QUALITY_PRESETS: Readonly<Record<QualityLevel, QualitySettings>> = 
     reflections: true,
     ambientEffects: true,
     drawDistance: 1000,
+    lodDistance: 2.5,
     targetFps: 60,
   },
 };

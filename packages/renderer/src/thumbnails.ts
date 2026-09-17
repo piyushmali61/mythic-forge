@@ -2,6 +2,7 @@ import type { MaterialPresetValues } from '@mythic-forge/core';
 import * as THREE from 'three';
 import { canvasToBytes, makeCanvas } from './assets/images.ts';
 import { parseGlb } from './assets/glb.ts';
+import { buildLods } from './assets/lod.ts';
 
 const IDLE_RELEASE_MS = 20_000;
 
@@ -18,6 +19,7 @@ export class ThumbnailRenderer {
   renderModel(bytes: Uint8Array, size: number): Promise<Uint8Array> {
     return this.enqueue(async () => {
       const { root } = await parseGlb(bytes);
+      buildLods(root);
       try {
         return await this.capture(root, size);
       } finally {

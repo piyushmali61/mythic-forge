@@ -23,7 +23,7 @@ For glTF and OBJ, select the model **together with** its `.bin`, `.mtl` and text
    - **Remove hidden objects and unused materials**
    - **Generate collision** — box collider from the bounds
    - **Reduce texture resolution** — 256 to 4096 px
-   - *Generate LODs* — not implemented yet
+   - **Generate LODs** — for meshes with 2,000+ triangles, adds two simpler copies (about 35% and 12% of the triangles) that are shown when the object is far away. Adds about 40% to the stored size. Animated models are skipped.
 5. Estimated GPU memory before and after is shown. Confirm you have the right to use the files, then **Import**.
 6. Models are saved as an optimised GLB. The result shows the real stored size. Press **Add to scene**.
 

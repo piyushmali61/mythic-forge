@@ -37,19 +37,36 @@ In idle editor state, **GPU utilization is ~0%**, preserving laptop and mobile b
 
 ## 3. Graphics Quality Profiles (§22)
 
-The engine defines five quality profiles that dynamically configure renderer capabilities:
+The five presets live in `packages/core/src/perf/profiles.ts` (`QUALITY_PRESETS`):
 
-| Parameter | Ultra-Low (Budget Mobile) | Low (Entry Mobile) | Medium (Balanced) | High (Standard PC) | Ultra (Gaming PC) |
+| Setting | Ultra Low | Low | Medium | High | Ultra |
 |---|---|---|---|---|---|
-| **Max Render Resolution** | $0.65\times$ Native | $0.75\times$ Native | $1.0\times$ Native | $1.0\times$ Native | $1.0\times$ Native (Max DPR 2) |
-| **Shadow Maps** | Disabled | Disabled | Basic ($512\times 512$) | High ($1024\times 1024$) | Ultra ($2048\times 2048$ Soft) |
-| **Anti-Aliasing** | Off | Off | FXAA | MSAA $2\times$ | MSAA $4\times$ |
-| **Max Draw Distance** | $150\text{ m}$ | $250\text{ m}$ | $500\text{ m}$ | $1000\text{ m}$ | $2000\text{ m}$ |
-| **Target Play FPS** | $30\text{ FPS}$ | $30\text{ FPS}$ | $45\text{ FPS}$ | $60\text{ FPS}$ | $60\text{–}120\text{ FPS}$ |
+| Render scale | 0.6 | 0.8 | 1.0 | 1.0 | 1.0 |
+| Max pixel ratio | 1 | 1 | 1.5 | 2 | 2.5 |
+| Shadows | Off | Off | Low: 512 px, basic | Medium: 1024 px, PCF | High: 2048 px, PCF |
+| Texture limit | 512 px | 1024 px | 2048 px | 4096 px | 8192 px |
+| Anti-aliasing (WebGL multisampling) | Off | Off | Off | On | On |
+| Reflections (environment map) | Off | Off | Off | On | On |
+| Fog / ambient effects | Off | On | On | On | On |
+| Draw distance | 120 m | 200 m | 350 m | 600 m | 1000 m |
+| LOD distance | ×0.5 | ×0.7 | ×1 | ×1.5 | ×2.5 |
+| Play-mode FPS cap | 30 | 30 | 30 | 60 | 60 |
+
+Point-light shadows (six renders each) are used only at High shadow quality. Anti-aliasing changes take effect the next time the editor opens, because they need a new WebGL context. Post-processing and particles don't exist yet, so they have no settings.
 
 ---
 
-## 4. Camera Systems & Controls (§11, §29, §30)
+## 4. Levels of Detail (LOD) (§21, §22)
+
+- **At import** (*Generate LODs*, on by default): every static mesh with at least 2,000 triangles gets two simplified copies with about 35% and 12% of its triangles (`packages/renderer/src/assets/lod.ts`). Simplification uses vertex clustering, which is O(n): both levels took 92 ms for a 65,000-triangle mesh and 259 ms for 261,000 triangles on the development PC (2026-09-17). Phones will be slower. Vertices that share a grid cell and face roughly the same way are merged, so hard edges survive. A level that doesn't save at least 20% is dropped. Skinned, morphing and animated models are skipped.
+- **Storage:** the copies are ordinary nodes in the project's GLB, tagged with `extras.mfLod`, so no custom file format is needed. Re-importing such a GLB removes old copies before generating new ones.
+- **At load:** `buildLods` turns each tagged set into a `ScaledLOD` (a `THREE.LOD`). Its switch distances are 8× and 20× the mesh's bounding radius, multiplied by the object's world scale and by the quality level's *LOD distance*. The Viewport passes that value through `camera.userData.lodDistanceScale`. A 10% hysteresis stops flicker at the boundary.
+- **Cost:** LOD copies add about 40% to a large mesh's stored size and GPU memory, in exchange for far fewer triangles drawn at a distance.
+- **Adaptive quality** can halve the LOD distance when frames are late (see [performance.md](performance.md)).
+
+---
+
+## 5. Camera Systems & Controls (§11, §29, §30)
 
 The viewport includes specialized camera modes for both desktop and touch screens:
 
@@ -65,7 +82,7 @@ The viewport includes specialized camera modes for both desktop and touch screen
 
 ---
 
-## 5. Transform Gizmos & Interaction (§9)
+## 6. Transform Gizmos & Interaction (§9)
 
 The 3D editor provides custom, battery-efficient transform gizmos:
 - **Translate Mode (`W`):** Red (X), Green (Y), and Blue (Z) axis arrows with planar drag quads.
