@@ -113,9 +113,6 @@ export function analyzeParsed(parsed: ParsedModel, name: string, format: FileFor
   const bigTextures = textureInfos.filter((t) => Math.max(t.width, t.height) > MOBILE_RECOMMENDED.textureSize);
   if (bigTextures.length) warnings.push(`${bigTextures.length} texture(s) are larger than ${MOBILE_RECOMMENDED.textureSize}px.`);
   if (bones.size > MOBILE_RECOMMENDED.bones) warnings.push(`Skeleton has ${bones.size} bones; low-end phones may struggle above ${MOBILE_RECOMMENDED.bones}.`);
-  if (parsed.animations.length > 0) {
-    warnings.push('Animations are kept in the file, but animation playback is NOT IMPLEMENTED in Mythic Forge 0.1.');
-  }
   return {
     name,
     format,
@@ -127,6 +124,7 @@ export function analyzeParsed(parsed: ParsedModel, name: string, format: FileFor
       materials: materials.size,
       textures: textures.size,
       animations: parsed.animations.length,
+      clips: parsed.animations.slice(0, 256).map((clip) => ({ name: clip.name.slice(0, 128), durationSec: Math.round(clip.duration * 1000) / 1000 })),
       bones: bones.size,
       ...(empty
         ? {}

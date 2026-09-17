@@ -505,6 +505,8 @@ export class Viewport {
           const e = this.runtime.entities.get(id);
           if (e) this.view.setRuntimeTransform(id, e.position, e.rotation, e.scale, this.runtime.isActive(id));
         }
+        const entities = this.runtime.entities;
+        this.view.updateAnimations(dt, (id) => entities.get(id)?.moveSpeed ?? 0);
       }
       const { clientWidth, clientHeight } = this.options.container;
       const main = this.view.mainCamera(clientWidth / Math.max(1, clientHeight), this.quality.drawDistance);

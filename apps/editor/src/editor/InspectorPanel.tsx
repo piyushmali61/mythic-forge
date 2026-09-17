@@ -3,6 +3,7 @@ import {
   LIGHT_TYPES,
   PRIMITIVE_LABELS,
   PRIMITIVE_TYPES,
+  defaultAnimator,
   defaultBehaviour,
   defaultCamera,
   defaultCollider,
@@ -10,6 +11,7 @@ import {
   defaultMaterial,
   defaultRigidBody,
   primitiveColliderSize,
+  type AnimatorComponent,
   type BehaviourDef,
   type BehaviourType,
   type Components,
@@ -79,6 +81,7 @@ function EntityInspector({ session, entity: e }: { session: EditorSession; entit
     { label: 'Camera', icon: 'camera', disabled: !!c.camera, onSelect: () => upd('camera', defaultCamera(false), 'Add camera') },
     { label: 'Collider', icon: 'collider', disabled: !!c.collider, onSelect: () => upd('collider', fitCollider(session, e), 'Add collider') },
     { label: 'Rigid Body', icon: 'physics', disabled: !!c.rigidBody, onSelect: () => upd('rigidBody', defaultRigidBody(), 'Add rigid body') },
+    { label: 'Animator', icon: 'play', disabled: !!c.animator || !c.model, onSelect: () => upd('animator', defaultAnimator(), 'Add animator') },
     {
       label: 'Audio Source',
       icon: 'music',
@@ -176,6 +179,8 @@ function EntityInspector({ session, entity: e }: { session: EditorSession; entit
           <Check label="Receive shadows" checked={c.model.receiveShadow} onChange={(v) => upd('model', { ...c.model!, receiveShadow: v }, 'Shadows')} />
         </Section>
       )}
+
+      {c.animator && <AnimatorEditor session={session} entity={e} animator={c.animator} upd={upd} />}
 
       {c.material && <MaterialEditor session={session} material={c.material} upd={upd} />}
       {c.light && <LightEditor light={c.light} upd={upd} />}
@@ -602,5 +607,43 @@ function SceneInspector({ session }: { session: EditorSession }) {
         Custom UI layouts and scripted logic are planned. Today, games are built from behaviours (Add component → Behaviours).
       </p>
     </fieldset>
+  );
+}
+
+function AnimatorEditor({ session, entity: e, animator: a, upd }: { session: EditorSession; entity: Readonly<Entity>; animator: AnimatorComponent; upd: Upd }) {
+  const assetId = e.components.model?.assetId;
+  const clips = session.assets.value.find((x) => x.id === assetId)?.stats.clips ?? [];
+  const set = (patch: Partial<AnimatorComponent>, label: string, phase?: EditPhase, field?: string) => upd('animator', { ...a, ...patch }, label, phase, field);
+  const clipOptions = (value: string, emptyLabel: string) => [
+    { value: '', label: emptyLabel },
+    ...clips.map((c) => ({ value: c.name, label: `${c.name} (${c.durationSec.toFixed(1)} s)` })),
+    // Keep a clip name that the current model doesn't have visible instead of silently changing it.
+    ...(value && !clips.some((c) => c.name === value) ? [{ value, label: `${value} (not in this model)` }] : []),
+  ];
+  const isPlayer = (e.components.behaviours ?? []).some((b) => b.type === 'playerController');
+  return (
+    <Section title="Animator" icon="play" onRemove={() => upd('animator', undefined, 'Remove animator')}>
+      {!e.components.model ? (
+        <p class="dim" style={{ fontSize: '0.84em' }}>Animators play clips from this object's model. Add a Model first.</p>
+      ) : clips.length === 0 ? (
+        <p class="dim" style={{ fontSize: '0.84em' }}>This model has no animation clips. Import a GLB, glTF or FBX file that contains animations.</p>
+      ) : (
+        <>
+          <Prop label="Clip">
+            <Select small label="Clip" value={a.clip} options={clipOptions(a.clip, 'First clip')} onChange={(v) => set({ clip: v }, 'Animation clip')} />
+          </Prop>
+          <Prop label="While moving">
+            <Select small label="Clip while moving" value={a.moveClip} options={clipOptions(a.moveClip, 'Same clip')} onChange={(v) => set({ moveClip: v }, 'Move clip')} />
+          </Prop>
+          {a.moveClip && !isPlayer && <p class="dim" style={{ fontSize: '0.84em' }}>The move clip plays while a Player Controller moves this object.</p>}
+          <Prop label="Speed">
+            <SliderInput label="Animation speed" min={0} max={3} step={0.05} value={a.speed} onChange={(v, p) => set({ speed: v }, 'Animation speed', p, 'speed')} />
+          </Prop>
+          <Check label="Play clip when idle" checked={a.playOnStart} onChange={(v) => set({ playOnStart: v }, 'Play clip')} />
+          <Check label="Loop" checked={a.loop} onChange={(v) => set({ loop: v }, 'Loop animation')} />
+        </>
+      )}
+      <p class="dim" style={{ fontSize: '0.84em' }}>Animations play in play mode and in exported games.</p>
+    </Section>
   );
 }

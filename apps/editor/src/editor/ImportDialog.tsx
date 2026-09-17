@@ -362,7 +362,10 @@ function ModelReview({ analysis: a, settings, setSettings }: { analysis: ModelAn
           {a.textures.length > 0 && <span class="dim"> ({a.textures.map((t) => `${t.width}×${t.height}`).join(', ')})</span>}
         </dd>
         <dt>Animations</dt>
-        <dd>{formatNumber(s.animations)}</dd>
+        <dd>
+          {formatNumber(s.animations)}
+          {s.clips && s.clips.length > 0 && <span class="dim"> ({s.clips.map((c) => c.name).join(', ')})</span>}
+        </dd>
         <dt>Bones</dt>
         <dd>{formatNumber(s.bones)}</dd>
         <dt>Bounding box (m)</dt>

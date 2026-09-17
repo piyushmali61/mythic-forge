@@ -42,6 +42,8 @@ export interface RuntimeEntity {
   yaw: number;
   pitch: number;
   collected: boolean;
+  /** Horizontal speed (m/s) a player controller actually moved in the last step; drives animator move clips. */
+  moveSpeed: number;
 }
 
 export interface AudioSink {
@@ -111,6 +113,7 @@ export class GameRuntime {
         yaw: 0,
         pitch: 0,
         collected: false,
+        moveSpeed: 0,
       });
     }
     this.totalCollectibles = collectibles;
@@ -261,6 +264,8 @@ export class GameRuntime {
   }
 
   private updatePlayer(e: RuntimeEntity, def: PlayerControllerBehaviour, input: InputState, dt: number): void {
+    const startX = e.position[0];
+    const startZ = e.position[2];
     let move: Vec3 = [0, 0, 0];
     const mx = clamp(input.moveX, -1, 1);
     const my = clamp(input.moveY, -1, 1);
@@ -316,6 +321,7 @@ export class GameRuntime {
       e.position = vec3.add(e.position, move);
     }
     e.rotation = quat.fromYaw(e.yaw);
+    e.moveSpeed = Math.hypot(e.position[0] - startX, e.position[2] - startZ) / dt;
     this.changed.add(e.id);
   }
 

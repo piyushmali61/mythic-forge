@@ -18,6 +18,7 @@ import {
   createEntity,
   createLightEntity,
   createPrimitive,
+  defaultAnimator,
   defaultCollider,
   log,
   type Command,
@@ -281,6 +282,8 @@ export class EditorSession {
   /** Places a model asset so it sits on the ground at the view centre, with a matching collider. */
   addModel(meta: ProjectAssetMeta): void {
     const e = createEntity(meta.name, { model: { assetId: meta.id, castShadow: true, receiveShadow: true } });
+    // Animated models play their first clip in play mode until the user picks another.
+    if (meta.stats.clips?.length) e.components.animator = defaultAnimator();
     const p = this.placementPoint();
     const min = meta.stats.boundsMin;
     const max = meta.stats.boundsMax;

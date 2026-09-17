@@ -15,6 +15,7 @@ const STAGES: readonly ReviewStage[] = [
   'rejected',
 ];
 const ROLES: readonly ReviewerRole[] = ['admin', 'reviewer', 'developer', 'content-manager'];
+const MAX_CLIPS = 256;
 
 /**
  * Reads a licence record from untrusted JSON. Missing booleans default to the *restrictive*
@@ -83,5 +84,11 @@ export function readStats(r: Reader, value: unknown, path: string): AssetStats {
   if (v.durationSec !== undefined) out.durationSec = r.num(v.durationSec, `${path}.durationSec`, 0, 0, 1e7);
   if (v.boundsMin !== undefined) out.boundsMin = r.vec3(v.boundsMin, `${path}.boundsMin`, [0, 0, 0]);
   if (v.boundsMax !== undefined) out.boundsMax = r.vec3(v.boundsMax, `${path}.boundsMax`, [0, 0, 0]);
+  if (Array.isArray(v.clips)) {
+    out.clips = v.clips.slice(0, MAX_CLIPS).flatMap((c, i) => {
+      if (!isRecord(c)) return [];
+      return [{ name: r.str(c.name, `${path}.clips[${i}].name`, '', 128), durationSec: r.num(c.durationSec, `${path}.clips[${i}].durationSec`, 0, 0, 1e6) }];
+    });
+  }
   return out;
 }

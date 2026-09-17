@@ -105,6 +105,7 @@ One-click switch to real-time 60 FPS gameplay, dynamic diya lighting, player con
   - **Official Mythic Bharat Studios Library:** Original in-house Indian architecture, temples, carved pillars, torana gateways, and glowing diya lamps (`MBS-ASSET-1.0`).
   - **Free & Open Library:** Verified CC0 1.0 public domain game starter models (rocks, wooden crates, ground tiles, earthenware urns) and PBR materials.
 - **Instant Play Mode:** Switch seamlessly between Editor and Play Mode with declarative behaviours (`rotate`, `bob`, `playerController`, `followCamera`, `collectible`) and simple rigid-body physics.
+- **Animation Playback:** Plays the animation clips inside imported GLB, glTF and FBX models, and blends to a move clip (for example *Run*) while a Player Controller moves the object. Animations run only in play mode and exported games.
 - **Battery-First Power Management:** Automatically suspends rendering when backgrounded; features a dedicated Battery Saver profile ($30\text{ FPS}$, reduced shadows) and native Android thermal management integration.
 - **Web Export & PWA Support:** Export projects as standalone, self-contained HTML/JS games, or install Mythic Forge directly as an offline Progressive Web App.
 

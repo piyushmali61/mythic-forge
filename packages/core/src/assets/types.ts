@@ -11,6 +11,8 @@ export interface AssetStats {
   materials?: number;
   textures?: number;
   animations?: number;
+  /** Animation clips in the model (name and length), in file order. */
+  clips?: AnimationClipInfo[];
   bones?: number;
   boundsMin?: Vec3;
   boundsMax?: Vec3;
@@ -19,6 +21,11 @@ export interface AssetStats {
   durationSec?: number;
   /** Estimated GPU memory once loaded (vertex/index buffers + textures incl. mipmaps). */
   gpuBytesEstimate?: number;
+}
+
+export interface AnimationClipInfo {
+  name: string;
+  durationSec: number;
 }
 
 export type AssetSource = 'user-import' | 'official' | 'free-open';

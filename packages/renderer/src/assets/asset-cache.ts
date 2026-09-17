@@ -113,7 +113,9 @@ export class AssetCache {
         log.warn('Assets', `Model asset ${assetId} is not in the optimised GLB format.`);
         return null;
       }
-      const { root } = await parseGlb(data.bytes);
+      const { root, animations } = await parseGlb(data.bytes);
+      // Clones copy this list, so every instance can create its own animation mixer.
+      root.animations = animations;
       root.traverse((o) => {
         const mesh = o as THREE.Mesh;
         if (!mesh.isMesh) return;

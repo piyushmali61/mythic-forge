@@ -83,6 +83,18 @@ export interface RigidBodyComponent {
   isKinematic: boolean;
 }
 
+/** Plays animation clips stored in the entity's model (play mode and exported games only). */
+export interface AnimatorComponent {
+  /** Clip played by default. Empty = the model's first clip. */
+  clip: string;
+  /** Clip played while the entity is moving (player-controlled objects). Empty = keep `clip`. */
+  moveClip: string;
+  /** Playback speed multiplier. */
+  speed: number;
+  loop: boolean;
+  playOnStart: boolean;
+}
+
 export interface AudioSourceComponent {
   assetId: string;
   volume: number;
@@ -150,6 +162,7 @@ export interface Components {
   collider?: ColliderComponent;
   rigidBody?: RigidBodyComponent;
   audioSource?: AudioSourceComponent;
+  animator?: AnimatorComponent;
   behaviours?: BehaviourDef[];
 }
 

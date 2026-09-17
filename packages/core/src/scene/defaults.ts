@@ -1,6 +1,7 @@
 import { createId } from '../util/ids.ts';
 import { SCENE_FORMAT_VERSION } from '../version.ts';
 import type {
+  AnimatorComponent,
   BehaviourDef,
   BehaviourType,
   CameraComponent,
@@ -75,6 +76,14 @@ export const defaultRigidBody = (): RigidBodyComponent => ({
   mass: 1,
   useGravity: true,
   isKinematic: false,
+});
+
+export const defaultAnimator = (clip = ''): AnimatorComponent => ({
+  clip,
+  moveClip: '',
+  speed: 1,
+  loop: true,
+  playOnStart: true,
 });
 
 export function defaultBehaviour(type: BehaviourType): BehaviourDef {

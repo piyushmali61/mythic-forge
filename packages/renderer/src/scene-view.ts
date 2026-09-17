@@ -1,5 +1,6 @@
 import {
   SHADOW_MAP_SIZE,
+  type AnimatorComponent,
   type CameraComponent,
   type Entity,
   type LightComponent,
@@ -10,6 +11,7 @@ import {
   type SceneModel,
 } from '@mythic-forge/core';
 import * as THREE from 'three';
+import { EntityAnimator, MOVING_SPEED } from './animation.ts';
 import type { AssetCache } from './assets/asset-cache.ts';
 import { GeometryCache, applyMaterial, createIcon, createMaterial, isEditorHelper } from './primitives.ts';
 
@@ -27,6 +29,9 @@ interface EntityNode {
   sharedContent: boolean;
   modelAssetId: string | null;
   textureAssetId: string | null;
+  animatorDef: AnimatorComponent | null;
+  /** Exists only while playing. */
+  animator: EntityAnimator | null;
 }
 
 export interface SceneViewOptions {
@@ -169,6 +174,8 @@ export class SceneView {
       sharedContent: false,
       modelAssetId: null,
       textureAssetId: null,
+      animatorDef: null,
+      animator: null,
     };
     this.nodes.set(e.id, node);
     applyTransform(group, e);
@@ -190,6 +197,9 @@ export class SceneView {
 
   private disposeContent(node: EntityNode): void {
     node.token++;
+    node.animator?.stop();
+    node.animator = null;
+    node.animatorDef = null;
     for (const obj of [node.content, node.light, node.camera, node.helper]) obj?.removeFromParent();
     // Geometries (GeometryCache) and model resources (AssetCache) are shared; only per-entity
     // materials, shadow maps and helper icons belong to this node.
@@ -221,6 +231,7 @@ export class SceneView {
     node.group.visible = this.visibleFor(e);
     node.group.userData.locked = e.locked;
     const q = this.options.quality();
+    node.animatorDef = c.animator ? { ...c.animator } : null;
 
     if (c.mesh) {
       const def = c.material;
@@ -259,6 +270,7 @@ export class SceneView {
         });
         node.content = obj;
         node.group.add(obj);
+        if (this.playing) this.startAnimator(node);
         this.options.onAsyncChange();
       });
     }
@@ -296,6 +308,30 @@ export class SceneView {
   setPlaying(playing: boolean): void {
     this.playing = playing;
     this.setHelpersVisible(!playing);
+    for (const node of this.nodes.values()) {
+      if (playing) {
+        this.startAnimator(node);
+      } else {
+        node.animator?.stop();
+        node.animator = null;
+      }
+    }
+  }
+
+  private startAnimator(node: EntityNode): void {
+    if (node.animator || !node.animatorDef || !node.content || !node.modelAssetId) return;
+    node.animator = EntityAnimator.create(node.content, node.animatorDef, node.group.name);
+  }
+
+  /**
+   * Advances model animations (play mode). `moveSpeed` reports how fast an entity is moving,
+   * which selects an animator's move clip. Hidden or disabled entities are not animated.
+   */
+  updateAnimations(dt: number, moveSpeed: (id: string) => number): void {
+    for (const node of this.nodes.values()) {
+      if (!node.animator || !isVisibleInHierarchy(node.group)) continue;
+      node.animator.update(dt, moveSpeed(node.id) > MOVING_SPEED);
+    }
   }
 
   setHelpersVisible(visible: boolean): void {

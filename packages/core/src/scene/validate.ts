@@ -279,6 +279,16 @@ function readComponents(r: Reader, c: Record<string, unknown>, path: string): Co
       };
     }
   }
+  if (isRecord(c.animator)) {
+    const k = c.animator;
+    out.animator = {
+      clip: r.str(k.clip, `${path}.animator.clip`, '', 128),
+      moveClip: r.str(k.moveClip, `${path}.animator.moveClip`, '', 128),
+      speed: r.num(k.speed, `${path}.animator.speed`, 1, 0, 10),
+      loop: r.bool(k.loop, `${path}.animator.loop`, true),
+      playOnStart: r.bool(k.playOnStart, `${path}.animator.playOnStart`, true),
+    };
+  }
   if (Array.isArray(c.behaviours)) {
     const list: BehaviourDef[] = [];
     c.behaviours.slice(0, 16).forEach((b, i) => {
